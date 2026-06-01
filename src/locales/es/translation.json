@@ -1,4 +1,7 @@
 {
+  "loader": {
+    "working": "Fabián está trabajando"
+  },
   "nav": {
     "home": "Inicio",
     "about": "Sobre mí",

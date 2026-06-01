@@ -32,7 +32,10 @@
       "PowerShell($ff = Get-Command ffmpeg -ErrorAction SilentlyContinue; if \\($ff\\) { $ff.Source } else { \"no-ffmpeg\" }; $vlc = Test-Path \"C:\\\\Program Files\\\\VideoLAN\\\\VLC\\\\vlc.exe\"; \"vlc: $vlc\"; $wmf = Get-Command \"Add-Type\" -ErrorAction SilentlyContinue; \"---\"; winget --version 2>$null)",
       "PowerShell(python -m pip install --quiet imageio imageio-ffmpeg 2>&1)",
       "PowerShell(\"done\")",
-      "Bash(rm -f public/_ftest.html src/assets/_ftest.html src/assets/_ftest.png src/assets/_shot.png)"
+      "Bash(rm -f public/_ftest.html src/assets/_ftest.html src/assets/_ftest.png src/assets/_shot.png)",
+      "Bash(rm -rf src/components/Loader)",
+      "Bash(npm uninstall *)",
+      "Bash(rm -f src/assets/_loader.png)"
     ]
   }
 }
