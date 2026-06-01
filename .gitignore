@@ -28,3 +28,7 @@ pnpm-debug.log*
 # media de referencia (no va al repo)
 src/assets/_frames/
 src/assets/*.mp4
+
+# firebase
+.firebase/
+*.log
