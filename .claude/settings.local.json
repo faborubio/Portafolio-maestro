@@ -27,7 +27,11 @@
       "Read(//c/Users/Fabian/.claude/projects/c--Users-Fabian-workspace-Portafolio-maestro/memory/**)",
       "Bash(curl -s -o /dev/null -w \"dev server: %{http_code}\\\\n\" http://localhost:5173/)",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:5173/)",
-      "Bash(curl -s -o /dev/null -w \"dev: %{http_code}\\\\n\" http://localhost:5173/)"
+      "Bash(curl -s -o /dev/null -w \"dev: %{http_code}\\\\n\" http://localhost:5173/)",
+      "Bash(ffmpeg -version)",
+      "PowerShell($ff = Get-Command ffmpeg -ErrorAction SilentlyContinue; if \\($ff\\) { $ff.Source } else { \"no-ffmpeg\" }; $vlc = Test-Path \"C:\\\\Program Files\\\\VideoLAN\\\\VLC\\\\vlc.exe\"; \"vlc: $vlc\"; $wmf = Get-Command \"Add-Type\" -ErrorAction SilentlyContinue; \"---\"; winget --version 2>$null)",
+      "PowerShell(python -m pip install --quiet imageio imageio-ffmpeg 2>&1)",
+      "PowerShell(\"done\")"
     ]
   }
 }

@@ -10,6 +10,8 @@ const Home = () => {
 
   return (
     <PageWrapper className="home">
+      <span className="code-tag home__tag-body">&lt;body&gt;</span>
+
       <div className="home__text">
         <span className="code-tag code-tag--open">&lt;h1&gt;</span>
 
@@ -41,6 +43,12 @@ const Home = () => {
       <div className="home__logo">
         <FLogo3D />
       </div>
+
+      <span className="code-tag home__tag-close">
+        &lt;/body&gt;
+        <br />
+        &lt;/html&gt;
+      </span>
     </PageWrapper>
   )
 }

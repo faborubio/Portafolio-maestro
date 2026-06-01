@@ -6,6 +6,20 @@
   justify-content: space-between;
   gap: 40px;
 
+  // Tags de código decorativos en las esquinas (estilo del original)
+  &__tag-body {
+    top: 70px;
+    left: clamp(20px, 8vw, 160px);
+    font-size: 1.1rem;
+  }
+
+  &__tag-close {
+    bottom: 50px;
+    left: clamp(20px, 8vw, 160px);
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
   &__text {
     position: relative;
     z-index: 2;

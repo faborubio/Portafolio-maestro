@@ -15,13 +15,13 @@
     animation: floatY 4s ease-in-out infinite;
   }
 
-  // Objeto 3D que gira sobre su eje Y (muestra el grosor real)
+  // Objeto 3D que se balancea sobre el eje Y mostrando siempre el grosor
   &__obj {
     position: relative;
     width: 100%;
     height: 100%;
     transform-style: preserve-3d;
-    animation: spinF 9s linear infinite;
+    animation: swayF 7s ease-in-out infinite;
     filter: drop-shadow(0 26px 34px rgba(0, 0, 0, 0.45));
   }
 
@@ -34,12 +34,16 @@
   }
 }
 
-@keyframes spinF {
-  from {
-    transform: rotateX(-12deg) rotateY(0deg);
+// Balanceo: nunca llega a 90°, así el grosor 3D siempre se ve (como la S)
+@keyframes swayF {
+  0% {
+    transform: rotateX(-10deg) rotateY(-34deg);
   }
-  to {
-    transform: rotateX(-12deg) rotateY(360deg);
+  50% {
+    transform: rotateX(-10deg) rotateY(34deg);
+  }
+  100% {
+    transform: rotateX(-10deg) rotateY(-34deg);
   }
 }
 

@@ -2,8 +2,9 @@ import { motion } from 'framer-motion'
 import './AnimatedLetters.scss'
 
 /**
- * Renderiza una cadena letra por letra con aparición escalonada (framer-motion).
- * Se re-anima cada vez que el componente se monta (al cambiar de sección).
+ * Renderiza una cadena letra por letra con:
+ *  - aparición escalonada al montar (framer-motion)
+ *  - efecto hover individual por letra (se eleva y se vuelve amarilla)
  *
  * @param {string} text  Texto a animar
  * @param {number} start Índice de inicio para escalonar el delay (encadenar líneas)
@@ -34,7 +35,17 @@ const AnimatedLetters = ({ text, start = 0 }) => {
       animate="animate"
     >
       {text.split('').map((char, i) => (
-        <motion.span key={i} className="animated-letters__char" variants={letter}>
+        <motion.span
+          key={i}
+          className="animated-letters__char"
+          variants={letter}
+          whileHover={{
+            y: -12,
+            scale: 1.25,
+            color: '#ffd700',
+            transition: { type: 'spring', stiffness: 400, damping: 12 },
+          }}
+        >
           {char === ' ' ? ' ' : char}
         </motion.span>
       ))}

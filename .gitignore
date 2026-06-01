@@ -24,3 +24,7 @@ pnpm-debug.log*
 .vscode/*
 !.vscode/extensions.json
 .idea
+
+# media de referencia (no va al repo)
+src/assets/_frames/
+src/assets/*.mp4
