@@ -2,8 +2,8 @@ import { motion } from 'framer-motion'
 import './FLogo3D.scss'
 
 // Nº de capas apiladas en el eje Z para dar grosor real 3D
-const LAYERS = 36
-const STEP = 1.8 // px de separación entre capas → grosor ≈ 63px
+const LAYERS = 40
+const STEP = 2 // px de separación entre capas → grosor ≈ 80px
 
 const FACE = '#1a5e85' // cara frontal/trasera (azul)
 const SIDE = '#ffd700' // canto extruido (amarillo)
@@ -14,12 +14,12 @@ const FLogo3D = () => {
 
   return (
     <div className="flogo3d" aria-hidden="true">
-      {/* Entrada: gira para "dibujar" el volumen 3D al cargar */}
+      {/* Entrada: aparece con fundido + escala (el giro continuo lo hace el obj) */}
       <motion.div
         className="flogo3d__intro"
-        initial={{ rotateY: -165, scale: 0.55, opacity: 0 }}
-        animate={{ rotateY: 0, scale: 1, opacity: 1 }}
-        transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1] }}
+        initial={{ scale: 0.6, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
       >
         <div className="flogo3d__float">
           <div className="flogo3d__obj">
