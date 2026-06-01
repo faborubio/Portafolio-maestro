@@ -12,17 +12,10 @@ import Contact from './pages/Contact/Contact'
 
 const App = () => {
   const location = useLocation()
-  const [booting, setBooting] = useState(true)
   const [routeLoading, setRouteLoading] = useState(false)
   const firstRoute = useRef(true)
 
-  // Preloader inicial
-  useEffect(() => {
-    const t = setTimeout(() => setBooting(false), 1600)
-    return () => clearTimeout(t)
-  }, [])
-
-  // Loader breve al cambiar de sección (estilo del original)
+  // Loader breve solo al cambiar de sección (no en la carga inicial del Home)
   useEffect(() => {
     if (firstRoute.current) {
       firstRoute.current = false
@@ -32,8 +25,6 @@ const App = () => {
     const t = setTimeout(() => setRouteLoading(false), 850)
     return () => clearTimeout(t)
   }, [location.pathname])
-
-  if (booting) return <SectionLoader />
 
   return (
     <Layout>
