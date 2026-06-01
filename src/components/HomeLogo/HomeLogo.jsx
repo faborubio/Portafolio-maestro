@@ -8,9 +8,9 @@ const FRONT_PTS = [
 const TX = 78 // extrusión hacia la derecha
 const TY = 88 //  y hacia abajo (como la S de Slobodan)
 const STEPS = 48 // copias para rellenar el canto del sólido
-const FACE = '#1a5e85' // cara frontal (azul, como la S)
+const FACE = '#022c43' // cara frontal (navy oscuro)
 const SIDE = '#ffd700' // caras exteriores (amarillo)
-const BG = '#022c43' // color del fondo, para separar las caras del canto
+const BG = '#1a5e85' // color del fondo, para separar las caras del canto
 
 const pathFrom = (ox = 0, oy = 0) =>
   'M ' + FRONT_PTS.map(([x, y]) => `${x + ox},${y + oy}`).join(' L ') + ' Z'

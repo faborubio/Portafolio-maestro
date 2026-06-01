@@ -6,7 +6,7 @@ const F_PATH =
 
 const LAYERS = 22
 const STEP = 0.013 // em entre capas → grosor 3D que escala con el texto
-const FACE = '#1a5e85' // cara azul (como la F gigante)
+const FACE = '#022c43' // cara de la F (navy oscuro)
 const SIDE = '#ffd700' // canto amarillo
 
 // "F" 3D en miniatura que gira 360° de forma continua (inline en el título)
