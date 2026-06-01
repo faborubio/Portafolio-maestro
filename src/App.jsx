@@ -13,14 +13,13 @@ import Contact from './pages/Contact/Contact'
 const App = () => {
   const location = useLocation()
   const [routeLoading, setRouteLoading] = useState(false)
-  const firstRoute = useRef(true)
+  const prevPath = useRef(location.pathname)
 
-  // Loader breve solo al cambiar de sección (no en la carga inicial del Home)
+  // Loader breve solo al cambiar de sección (no en la carga inicial del Home).
+  // Comparar con la ruta previa evita que StrictMode lo dispare al montar.
   useEffect(() => {
-    if (firstRoute.current) {
-      firstRoute.current = false
-      return
-    }
+    if (prevPath.current === location.pathname) return
+    prevPath.current = location.pathname
     setRouteLoading(true)
     const t = setTimeout(() => setRouteLoading(false), 850)
     return () => clearTimeout(t)
