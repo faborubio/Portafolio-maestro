@@ -1,0 +1,32 @@
+// ===== Animaciones reutilizables =====
+
+// Aparición de letras (AnimatedLetters)
+@keyframes bounceIn {
+  0%   { opacity: 0; transform: scale(0.3) translateY(40px); }
+  60%  { opacity: 1; transform: scale(1.05) translateY(0); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+// Flotación del logo
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-18px); }
+}
+
+// Rotación 3D lenta
+@keyframes spin3d {
+  from { transform: rotateY(0deg); }
+  to   { transform: rotateY(360deg); }
+}
+
+// Fade-in genérico
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+// Indicador "scroll" del cursor parpadeante
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.3; }
+}

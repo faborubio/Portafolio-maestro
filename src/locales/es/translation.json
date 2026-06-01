@@ -1,0 +1,47 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "skills": "Habilidades",
+    "tips": "Tips",
+    "portfolio": "Portafolio",
+    "contact": "Contacto"
+  },
+  "home": {
+    "hi": "Hola,",
+    "im": "soy",
+    "role": "desarrollador web.",
+    "subtitle": "Desarrollador Full Stack / Experto en JavaScript / Freelancer",
+    "contact": "Contáctame"
+  },
+  "about": {
+    "title": "Sobre mí",
+    "p1": "Soy un desarrollador web full stack apasionado por crear experiencias digitales atractivas y funcionales.",
+    "p2": "Me motivan los retos, el aprendizaje continuo y trabajar en proyectos que aporten valor real a las personas.",
+    "p3": "Si quieres saber más sobre mí o trabajar juntos, no dudes en contactarme."
+  },
+  "skills": {
+    "title": "Mis habilidades",
+    "intro": "Tecnologías y herramientas con las que trabajo a diario."
+  },
+  "tips": {
+    "title": "Tips & artículos",
+    "intro": "Pequeños consejos y notas sobre desarrollo web.",
+    "readMore": "Leer más"
+  },
+  "portfolio": {
+    "title": "Mi portafolio",
+    "intro": "Una selección de proyectos recientes.",
+    "view": "Ver proyecto"
+  },
+  "contact": {
+    "title": "Contáctame",
+    "intro": "¿Tienes un proyecto en mente? Escríbeme y hablamos.",
+    "name": "Nombre",
+    "email": "Correo",
+    "subject": "Asunto",
+    "message": "Mensaje",
+    "send": "Enviar",
+    "note": "Formulario decorativo — se conectará próximamente."
+  }
+}

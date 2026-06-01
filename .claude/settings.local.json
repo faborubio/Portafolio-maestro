@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm --version)",
+      "Bash(git --version)",
+      "Bash(npm install *)",
+      "Bash(mkdir -p src/assets/img src/styles src/locales/es src/locales/en src/data src/components src/pages)",
+      "Bash(cp _legacy/assets/img/logofdef.png src/assets/img/)",
+      "Bash(cp _legacy/assets/img/Fabian6.png src/assets/img/)",
+      "Bash(cp _legacy/assets/img/circle.png src/assets/img/)",
+      "Bash(npm run *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5173/)",
+      "Bash(curl -s http://localhost:5173/)",
+      "Bash(gh --version)",
+      "Bash(gh auth *)",
+      "Bash(git config *)",
+      "Bash(echo \"global user.name: $\\(git config --global user.name\\)\")",
+      "Bash(echo \"global user.email: $\\(git config --global user.email\\)\")",
+      "Bash(gh api *)",
+      "Bash(git add *)",
+      "Bash(git commit -q -m ' *)"
+    ]
+  }
+}

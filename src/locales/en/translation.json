@@ -1,0 +1,47 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "tips": "Tips",
+    "portfolio": "Portfolio",
+    "contact": "Contact"
+  },
+  "home": {
+    "hi": "Hi,",
+    "im": "I'm",
+    "role": "web developer.",
+    "subtitle": "Full Stack Developer / JavaScript Expert / Freelancer",
+    "contact": "Contact me"
+  },
+  "about": {
+    "title": "About me",
+    "p1": "I'm a full stack web developer passionate about building engaging and functional digital experiences.",
+    "p2": "I'm driven by challenges, continuous learning, and working on projects that bring real value to people.",
+    "p3": "If you'd like to know more about me or work together, feel free to reach out."
+  },
+  "skills": {
+    "title": "My skills",
+    "intro": "Technologies and tools I work with every day."
+  },
+  "tips": {
+    "title": "Tips & articles",
+    "intro": "Small tips and notes about web development.",
+    "readMore": "Read more"
+  },
+  "portfolio": {
+    "title": "My portfolio",
+    "intro": "A selection of recent projects.",
+    "view": "View project"
+  },
+  "contact": {
+    "title": "Contact me",
+    "intro": "Got a project in mind? Drop me a line and let's talk.",
+    "name": "Name",
+    "email": "Email",
+    "subject": "Subject",
+    "message": "Message",
+    "send": "Send",
+    "note": "Decorative form — will be connected soon."
+  }
+}

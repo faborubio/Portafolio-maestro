@@ -1,0 +1,32 @@
+@import '../../styles/variables';
+
+.page {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  padding: 60px clamp(20px, 8vw, 160px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  // Marca de agua gigante de fondo (estilo del original)
+  &__watermark {
+    position: absolute;
+    bottom: 0;
+    right: 4%;
+    font-size: clamp(8rem, 22vw, 22rem);
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.03);
+    letter-spacing: -8px;
+    user-select: none;
+    pointer-events: none;
+    z-index: 0;
+    line-height: 0.8;
+  }
+}
+
+@media screen and (max-width: $bp-mobile) {
+  .page {
+    padding: 90px 24px 40px;
+  }
+}
