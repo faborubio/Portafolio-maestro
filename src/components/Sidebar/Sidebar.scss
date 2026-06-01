@@ -15,22 +15,22 @@
   &__logo {
     display: grid;
     place-items: center;
-    padding: 14px 0;
+    padding: 12px 0;
     width: 100%;
     background: $sidebar-bg;
 
     img {
-      width: 34px;
-      height: auto;
+      height: 90px;
+      width: auto;
     }
   }
 
   &__nav {
     flex: 1;
     width: 100%;
-    margin-top: 10px;
     display: flex;
     flex-direction: column;
+    justify-content: center; // iconos centrados verticalmente, como en Slobodan
 
     a {
       position: relative;

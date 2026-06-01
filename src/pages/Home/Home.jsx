@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import PageWrapper from '../../components/PageWrapper/PageWrapper'
 import AnimatedLetters from '../../components/AnimatedLetters/AnimatedLetters'
 import HomeLogo from '../../components/HomeLogo/HomeLogo'
+import SpinF from '../../components/SpinF/SpinF'
 import './Home.scss'
 
 const Home = () => {
@@ -22,8 +23,8 @@ const Home = () => {
           <span className="home__line">
             <AnimatedLetters text={`${t('home.im')} `} start={3} />
             <span className="home__name">
-              <span className="home__name-initial">F</span>
-              <AnimatedLetters text="abián," start={6} />
+              <SpinF />
+              <AnimatedLetters text="abian," start={6} />
             </span>
           </span>
           <span className="home__line">

@@ -16,7 +16,7 @@ import {
   faLinkedinIn,
   faGithub,
 } from '@fortawesome/free-brands-svg-icons'
-import logo from '../../assets/img/logofdef.png'
+import logo from '../../assets/img/f-preload.svg'
 import './Sidebar.scss'
 
 const navItems = [

@@ -25,11 +25,6 @@
   to   { opacity: 1; }
 }
 
-// Giro continuo de la inicial del nombre (F del título), como la S del original
-@keyframes spinInitial {
-  from { transform: rotateY(0deg); }
-  to   { transform: rotateY(360deg); }
-}
 
 // Indicador "scroll" del cursor parpadeante
 @keyframes pulse {

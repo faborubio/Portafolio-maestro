@@ -38,16 +38,6 @@
 
   &__name {
     color: $text;
-    perspective: 600px;
-  }
-
-  &__name-initial {
-    display: inline-block;
-    color: $accent;
-    font-weight: 800;
-    transform-style: preserve-3d;
-    // un solo giro sobre su eje al cargar la página
-    animation: spinInitial 1.3s ease-out 0.3s both;
   }
 
   // <h1> justo encima del título (en flujo)

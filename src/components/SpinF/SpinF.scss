@@ -1,0 +1,33 @@
+.spin-f {
+  display: inline-block;
+  width: 0.42em;
+  height: 0.74em;
+  margin: 0 0.06em;
+  perspective: 5em;
+  vertical-align: baseline;
+  position: relative;
+
+  &__obj {
+    position: absolute;
+    inset: 0;
+    transform-style: preserve-3d;
+    // un solo giro al entrar al Home; descansa en un leve ángulo (se ve el 3D)
+    animation: spinFY 1.5s ease-out 0.3s both;
+  }
+
+  &__layer {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@keyframes spinFY {
+  from {
+    transform: rotateX(-8deg) rotateY(0deg);
+  }
+  to {
+    transform: rotateX(-8deg) rotateY(380deg); // una vuelta completa + leve ángulo final
+  }
+}
