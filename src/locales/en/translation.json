@@ -27,7 +27,25 @@
   "tips": {
     "title": "Tips & articles",
     "intro": "Small tips and notes about web development.",
-    "readMore": "Read more"
+    "readMore": "Read more",
+    "items": {
+      "tip1": {
+        "title": "Clean code",
+        "text": "Name your variables and functions well: code is read far more often than it is written."
+      },
+      "tip2": {
+        "title": "Performance",
+        "text": "Measure before optimizing. Lighthouse and the network panel are your best allies."
+      },
+      "tip3": {
+        "title": "Mobile first",
+        "text": "Design for mobile first and scale up; it's easier than the other way around."
+      },
+      "tip4": {
+        "title": "Intentional design",
+        "text": "Spacing, contrast and visual hierarchy make an interface feel professional."
+      }
+    }
   },
   "portfolio": {
     "title": "My portfolio",

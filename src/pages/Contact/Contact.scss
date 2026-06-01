@@ -1,0 +1,68 @@
+@import '../../styles/variables';
+
+.contact {
+  &__title {
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    color: $accent;
+  }
+
+  &__intro {
+    margin-top: 10px;
+    color: $muted;
+    max-width: 600px;
+  }
+
+  &__form {
+    position: relative;
+    z-index: 2;
+    margin-top: 34px;
+    max-width: 640px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    input,
+    textarea {
+      width: 100%;
+      background: $bg-2;
+      border: 1px solid transparent;
+      border-radius: 6px;
+      color: $text;
+      padding: 14px 16px;
+      font-size: 0.95rem;
+      font-family: inherit;
+      transition: border-color 0.25s $ease;
+
+      &::placeholder {
+        color: #7d8b96;
+      }
+
+      &:focus {
+        outline: none;
+        border-color: $accent;
+      }
+    }
+
+    .btn-outline {
+      align-self: flex-start;
+      margin-top: 6px;
+    }
+  }
+
+  &__row {
+    display: flex;
+    gap: 16px;
+  }
+
+  &__note {
+    color: $muted;
+    font-size: 0.8rem;
+    font-style: italic;
+  }
+}
+
+@media screen and (max-width: $bp-mobile) {
+  .contact__row {
+    flex-direction: column;
+  }
+}

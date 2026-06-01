@@ -27,7 +27,25 @@
   "tips": {
     "title": "Tips & artículos",
     "intro": "Pequeños consejos y notas sobre desarrollo web.",
-    "readMore": "Leer más"
+    "readMore": "Leer más",
+    "items": {
+      "tip1": {
+        "title": "Código limpio",
+        "text": "Nombra bien tus variables y funciones: el código se lee muchas más veces de las que se escribe."
+      },
+      "tip2": {
+        "title": "Rendimiento",
+        "text": "Mide antes de optimizar. Lighthouse y el panel de red son tus mejores aliados."
+      },
+      "tip3": {
+        "title": "Mobile first",
+        "text": "Diseña primero para móvil y escala hacia arriba; es más fácil que el camino inverso."
+      },
+      "tip4": {
+        "title": "Diseño con intención",
+        "text": "Espaciado, contraste y jerarquía visual hacen que una interfaz se sienta profesional."
+      }
+    }
   },
   "portfolio": {
     "title": "Mi portafolio",
