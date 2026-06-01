@@ -55,18 +55,11 @@
     text-transform: uppercase;
   }
 
-  // Logo F flotante (equivalente a la "S" 3D del original)
+  // Logo F 3D flotante (equivalente a la "S" 3D del original)
   &__logo {
     position: relative;
     z-index: 1;
     flex-shrink: 0;
-
-    img {
-      width: clamp(180px, 30vw, 420px);
-      height: auto;
-      filter: drop-shadow(0 25px 40px rgba(0, 0, 0, 0.45));
-      animation: float 4s ease-in-out infinite;
-    }
   }
 }
 
@@ -75,9 +68,5 @@
     flex-direction: column-reverse;
     justify-content: center;
     text-align: left;
-
-    &__logo img {
-      width: clamp(140px, 45vw, 240px);
-    }
   }
 }

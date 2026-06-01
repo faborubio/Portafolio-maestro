@@ -26,7 +26,8 @@
       "Bash(cd \"C:\\\\Users\\\\Fabian\\\\.claude\\\\projects\\\\c--Users-Fabian-workspace-Portafolio-maestro\\\\memory\" && ls; echo \"---\"; test -f MEMORY.md && cat MEMORY.md || echo \"NO MEMORY.md\")",
       "Read(//c/Users/Fabian/.claude/projects/c--Users-Fabian-workspace-Portafolio-maestro/memory/**)",
       "Bash(curl -s -o /dev/null -w \"dev server: %{http_code}\\\\n\" http://localhost:5173/)",
-      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:5173/)"
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:5173/)",
+      "Bash(curl -s -o /dev/null -w \"dev: %{http_code}\\\\n\" http://localhost:5173/)"
     ]
   }
 }

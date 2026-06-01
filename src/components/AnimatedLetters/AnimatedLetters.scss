@@ -1,8 +1,9 @@
 .animated-letters {
+  display: inline;
+
   &__char {
     display: inline-block;
-    opacity: 0;
     white-space: pre;
-    animation: bounceIn 0.7s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+    transform-origin: bottom;
   }
 }

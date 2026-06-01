@@ -1,28 +1,54 @@
 @import '../../styles/variables';
 
 .flogo3d {
-  perspective: 1000px;
+  perspective: 1100px;
   display: grid;
   place-items: center;
+  width: clamp(200px, 30vw, 380px);
+  aspect-ratio: 1 / 1;
 
-  &__svg {
-    width: clamp(180px, 30vw, 400px);
-    height: auto;
+  // Flotación vertical
+  &__float {
+    width: 100%;
+    height: 100%;
     transform-style: preserve-3d;
-    filter: drop-shadow(0 30px 40px rgba(0, 0, 0, 0.45));
-    animation: floatTurn 6s ease-in-out infinite;
+    animation: floatY 4s ease-in-out infinite;
+  }
+
+  // Objeto 3D que gira sobre su eje Y (muestra el grosor real)
+  &__obj {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    animation: spinF 9s linear infinite;
+    filter: drop-shadow(0 26px 34px rgba(0, 0, 0, 0.45));
+  }
+
+  // Cada capa de la extrusión, centrada y apilada en Z
+  &__layer {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
   }
 }
 
-// Flotación + giro 3D suave (estilo S de Slobodan)
-@keyframes floatTurn {
-  0% {
-    transform: translateY(0) rotateY(-24deg) rotateZ(-2deg);
+@keyframes spinF {
+  from {
+    transform: rotateX(-12deg) rotateY(0deg);
+  }
+  to {
+    transform: rotateX(-12deg) rotateY(360deg);
+  }
+}
+
+@keyframes floatY {
+  0%,
+  100% {
+    transform: translateY(0);
   }
   50% {
-    transform: translateY(-18px) rotateY(24deg) rotateZ(2deg);
-  }
-  100% {
-    transform: translateY(0) rotateY(-24deg) rotateZ(-2deg);
+    transform: translateY(-16px);
   }
 }
