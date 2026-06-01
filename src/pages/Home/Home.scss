@@ -46,7 +46,8 @@
     color: $accent;
     font-weight: 800;
     transform-style: preserve-3d;
-    animation: spinInitial 4s linear infinite;
+    // un solo giro sobre su eje al cargar la página
+    animation: spinInitial 1.3s ease-out 0.3s both;
   }
 
   // <h1> justo encima del título (en flujo)
