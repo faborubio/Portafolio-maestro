@@ -1,11 +1,18 @@
 @import '../../styles/variables';
 
 .flogo3d {
-  perspective: 1100px;
+  perspective: 1300px;
   display: grid;
   place-items: center;
-  width: clamp(200px, 30vw, 380px);
-  aspect-ratio: 1 / 1;
+  width: clamp(260px, 42vw, 520px);
+  aspect-ratio: 3 / 4;
+
+  // Capa de entrada (framer-motion) — la f gira para revelar el 3D al cargar
+  &__intro {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+  }
 
   // Flotación vertical
   &__float {
@@ -15,14 +22,14 @@
     animation: floatY 4s ease-in-out infinite;
   }
 
-  // Objeto 3D que se balancea sobre el eje Y mostrando siempre el grosor
+  // Objeto 3D que se balancea mostrando siempre el grosor real
   &__obj {
     position: relative;
     width: 100%;
     height: 100%;
     transform-style: preserve-3d;
     animation: swayF 7s ease-in-out infinite;
-    filter: drop-shadow(0 26px 34px rgba(0, 0, 0, 0.45));
+    filter: drop-shadow(0 30px 40px rgba(0, 0, 0, 0.5));
   }
 
   // Cada capa de la extrusión, centrada y apilada en Z
@@ -37,13 +44,13 @@
 // Balanceo: nunca llega a 90°, así el grosor 3D siempre se ve (como la S)
 @keyframes swayF {
   0% {
-    transform: rotateX(-10deg) rotateY(-34deg);
+    transform: rotateX(-8deg) rotateY(-38deg);
   }
   50% {
-    transform: rotateX(-10deg) rotateY(34deg);
+    transform: rotateX(-8deg) rotateY(38deg);
   }
   100% {
-    transform: rotateX(-10deg) rotateY(-34deg);
+    transform: rotateX(-8deg) rotateY(-38deg);
   }
 }
 
@@ -53,6 +60,6 @@
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-16px);
+    transform: translateY(-18px);
   }
 }
