@@ -14,12 +14,12 @@ const FLogo3D = () => {
 
   return (
     <div className="flogo3d" aria-hidden="true">
-      {/* Entrada: aparece con fundido + escala (el giro continuo lo hace el obj) */}
+      {/* Entrada: gira para "dibujar" el volumen 3D al cargar */}
       <motion.div
         className="flogo3d__intro"
-        initial={{ scale: 0.6, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+        initial={{ rotateY: -165, scale: 0.55, opacity: 0 }}
+        animate={{ rotateY: 0, scale: 1, opacity: 1 }}
+        transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1] }}
       >
         <div className="flogo3d__float">
           <div className="flogo3d__obj">
