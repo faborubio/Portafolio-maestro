@@ -28,10 +28,9 @@ const Home = () => {
           </span>
           <span className="home__line">
             <AnimatedLetters text={t('home.role')} start={11} />
+            <span className="code-tag home__tag-h1close">&lt;/h1&gt;</span>
           </span>
         </h1>
-
-        <span className="code-tag code-tag--close">&lt;/h1&gt;</span>
 
         <p className="home__subtitle">{t('home.subtitle')}</p>
 

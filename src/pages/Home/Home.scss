@@ -6,18 +6,18 @@
   justify-content: space-between;
   gap: 40px;
 
-  // Tags de código decorativos en las esquinas (estilo del original)
+  // Tags de código en las esquinas (absolutos, como el original)
   &__tag-body {
-    top: 70px;
-    left: clamp(20px, 8vw, 160px);
+    top: 40px;
+    left: clamp(24px, 7vw, 150px);
     font-size: 1.1rem;
   }
 
   &__tag-close {
-    bottom: 50px;
-    left: clamp(20px, 8vw, 160px);
+    bottom: 40px;
+    left: clamp(16px, 6vw, 120px);
     font-size: 1.1rem;
-    line-height: 1.6;
+    line-height: 1.7;
   }
 
   &__text {
@@ -45,20 +45,22 @@
     font-weight: 800;
   }
 
-  .code-tag {
+  // <h1> justo encima del título (en flujo)
+  .code-tag--open {
     position: relative;
     display: block;
-    font-size: 1.1rem;
+    margin-left: 4px;
+    margin-bottom: 6px;
+    font-size: 1.05rem;
+  }
 
-    &--open {
-      margin-bottom: 8px;
-      margin-left: -8px;
-    }
-
-    &--close {
-      margin-top: 8px;
-      margin-left: 40px;
-    }
+  // </h1> inline al final de "web developer.", ligeramente abajo-derecha
+  &__tag-h1close {
+    position: relative;
+    display: inline-block;
+    bottom: -10px;
+    margin-left: 14px;
+    font-size: 1rem;
   }
 
   &__subtitle {
