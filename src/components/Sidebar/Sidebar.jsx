@@ -15,7 +15,6 @@ import {
 import {
   faLinkedinIn,
   faGithub,
-  faYoutube,
 } from '@fortawesome/free-brands-svg-icons'
 import logo from '../../assets/img/logofdef.png'
 import './Sidebar.scss'
@@ -30,9 +29,8 @@ const navItems = [
 ]
 
 const socials = [
-  { url: 'https://www.linkedin.com/', icon: faLinkedinIn, label: 'LinkedIn' },
-  { url: 'https://github.com/', icon: faGithub, label: 'GitHub' },
-  { url: 'https://www.youtube.com/', icon: faYoutube, label: 'YouTube' },
+  { url: 'https://www.linkedin.com/in/fabian-rubioc/', icon: faLinkedinIn, label: 'LinkedIn' },
+  { url: 'https://github.com/faborubio', icon: faGithub, label: 'GitHub' },
 ]
 
 const Sidebar = () => {
