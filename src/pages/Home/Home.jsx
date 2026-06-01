@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import PageWrapper from '../../components/PageWrapper/PageWrapper'
 import AnimatedLetters from '../../components/AnimatedLetters/AnimatedLetters'
-import FLogo3D from '../../components/FLogo3D/FLogo3D'
+import HomeLogo from '../../components/HomeLogo/HomeLogo'
 import './Home.scss'
 
 const Home = () => {
@@ -40,7 +40,7 @@ const Home = () => {
       </div>
 
       <div className="home__logo">
-        <FLogo3D />
+        <HomeLogo />
       </div>
 
       <span className="code-tag home__tag-close">
