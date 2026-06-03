@@ -64,6 +64,8 @@
     position: absolute;
     inset: 0;
     background: linear-gradient(135deg, $bg-3, $bg-2);
+    background-size: cover;
+    background-position: center;
     transition: transform 0.5s $ease;
   }
 

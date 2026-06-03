@@ -1,6 +1,8 @@
 // Contenido editable del portafolio.
 // Los textos visibles largos viven en src/locales; aquí van datos estructurados.
 
+import mojitos from '../assets/img/proj-mojitos.png'
+
 export const skills = [
   { name: 'HTML5', level: 95 },
   { name: 'CSS3 / Sass', level: 90 },
@@ -20,45 +22,15 @@ export const tips = [
 
 export const projects = [
   {
-    id: 'proj1',
-    title: 'Landing Page',
+    id: 'mojitos',
+    title: 'Velvet Pour',
     category: 'web',
-    tech: ['React', 'Sass'],
-    url: '#',
+    tech: ['Angular', 'TailwindCSS', 'GSAP', 'Firebase'],
+    url: 'https://mojitos-landing.web.app/',
+    image: mojitos,
   },
-  {
-    id: 'proj2',
-    title: 'Dashboard',
-    category: 'app',
-    tech: ['React', 'Chart.js'],
-    url: '#',
-  },
-  {
-    id: 'proj3',
-    title: 'E-commerce',
-    category: 'web',
-    tech: ['Next.js', 'Stripe'],
-    url: '#',
-  },
-  {
-    id: 'proj4',
-    title: 'Portfolio',
-    category: 'web',
-    tech: ['Vite', 'i18n'],
-    url: '#',
-  },
-  {
-    id: 'proj5',
-    title: 'API REST',
-    category: 'backend',
-    tech: ['Node', 'Express'],
-    url: '#',
-  },
-  {
-    id: 'proj6',
-    title: 'Mobile App',
-    category: 'app',
-    tech: ['React Native'],
-    url: '#',
-  },
+  // Demos de relleno (reemplazar por proyectos reales)
+  { id: 'demo1', title: 'Landing Page', category: 'web', tech: ['React', 'Sass'], url: '#' },
+  { id: 'demo2', title: 'Dashboard', category: 'app', tech: ['React', 'Chart.js'], url: '#' },
+  { id: 'demo3', title: 'API REST', category: 'backend', tech: ['Node', 'Express'], url: '#' },
 ]

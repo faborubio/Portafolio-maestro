@@ -38,13 +38,21 @@ const Portfolio = () => {
       <div className="portfolio__grid">
         {visible.map((p) => (
           <article className="project" key={p.id}>
-            <div className="project__thumb">
+            <div
+              className="project__thumb"
+              style={p.image ? { backgroundImage: `url(${p.image})` } : undefined}
+            >
               <span className="project__badge">{p.category}</span>
             </div>
             <div className="project__overlay">
               <h3 className="project__name">{p.title}</h3>
               <p className="project__tech">{p.tech.join(' · ')}</p>
-              <a href={p.url} className="project__link">
+              <a
+                href={p.url}
+                className="project__link"
+                target="_blank"
+                rel="noreferrer"
+              >
                 {t('portfolio.view')}
               </a>
             </div>
