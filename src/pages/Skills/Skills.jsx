@@ -1,40 +1,53 @@
+import { useEffect, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
-import { motion } from 'framer-motion'
+import TagCloud from 'TagCloud'
 import PageWrapper from '../../components/PageWrapper/PageWrapper'
 import AnimatedLetters from '../../components/AnimatedLetters/AnimatedLetters'
-import { skills } from '../../data/portfolio'
 import './Skills.scss'
+
+const TAGS = [
+  'HTML5', 'CSS3', 'Sass', 'TailwindCSS', 'JavaScript', 'TypeScript',
+  'React', 'Angular', 'Node.js', 'Express', 'REST', 'JSON',
+  'Firebase', 'MongoDB', 'SQL', 'Git', 'GSAP', 'Vite',
+  'Webpack', 'npm', 'Bootstrap', 'Figma',
+]
 
 const Skills = () => {
   const { t } = useTranslation()
+  const sphereRef = useRef(null)
+
+  useEffect(() => {
+    const el = sphereRef.current
+    if (!el) return
+    el.innerHTML = '' // evita duplicados (StrictMode / re-render)
+
+    const radius = Math.min(340, window.innerWidth * 0.4)
+    const cloud = TagCloud(el, TAGS, {
+      radius,
+      maxSpeed: 'normal',
+      initSpeed: 'normal',
+      direction: 135,
+      keep: true,
+    })
+
+    return () => {
+      cloud?.destroy?.()
+      if (el) el.innerHTML = ''
+    }
+  }, [])
 
   return (
     <PageWrapper className="skills">
-      <div className="skills__head">
+      <div className="skills__text">
         <h1 className="skills__title">
           <AnimatedLetters text={t('skills.title')} />
         </h1>
-        <p className="skills__intro">{t('skills.intro')}</p>
+        <p>{t('skills.p1')}</p>
+        <p>{t('skills.p2')}</p>
+        <p className="skills__hint">{t('skills.p3')}</p>
       </div>
 
-      <div className="skills__list">
-        {skills.map((s, i) => (
-          <div className="skill" key={s.name}>
-            <div className="skill__head">
-              <span className="skill__name">{s.name}</span>
-              <span className="skill__pct">{s.level}%</span>
-            </div>
-            <div className="skill__track">
-              <motion.div
-                className="skill__bar"
-                initial={{ width: 0 }}
-                animate={{ width: `${s.level}%` }}
-                transition={{ duration: 1, delay: 0.2 + i * 0.12, ease: 'easeOut' }}
-              />
-            </div>
-          </div>
-        ))}
-      </div>
+      <div className="skills__sphere" ref={sphereRef} aria-hidden="true" />
 
       <span className="page__watermark">Skills</span>
     </PageWrapper>

@@ -24,8 +24,10 @@
     "p3": "Si quieres saber más sobre mí o trabajar juntos, no dudes en contactarme."
   },
   "skills": {
-    "title": "Mis habilidades",
-    "intro": "Tecnologías y herramientas con las que trabajo a diario."
+    "title": "Habilidades & Experiencia",
+    "p1": "Desarrollador full stack con experiencia en front-end y back-end: HTML5, CSS3/Sass, JavaScript, TypeScript, React, Angular y Node.js, entre otras.",
+    "p2": "Cuido el diseño responsive (mobile-first), el rendimiento y la calidad del código para ofrecer la mejor experiencia de usuario en cada proyecto.",
+    "p3": "Pasa el mouse sobre la esfera para explorar las tecnologías con las que trabajo."
   },
   "tips": {
     "title": "Tips & artículos",

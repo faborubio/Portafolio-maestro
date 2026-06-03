@@ -1,61 +1,68 @@
 @import '../../styles/variables';
 
 .skills {
-  &__title {
-    font-size: clamp(2.2rem, 5vw, 4rem);
-    color: $accent;
-  }
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
 
-  &__intro {
-    margin-top: 10px;
-    color: $muted;
-    max-width: 600px;
-  }
-
-  &__list {
+  &__text {
     position: relative;
     z-index: 2;
-    margin-top: 40px;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 26px 60px;
-    max-width: 900px;
-  }
-}
+    max-width: 560px;
 
-.skill {
-  &__head {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 8px;
-    font-size: 0.95rem;
+    p {
+      margin-top: 16px;
+      line-height: 1.7;
+      color: $muted;
+      font-size: 0.95rem;
+    }
   }
 
-  &__name {
-    font-weight: 600;
-  }
-
-  &__pct {
+  &__title {
+    font-size: clamp(2rem, 4.5vw, 3.4rem);
     color: $accent;
+    margin-bottom: 8px;
   }
 
-  &__track {
-    height: 8px;
-    background: $bg-2;
-    border-radius: 6px;
-    overflow: hidden;
+  &__hint {
+    color: $text !important;
+    font-size: 0.85rem !important;
+    border-left: 2px solid $accent;
+    padding-left: 12px;
+    margin-top: 26px !important;
   }
 
-  &__bar {
-    height: 100%;
-    background: linear-gradient(90deg, $bg-3, $accent);
-    border-radius: 6px;
+  // Esfera 3D de tecnologías (TagCloud)
+  &__sphere {
+    position: relative;
+    z-index: 1;
+    flex-shrink: 0;
+    font-family: $font-heading;
+    font-size: 1.25rem;
+
+    span {
+      color: $muted;
+      cursor: default;
+      transition: color 0.2s $ease;
+
+      &:hover {
+        color: $accent;
+        text-shadow: 0 0 12px rgba(0, 122, 255, 0.6);
+      }
+    }
   }
 }
 
 @media screen and (max-width: $bp-mobile) {
-  .skills__list {
-    grid-template-columns: 1fr;
-    gap: 22px;
+  .skills {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+
+    &__sphere {
+      align-self: center;
+      font-size: 1rem;
+    }
   }
 }

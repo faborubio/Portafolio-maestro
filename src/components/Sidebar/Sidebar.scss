@@ -41,6 +41,10 @@
       font-size: 20px;
       transition: color 0.25s $ease;
 
+      svg {
+        transition: opacity 0.2s $ease;
+      }
+
       &:hover {
         color: $accent;
       }
@@ -50,27 +54,33 @@
         color: $accent;
       }
 
-      // tooltip con el nombre de la sección
+      // nombre de la sección: ocupa el lugar del icono al hacer hover
       .sidebar__label {
         position: absolute;
-        left: 100%;
-        margin-left: 2px;
-        white-space: nowrap;
-        background: $accent;
-        color: $bg;
-        font-size: 12px;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        text-align: center;
+        padding: 0 2px;
+        font-family: $font-heading;
+        font-size: 9px;
         font-weight: 600;
-        padding: 6px 10px;
-        border-radius: 0 4px 4px 0;
+        line-height: 1.05;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: $accent;
         opacity: 0;
         pointer-events: none;
-        transform: translateX(-8px);
-        transition: all 0.2s $ease;
+        transition: opacity 0.2s $ease;
       }
 
-      &:hover .sidebar__label {
-        opacity: 1;
-        transform: translateX(0);
+      &:hover {
+        svg {
+          opacity: 0;
+        }
+        .sidebar__label {
+          opacity: 1;
+        }
       }
     }
   }
