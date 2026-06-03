@@ -6,6 +6,10 @@
   // proporción (aspect-ratio) se aplica inline según la dirección de extrusión
   transform: rotate(8deg); // ligera inclinación, como la S de Slobodan
 
+  @media screen and (max-width: $bp-phone) {
+    width: clamp(150px, 48vw, 200px); // más pequeño en celulares
+  }
+
   // ----- Sólido (F extruida oblicua, estilo S) -----
   &__solid {
     position: absolute;

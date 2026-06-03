@@ -40,6 +40,14 @@
     color: $text;
   }
 
+  // Highlight tipo "syntax" en el rol del título
+  &__role-1 {
+    color: $accent;
+  }
+  &__role-2 {
+    color: $accent-2;
+  }
+
   // <h1> justo encima del título (en flujo)
   .code-tag--open {
     position: relative;
@@ -79,5 +87,33 @@
     flex-direction: column-reverse;
     justify-content: center;
     text-align: left;
+    gap: 24px;
+  }
+}
+
+@media screen and (max-width: $bp-phone) {
+  .home {
+    gap: 12px;
+
+    // los tags de esquina estorban en pantallas pequeñas
+    &__tag-body,
+    &__tag-close {
+      display: none;
+    }
+
+    &__title {
+      font-size: clamp(2rem, 11vw, 2.8rem);
+      letter-spacing: -1px;
+    }
+
+    &__subtitle {
+      margin-top: 18px;
+      font-size: 0.78rem;
+      letter-spacing: 2px;
+    }
+
+    .btn-outline {
+      margin-top: 28px;
+    }
   }
 }

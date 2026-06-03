@@ -12,11 +12,19 @@
     max-width: 600px;
   }
 
-  &__form {
+  &__body {
     position: relative;
     z-index: 2;
     margin-top: 34px;
-    max-width: 640px;
+    display: flex;
+    gap: 28px;
+    align-items: stretch;
+  }
+
+  &__form {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 560px;
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -24,22 +32,27 @@
     input,
     textarea {
       width: 100%;
-      background: $bg-2;
-      border: 1px solid transparent;
-      border-radius: 6px;
+      // input "glass" más oscuro que la superficie (estilo línea de comandos)
+      background: rgba(5, 10, 20, 0.6);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
       color: $text;
       padding: 14px 16px;
       font-size: 0.95rem;
       font-family: inherit;
-      transition: border-color 0.25s $ease;
+      transition: border-color 0.25s $ease, box-shadow 0.25s $ease;
 
       &::placeholder {
         color: #7d8b96;
+        font-family: $font-script;
       }
 
       &:focus {
         outline: none;
         border-color: $accent;
+        box-shadow: 0 0 12px rgba(0, 242, 255, 0.15);
       }
     }
 
@@ -59,9 +72,26 @@
     font-size: 0.8rem;
     font-style: italic;
   }
+
+  .contact-map {
+    flex: 1 1 0;
+    align-self: stretch;
+  }
 }
 
 @media screen and (max-width: $bp-mobile) {
+  .contact__body {
+    flex-direction: column;
+  }
+  .contact__form {
+    max-width: 100%;
+  }
+  .contact-map {
+    min-height: 260px;
+  }
+}
+
+@media screen and (max-width: $bp-phone) {
   .contact__row {
     flex-direction: column;
   }

@@ -30,3 +30,14 @@
     padding: 90px 24px 40px;
   }
 }
+
+@media screen and (max-width: $bp-phone) {
+  .page {
+    padding: 78px 18px 36px;
+
+    &__watermark {
+      font-size: clamp(6rem, 30vw, 9rem);
+      opacity: 0.6;
+    }
+  }
+}

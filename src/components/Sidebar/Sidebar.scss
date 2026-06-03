@@ -175,22 +175,40 @@
 
     &__nav {
       flex: 0;
-      margin-top: 30px;
+      margin-top: 24px;
+      align-items: center; // centra los ítems (de ancho fijo)
 
       a {
-        font-size: 24px;
-        gap: 14px;
-        grid-auto-flow: column;
+        width: 230px;
+        height: auto;
+        padding: 13px 0;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 20px;
+        font-size: 22px;
+
+        // el icono siempre visible en móvil (anula el swap de desktop)
+        svg {
+          opacity: 1 !important;
+          width: 26px;
+          flex-shrink: 0;
+        }
 
         .sidebar__label {
           position: static;
+          inset: auto;
+          display: inline;
+          place-items: initial;
           opacity: 1;
           transform: none;
-          background: transparent;
           color: $text;
           padding: 0;
-          font-size: 18px;
-          font-weight: 400;
+          font-size: 15px;
+          font-weight: 500;
+          letter-spacing: 1px;
+          text-align: left;
         }
       }
     }
