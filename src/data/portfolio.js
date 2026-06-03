@@ -2,6 +2,7 @@
 // Los textos visibles largos viven en src/locales; aquí van datos estructurados.
 
 import mojitos from '../assets/img/proj-mojitos.png'
+import caucorp from '../assets/img/proj-caucorp.png'
 
 export const skills = [
   { name: 'HTML5', level: 95 },
@@ -22,6 +23,14 @@ export const tips = [
 
 export const projects = [
   {
+    id: 'caucorp',
+    title: 'Caucorp',
+    category: 'web',
+    tech: ['Angular', 'TypeScript', 'TailwindCSS', 'Firebase', 'Karma/Jasmine'],
+    url: 'https://caucorp.com/es',
+    image: caucorp,
+  },
+  {
     id: 'mojitos',
     title: 'Velvet Pour',
     category: 'web',
@@ -30,7 +39,6 @@ export const projects = [
     image: mojitos,
   },
   // Demos de relleno (reemplazar por proyectos reales)
-  { id: 'demo1', title: 'Landing Page', category: 'web', tech: ['React', 'Sass'], url: '#' },
-  { id: 'demo2', title: 'Dashboard', category: 'app', tech: ['React', 'Chart.js'], url: '#' },
-  { id: 'demo3', title: 'API REST', category: 'backend', tech: ['Node', 'Express'], url: '#' },
+  { id: 'demo1', title: 'Dashboard', category: 'app', tech: ['React', 'Chart.js'], url: '#' },
+  { id: 'demo2', title: 'API REST', category: 'backend', tech: ['Node', 'Express'], url: '#' },
 ]
