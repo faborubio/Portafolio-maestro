@@ -8,9 +8,9 @@ const FRONT_PTS = [
 const TX = 78 // extrusión hacia la derecha
 const TY = 88 //  y hacia abajo (como la S de Slobodan)
 const STEPS = 48 // copias para rellenar el canto del sólido
-const FACE = '#18181b' // cara gris oscuro
-const SIDE = '#007aff' // canto azul eléctrico
-const BG = '#12131a' // color del fondo, separadores del canto
+const FACE = '#0f1b30' // cara navy oscuro
+const SIDE = '#00f2ff' // canto cian
+const BG = '#0a1221' // color del fondo, separadores del canto
 
 const pathFrom = (ox = 0, oy = 0) =>
   'M ' + FRONT_PTS.map(([x, y]) => `${x + ox},${y + oy}`).join(' L ') + ' Z'
@@ -70,7 +70,7 @@ const HomeLogo = () => {
         className="home-logo__draw"
         viewBox={VIEWBOX}
         fill="none"
-        stroke="#007aff"
+        stroke="#00f2ff"
         strokeWidth="5"
         strokeLinejoin="round"
         strokeLinecap="round"

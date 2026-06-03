@@ -1,18 +1,19 @@
 // ===== Tokens de diseño (estilo bobangajicsm) =====
 
-// Colores — "High-Tech Terminal"
-$bg:        #12131a; // casi negro (con sutil tinte azul)
-$bg-2:      #1a1b22; // superficie elevada (cards/inputs)
-$bg-3:      #282a31; // superficie hover/activa
-$accent:    #007aff; // azul eléctrico
-$text:      #e2e1eb;
-$muted:     #a1a1aa;
-$sidebar-bg: #09090b;
-$sidebar-w: 60px;     // ancho de la barra lateral (desktop)
+// Colores — "Cyber-Humanist" (glassmorphism + SaaS)
+$bg:        #0a1221; // navy base
+$bg-2:      #131c2e; // superficie navy
+$bg-3:      #1d2a40; // superficie elevada
+$accent:    #00f2ff; // cian primario
+$accent-2:  #ffb800; // ámbar (acento humano)
+$text:      #e0e3e5;
+$muted:     #849495;
+$sidebar-bg: #0a1221;
+$sidebar-w: 80px;     // ancho de la barra lateral (desktop)
 
-// Tipografía — JetBrains Mono (títulos/labels) + Geist (cuerpo)
+// Tipografía — Geist (títulos/cuerpo) + JetBrains Mono (labels/código)
 $font-body:    'Geist', 'Inter', 'Helvetica Neue', Arial, sans-serif;
-$font-heading: 'JetBrains Mono', monospace;
+$font-heading: 'Geist', 'Inter', 'Helvetica Neue', Arial, sans-serif;
 $font-script:  'JetBrains Mono', monospace;
 
 // Breakpoints

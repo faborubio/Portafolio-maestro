@@ -3,13 +3,6 @@
 @import './animations';
 @import './buttons';
 
-// High-Tech Terminal: esquinas rectas en todo
-*,
-*::before,
-*::after {
-  border-radius: 0 !important;
-}
-
 *,
 *::before,
 *::after {
@@ -26,15 +19,18 @@ body {
 body {
   font-family: $font-body;
   color: $text;
-  background-color: $bg;
-  // patrón de cuadrícula de puntos (blueprint) cada 32px
-  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-  background-size: 32px 32px;
+  // Fondo obsidiana→navy con cuadrícula cian sutil cada 32px
+  background-color: #0a1221;
+  background-image: linear-gradient(rgba(0, 242, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 242, 255, 0.05) 1px, transparent 1px),
+    radial-gradient(circle at 30% 0%, #0a1221 0%, #050a14 100%);
+  background-size: 32px 32px, 32px 32px, cover;
+  background-attachment: fixed;
   overflow: hidden; // cada página gestiona su propio scroll interno
   -webkit-font-smoothing: antialiased;
 }
 
-// Títulos en JetBrains Mono (estética terminal)
+// Títulos en Geist, peso y tracking ajustados
 h1,
 h2,
 h3 {
@@ -55,13 +51,16 @@ ul {
   list-style: none;
 }
 
-// Scrollbar discreta
+// Scrollbar minimalista cian, sin pista
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: $bg-3;
-  border-radius: 4px;
+  background: rgba(0, 242, 255, 0.5);
+  border-radius: 3px;
 }
 
 // Tags decorativos de código (estilo del original)

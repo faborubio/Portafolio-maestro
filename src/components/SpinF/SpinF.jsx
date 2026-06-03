@@ -6,8 +6,8 @@ const F_PATH =
 
 const LAYERS = 22
 const STEP = 0.013 // em entre capas → grosor 3D que escala con el texto
-const FACE = '#18181b' // cara gris oscuro
-const SIDE = '#007aff' // canto azul eléctrico
+const FACE = '#0f1b30' // cara navy oscuro
+const SIDE = '#00f2ff' // canto cian
 
 // "F" 3D en miniatura que gira 360° de forma continua (inline en el título)
 const SpinF = () => {
