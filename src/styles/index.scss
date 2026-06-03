@@ -1,7 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Geist:wght@400;500;600;700&display=swap');
 @import './variables';
 @import './animations';
 @import './buttons';
+
+// High-Tech Terminal: esquinas rectas en todo
+*,
+*::before,
+*::after {
+  border-radius: 0 !important;
+}
 
 *,
 *::before,
@@ -19,9 +26,20 @@ body {
 body {
   font-family: $font-body;
   color: $text;
-  background: $bg;
+  background-color: $bg;
+  // patrón de cuadrícula de puntos (blueprint) cada 32px
+  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 32px 32px;
   overflow: hidden; // cada página gestiona su propio scroll interno
   -webkit-font-smoothing: antialiased;
+}
+
+// Títulos en JetBrains Mono (estética terminal)
+h1,
+h2,
+h3 {
+  font-family: $font-heading;
+  letter-spacing: -0.02em;
 }
 
 #root {
