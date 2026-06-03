@@ -25,9 +25,10 @@
 
 @keyframes spinFY {
   from {
-    transform: rotateX(-8deg) rotateY(0deg);
+    transform: rotateX(8deg) rotateY(0deg);
   }
   to {
-    transform: rotateX(-8deg) rotateY(380deg); // una vuelta completa + leve ángulo final
+    // una vuelta completa, reposa en rotateY -22° → canto amarillo abajo-derecha
+    transform: rotateX(8deg) rotateY(-382deg);
   }
 }

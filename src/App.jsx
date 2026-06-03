@@ -21,7 +21,7 @@ const App = () => {
     if (prevPath.current === location.pathname) return
     prevPath.current = location.pathname
     setRouteLoading(true)
-    const t = setTimeout(() => setRouteLoading(false), 850)
+    const t = setTimeout(() => setRouteLoading(false), 550)
     return () => clearTimeout(t)
   }, [location.pathname])
 
