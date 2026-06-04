@@ -1,179 +1,167 @@
 ---
-name: High-Tech Terminal
+name: Cyber-Humanist Portfolio
 colors:
-  surface: '#12131a'
-  surface-dim: '#12131a'
-  surface-bright: '#383940'
-  surface-container-lowest: '#0c0e14'
-  surface-container-low: '#1a1b22'
-  surface-container: '#1e1f26'
-  surface-container-high: '#282a31'
-  surface-container-highest: '#33343c'
-  on-surface: '#e2e1eb'
-  on-surface-variant: '#c1c6d7'
-  inverse-surface: '#e2e1eb'
-  inverse-on-surface: '#2f3037'
-  outline: '#8b90a0'
-  outline-variant: '#414755'
-  surface-tint: '#adc6ff'
-  primary: '#adc6ff'
-  on-primary: '#002e69'
-  primary-container: '#4b8eff'
-  on-primary-container: '#00285c'
-  inverse-primary: '#005bc1'
-  secondary: '#c8c6c9'
-  on-secondary: '#303033'
-  secondary-container: '#47464a'
-  on-secondary-container: '#b6b4b8'
-  tertiary: '#c8c6c5'
-  on-tertiary: '#313030'
-  tertiary-container: '#929090'
-  on-tertiary-container: '#2a2a29'
+  surface: '#101415'
+  surface-dim: '#101415'
+  surface-bright: '#363a3b'
+  surface-container-lowest: '#0b0f10'
+  surface-container-low: '#191c1e'
+  surface-container: '#1d2022'
+  surface-container-high: '#272a2c'
+  surface-container-highest: '#323537'
+  on-surface: '#e0e3e5'
+  on-surface-variant: '#b9cacb'
+  inverse-surface: '#e0e3e5'
+  inverse-on-surface: '#2d3133'
+  outline: '#849495'
+  outline-variant: '#3a494b'
+  surface-tint: '#00dbe7'
+  primary: '#e1fdff'
+  on-primary: '#00363a'
+  primary-container: '#00f2ff'
+  on-primary-container: '#006a71'
+  inverse-primary: '#00696f'
+  secondary: '#ffdb9d'
+  on-secondary: '#412d00'
+  secondary-container: '#feb700'
+  on-secondary-container: '#6b4b00'
+  tertiary: '#f7f7ff'
+  on-tertiary: '#293041'
+  tertiary-container: '#d3dbf0'
+  on-tertiary-container: '#586072'
   error: '#ffb4ab'
   on-error: '#690005'
   error-container: '#93000a'
   on-error-container: '#ffdad6'
-  primary-fixed: '#d8e2ff'
-  primary-fixed-dim: '#adc6ff'
-  on-primary-fixed: '#001a41'
-  on-primary-fixed-variant: '#004493'
-  secondary-fixed: '#e4e1e5'
-  secondary-fixed-dim: '#c8c6c9'
-  on-secondary-fixed: '#1b1b1e'
-  on-secondary-fixed-variant: '#47464a'
-  tertiary-fixed: '#e5e2e1'
-  tertiary-fixed-dim: '#c8c6c5'
-  on-tertiary-fixed: '#1c1b1b'
-  on-tertiary-fixed-variant: '#474646'
-  background: '#12131a'
-  on-background: '#e2e1eb'
-  surface-variant: '#33343c'
+  primary-fixed: '#74f5ff'
+  primary-fixed-dim: '#00dbe7'
+  on-primary-fixed: '#002022'
+  on-primary-fixed-variant: '#004f54'
+  secondary-fixed: '#ffdea8'
+  secondary-fixed-dim: '#ffba20'
+  on-secondary-fixed: '#271900'
+  on-secondary-fixed-variant: '#5e4200'
+  tertiary-fixed: '#dbe2f8'
+  tertiary-fixed-dim: '#bfc6db'
+  on-tertiary-fixed: '#141c2b'
+  on-tertiary-fixed-variant: '#3f4758'
+  background: '#101415'
+  on-background: '#e0e3e5'
+  surface-variant: '#323537'
+  obsidian-base: '#050a14'
+  navy-surface: '#0a1221'
+  glass-stroke: rgba(255, 255, 255, 0.1)
+  grid-line: rgba(0, 242, 255, 0.05)
 typography:
-  headline-lg:
-    fontFamily: JetBrains Mono
-    fontSize: 32px
+  headline-xl:
+    fontFamily: Geist
+    fontSize: 64px
+    fontWeight: '700'
+    lineHeight: '1.1'
+    letterSpacing: -0.02em
+  headline-xl-mobile:
+    fontFamily: Geist
+    fontSize: 40px
     fontWeight: '700'
     lineHeight: '1.2'
-    letterSpacing: -0.02em
-  headline-md:
-    fontFamily: JetBrains Mono
-    fontSize: 24px
+    letterSpacing: -0.01em
+  headline-lg:
+    fontFamily: Geist
+    fontSize: 32px
     fontWeight: '600'
     lineHeight: '1.2'
-  headline-sm:
-    fontFamily: JetBrains Mono
-    fontSize: 18px
-    fontWeight: '600'
-    lineHeight: '1.2'
-  body-lg:
+  body-md:
     fontFamily: Geist
     fontSize: 16px
     fontWeight: '400'
     lineHeight: '1.6'
-  body-md:
-    fontFamily: Geist
-    fontSize: 14px
-    fontWeight: '400'
-    lineHeight: '1.6'
-  label-md:
-    fontFamily: JetBrains Mono
-    fontSize: 12px
-    fontWeight: '500'
-    lineHeight: '1'
-    letterSpacing: 0.05em
   code-sm:
     fontFamily: JetBrains Mono
-    fontSize: 12px
+    fontSize: 14px
     fontWeight: '400'
     lineHeight: '1.5'
+  label-caps:
+    fontFamily: JetBrains Mono
+    fontSize: 12px
+    fontWeight: '600'
+    lineHeight: '1.0'
+    letterSpacing: 0.1em
+rounded:
+  sm: 0.125rem
+  DEFAULT: 0.25rem
+  md: 0.375rem
+  lg: 0.5rem
+  xl: 0.75rem
+  full: 9999px
 spacing:
-  base: 4px
-  unit-1: 4px
-  unit-2: 8px
-  unit-4: 16px
-  unit-8: 32px
-  gutter: 16px
-  margin: 24px
+  unit: 8px
+  container-max: 1200px
+  gutter: 24px
+  section-gap: 120px
 ---
 
 ## Brand & Style
 
-The design system is engineered for precision, speed, and technical depth. It draws inspiration from mission-control interfaces and advanced command-line environments, targeting a developer-centric audience that values information density and functional clarity over decorative elements.
+This design system is built for a high-tier developer portfolio that balances technical precision with human accessibility. The brand personality is **intelligent, futuristic, and meticulous**. It aims to evoke a sense of "digital craftsmanship," where the code is as beautiful as the interface.
 
-The style is a hybrid of **High-Tech Minimalism** and **Digital Brutalism**. It utilizes a "pitch-black" foundation to reduce eye strain and maximize the contrast of data points. The aesthetic is defined by its rigidity, utilizing subtle grid overlays and structural lines to create a sense of infinite, organized space. Every element should feel like a calculated piece of machinery—unapologetically digital, ultra-precise, and futuristic.
+The design style is a sophisticated blend of **Glassmorphism** and **Modern Minimalist SaaS**. It utilizes translucent layers to represent depth and complex architecture, while a foundational **Subtle Grid** pattern provides an underlying structure that references development environments (IDEs). The emotional response should be one of trust in the developer's technical prowess, paired with the warmth of a collaborative partner.
 
 ## Colors
 
-The palette is strictly controlled to maintain a focused environment. 
+The palette is anchored in a deep **Obsidian** and **Navy** foundation to minimize eye strain and provide a premium "pro-tool" backdrop. 
 
-- **Background:** The absolute base is `#000000`. This is non-negotiable to ensure the "Terminal" feel.
-- **Accent:** Electric Blue (`#007AFF`) is used sparingly for primary actions, focus states, and critical data highlights. It should feel like a light source emitting from the screen.
-- **Surfaces:** A monochromatic grayscale defines the hierarchy. Use higher-value grays for elevated panels and lower-value grays for recessed areas.
-- **Data Status:** While primarily monochromatic, utility colors (Success: #10B981, Warning: #F59E0B, Error: #EF4444) may be used in desaturated forms for status indicators only.
+- **Primary Cyan (#00f2ff):** Used for critical actions, terminal highlights, and active states. It represents the "energy" of the code.
+- **Soft Amber (#ffb800):** A warm counterpoint used sparingly for warnings, specialized tags, or "human" elements like a call-to-action to connect.
+- **Surface Strategy:** The background uses a gradient from `#050a14` to `#0a1221`. Glassmorphic cards use a semi-transparent version of the Navy surface with a subtle `glass-stroke` to define edges without adding heavy visual weight.
 
 ## Typography
 
-Typography is used as a functional tool for data visualization. 
+The typography strategy employs a "Geist/Mono" duality. **Geist** provides a clean, neutral, and highly legible sans-serif for the primary narrative and interface elements. **JetBrains Mono** is reserved for technical metadata, labels, and code snippets, grounding the design in the developer's medium.
 
-- **Headlines & Labels:** Uses **JetBrains Mono**. The monospaced nature emphasizes the "terminal" aesthetic and ensures that characters align perfectly in data tables and headers.
-- **Body Text:** Uses **Geist**. This provides a clean, highly legible sans-serif for longer descriptions or documentation, maintaining a technical but modern feel.
-- **Scaling:** Headlines are kept relatively small to maximize screen real estate. Use uppercase for labels to create a distinctive visual rhythm.
-- **Formatting:** Use bold weights only for critical emphasis. Underlining is reserved for interactive text links in the Electric Blue accent.
+- **Headlines:** Use tight letter spacing and heavy weights to create a commanding presence.
+- **Body:** Generous line height (1.6) ensures long-form project descriptions remain readable.
+- **Labels:** Always use Mono in all-caps for a "system output" feel.
 
 ## Layout & Spacing
 
-This design system operates on a rigorous **4px / 8px grid**. Precision is paramount; every element must align to the grid to prevent visual "jitter."
+The layout is governed by a **Fixed Grid** on desktop, centered with a maximum width of 1200px. A subtle 32px CSS grid pattern is rendered in the background to visually reinforce the technical theme.
 
-- **Layout Model:** A 12-column fluid grid for desktop, moving to a single-column layout for mobile. 
-- **Grid Pattern:** A subtle background pattern (1px dots or lines at 32px intervals) should be visible at all times to reinforce the "blueprint" feel.
-- **Density:** High density is preferred. Padding should be sufficient for legibility but lean towards compact rather than spacious.
-- **Breakpoints:**
-  - Mobile: < 600px (Margins: 16px, Gutters: 8px)
-  - Tablet: 600px - 1024px (Margins: 24px, Gutters: 16px)
-  - Desktop: > 1024px (Margins: 32px, Gutters: 16px)
+- **Rhythm:** An 8px linear scale is used for all internal component spacing and padding.
+- **Sections:** Large vertical gaps (120px+) create a sense of breathing room and premium pacing.
+- **Responsive:** On mobile, margins shrink to 20px, and the grid pattern should be simplified or reduced in opacity to maintain clarity on smaller screens.
 
 ## Elevation & Depth
 
-In a pitch-black environment, traditional shadows are ineffective. This design system communicates depth through **Tonal Layering** and **Luminescence**.
+This design system rejects traditional box-shadows in favor of **Tonal Layers** and **Backdrop Blurs**.
 
-- **Tonal Layers:** Surfaces "rise" by becoming lighter. The background is `#000000`, the next layer (cards/containers) is `#09090B`, and the active/hover state is `#18181B`.
-- **Borders:** Use low-contrast 1px outlines (`#27272A`) to define component boundaries. 
-- **Luminescence:** Interactive elements use the primary Electric Blue to create "glow" effects. Instead of a shadow, an active button might have a subtle external glow (box-shadow: 0 0 8px rgba(0, 122, 255, 0.4)).
-- **Glass:** Occasional use of backdrop blurs (12px) is permitted for transient overlays like tooltips, but the background color must remain a dark gray tint.
+1.  **Level 0 (Base):** The deep obsidian background with the subtle cyan grid pattern.
+2.  **Level 1 (Cards/Surfaces):** Semi-transparent Navy (`rgba(10, 18, 33, 0.7)`) with a `20px` backdrop blur. Edges are defined by a `1px` solid stroke of `glass-stroke`.
+3.  **Level 2 (Popovers/Modals):** Increased transparency and a slight outer glow using the Primary Cyan at 5% opacity to simulate light emitting from the screen.
 
 ## Shapes
 
-The shape language is strictly **Sharp**. 
+The shape language is **Soft (0.25rem / 4px)**. This choice leans away from the "bubbly" feel of consumer apps and toward the "sharp but refined" aesthetic of professional developer tools like VS Code or terminal emulators.
 
-- **Radius:** All elements—including buttons, cards, input fields, and modals—must have a `0px` border radius. 
-- **Visual Logic:** Rounded corners represent softness and approachability; sharp corners represent industrial precision and technical efficiency. 
-- **Exceptions:** No exceptions are permitted. Even progress bars and chips must maintain 90-degree corners to preserve the structural integrity of the grid.
+- **Standard Elements:** 4px radius (Buttons, Input fields).
+- **Large Containers:** 8px radius (Project cards, Modals).
+- **Accents:** Use hard 90-degree corners for decorative elements like code-bracket borders to contrast with the soft-rounded UI components.
 
 ## Components
 
 ### Buttons
-- **Primary:** Solid `#007AFF` with black text. Sharp corners.
-- **Secondary:** Transparent with a 1px `#27272A` border. Text is white.
-- **Ghost:** No border, text is `#A1A1AA`. Becomes white on hover.
-
-### Input Fields
-- Background: `#09090B`.
-- Border: 1px `#27272A`.
-- Active State: Border becomes `#007AFF` with a vertical "cursor" blink in the same color.
-
-### Chips & Tags
-- Rectangular, sharp-edged.
-- Monochromatic (Gray scale) unless indicating a specific status.
-- Font: JetBrains Mono (Label-sm).
-
-### Lists & Data Tables
-- Use subtle 1px horizontal dividers.
-- Alternate row colors are not permitted; use hover states (background: `#121212`) to guide the eye.
-- Column headers are always uppercase JetBrains Mono.
+- **Primary:** Solid Cyan background with Obsidian text. No shadow, but a subtle Cyan outer glow on hover.
+- **Secondary:** Ghost style. Transparent background, 1px Cyan border, Cyan text.
+- **Tertiary/Connect:** Soft Amber text with a bottom underline that expands on hover.
 
 ### Cards
-- No shadows. Define boundaries via a 1px border (`#18181B`) or a slightly lighter background than the canvas.
-- Title bars should often have a different background tint to act as a "handle."
+Project cards should feature a "glass" texture. Use a `1px` top-left highlight and a `1px` bottom-right shadow-stroke to give the glass a sense of physical thickness.
 
-### Progress & Loading
-- Use "stepped" progress bars (blocks) rather than smooth fills to emphasize the digital/discrete nature of data.
+### Input Fields
+Darker than the surface background. Use JetBrains Mono for the placeholder text to emphasize the "command line" feel. Focus state is a simple 1px Primary Cyan border.
+
+### Chips / Tags
+Small, Mono-font badges. Use low-saturation versions of the primary/secondary colors for background fills (e.g., Cyan at 10% opacity) with high-contrast text.
+
+### Visual Accents
+- **Syntax Highlighting:** Apply code-themed coloring to certain keywords in the headlines (e.g., a "Hello World" title where "Hello" is Primary Cyan and "World" is Soft Amber).
+- **Scrollbar:** Minimalist, thin Cyan bar with no track background.

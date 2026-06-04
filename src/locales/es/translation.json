@@ -6,7 +6,7 @@
     "home": "Inicio",
     "about": "Sobre mí",
     "skills": "Habilidades",
-    "tips": "Tips",
+    "tips": "Método",
     "portfolio": "Portafolio",
     "contact": "Contacto"
   },
@@ -33,25 +33,33 @@
     "p3": "Pasa el mouse sobre la esfera para explorar las tecnologías con las que trabajo."
   },
   "tips": {
-    "title": "Tips & artículos",
-    "intro": "Pequeños consejos y notas sobre desarrollo web.",
+    "title": "Cómo trabajo",
+    "intro": "Principios que aplico en cada proyecto, no solo buenas intenciones.",
     "readMore": "Leer más",
     "items": {
       "tip1": {
-        "title": "Código limpio",
-        "text": "Nombra bien tus variables y funciones: el código se lee muchas más veces de las que se escribe."
+        "title": "Código limpio y mantenible",
+        "text": "Nombres claros, funciones pequeñas y cero atajos que salgan caros después. El código se lee muchas más veces de las que se escribe."
       },
       "tip2": {
-        "title": "Rendimiento",
-        "text": "Mide antes de optimizar. Lighthouse y el panel de red son tus mejores aliados."
+        "title": "Rendimiento medible",
+        "text": "Mido antes de optimizar. Lighthouse y el panel de red guían cada mejora; decisiones basadas en datos, no en suposiciones."
       },
       "tip3": {
-        "title": "Mobile first",
-        "text": "Diseña primero para móvil y escala hacia arriba; es más fácil que el camino inverso."
+        "title": "Mobile-first",
+        "text": "Diseño primero para móvil y escalo hacia arriba. La mayoría de tus usuarios llega desde el teléfono."
       },
       "tip4": {
         "title": "Diseño con intención",
-        "text": "Espaciado, contraste y jerarquía visual hacen que una interfaz se sienta profesional."
+        "text": "Espaciado, contraste y jerarquía deliberados: cada detalle visual responde a un porqué, no al azar."
+      },
+      "tip5": {
+        "title": "Accesibilidad",
+        "text": "Interfaces usables por todos: HTML semántico, buen contraste y navegación por teclado desde el primer commit."
+      },
+      "tip6": {
+        "title": "Comunicación clara",
+        "text": "Explico avances y decisiones sin tecnicismos innecesarios. Un proyecto avanza tan bien como se comunica."
       }
     }
   },

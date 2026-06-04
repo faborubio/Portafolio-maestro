@@ -1,7 +1,7 @@
 // Contenido editable del portafolio.
 // Los textos visibles largos viven en src/locales; aquí van datos estructurados.
 
-import mojitos from '../assets/img/proj-mojitos.png'
+import mojitos from '../assets/img/proj-mojitos.webp'
 import caucorp from '../assets/img/proj-caucorp.png'
 
 export const skills = [
@@ -19,6 +19,8 @@ export const tips = [
   { id: 'tip2', icon: 'faRocket' },
   { id: 'tip3', icon: 'faMobileScreen' },
   { id: 'tip4', icon: 'faPalette' },
+  { id: 'tip5', icon: 'faUniversalAccess' },
+  { id: 'tip6', icon: 'faComments' },
 ]
 
 export const projects = [

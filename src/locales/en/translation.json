@@ -6,7 +6,7 @@
     "home": "Home",
     "about": "About",
     "skills": "Skills",
-    "tips": "Tips",
+    "tips": "Approach",
     "portfolio": "Portfolio",
     "contact": "Contact"
   },
@@ -33,25 +33,33 @@
     "p3": "Hover over the sphere to explore the technologies I work with."
   },
   "tips": {
-    "title": "Tips & articles",
-    "intro": "Small tips and notes about web development.",
+    "title": "How I work",
+    "intro": "Principles I bring to every project — not just good intentions.",
     "readMore": "Read more",
     "items": {
       "tip1": {
-        "title": "Clean code",
-        "text": "Name your variables and functions well: code is read far more often than it is written."
+        "title": "Clean, maintainable code",
+        "text": "Clear names, small functions and no shortcuts that cost more later. Code is read far more often than it is written."
       },
       "tip2": {
-        "title": "Performance",
-        "text": "Measure before optimizing. Lighthouse and the network panel are your best allies."
+        "title": "Measurable performance",
+        "text": "I measure before optimizing. Lighthouse and the network panel guide every improvement — decisions based on data, not guesses."
       },
       "tip3": {
-        "title": "Mobile first",
-        "text": "Design for mobile first and scale up; it's easier than the other way around."
+        "title": "Mobile-first",
+        "text": "I design for mobile first and scale up. Most of your users arrive from a phone."
       },
       "tip4": {
         "title": "Intentional design",
-        "text": "Spacing, contrast and visual hierarchy make an interface feel professional."
+        "text": "Deliberate spacing, contrast and hierarchy: every visual detail has a reason behind it, nothing left to chance."
+      },
+      "tip5": {
+        "title": "Accessibility",
+        "text": "Interfaces everyone can use: semantic HTML, solid contrast and keyboard navigation from the first commit."
+      },
+      "tip6": {
+        "title": "Clear communication",
+        "text": "I explain progress and decisions without unnecessary jargon. A project moves as well as it's communicated."
       }
     }
   },
