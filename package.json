@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
     "@fortawesome/free-brands-svg-icons": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
@@ -21,7 +22,6 @@
     "react-dom": "^18.3.1",
     "react-i18next": "^14.1.2",
     "react-leaflet": "^4.2.1",
-    "react-router-dom": "^6.23.1",
     "TagCloud": "^2.5.0"
   },
   "devDependencies": {

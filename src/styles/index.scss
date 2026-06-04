@@ -26,7 +26,7 @@ body {
     radial-gradient(circle at 30% 0%, #0a1221 0%, #050a14 100%);
   background-size: 32px 32px, 32px 32px, cover;
   background-attachment: fixed;
-  overflow: hidden; // cada página gestiona su propio scroll interno
+  overflow: hidden;
   -webkit-font-smoothing: antialiased;
 }
 

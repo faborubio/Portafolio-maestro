@@ -25,7 +25,7 @@ const About = () => {
   const { t } = useTranslation()
 
   return (
-    <PageWrapper className="about">
+    <PageWrapper className="about" id="about">
       <div className="about__text">
         <h1 className="about__title">
           <AnimatedLetters text={t('about.title')} />

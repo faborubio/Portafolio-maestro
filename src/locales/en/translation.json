@@ -67,6 +67,18 @@
     "subject": "Subject",
     "message": "Message",
     "send": "Send",
-    "note": "Decorative form — will be connected soon."
+    "sending": "Sending...",
+    "successTitle": "Message sent!",
+    "successText": "Thanks for reaching out. I'll get back to you shortly.",
+    "errorText": "Something went wrong. Please try again or reach out directly.",
+    "errorRate": "Too many attempts. Please wait a moment and try again.",
+    "sendAnother": "Send another message",
+    "errors": {
+      "nameMin": "Name must be at least 2 characters.",
+      "nameMax": "Name cannot exceed 80 characters.",
+      "emailInvalid": "Enter a valid email ending in .com, .cl, .dev or .org.",
+      "messageMin": "Message must be at least 10 characters.",
+      "messageMax": "Message cannot exceed 2000 characters."
+    }
   }
 }

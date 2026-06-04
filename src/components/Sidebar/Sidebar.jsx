@@ -1,5 +1,4 @@
-import { useState } from 'react'
-import { NavLink, Link } from 'react-router-dom'
+import { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
@@ -12,20 +11,17 @@ import {
   faBars,
   faXmark,
 } from '@fortawesome/free-solid-svg-icons'
-import {
-  faLinkedinIn,
-  faGithub,
-} from '@fortawesome/free-brands-svg-icons'
+import { faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons'
 import logo from '../../assets/img/f-preload.svg'
 import './Sidebar.scss'
 
 const navItems = [
-  { to: '/', icon: faHouse, key: 'home', end: true },
-  { to: '/about', icon: faUser, key: 'about' },
-  { to: '/skills', icon: faGear, key: 'skills' },
-  { to: '/tips', icon: faLightbulb, key: 'tips' },
-  { to: '/portfolio', icon: faEye, key: 'portfolio' },
-  { to: '/contact', icon: faEnvelope, key: 'contact' },
+  { id: 'home',      icon: faHouse,     key: 'home' },
+  { id: 'about',     icon: faUser,      key: 'about' },
+  { id: 'skills',    icon: faGear,      key: 'skills' },
+  { id: 'tips',      icon: faLightbulb, key: 'tips' },
+  { id: 'portfolio', icon: faEye,       key: 'portfolio' },
+  { id: 'contact',   icon: faEnvelope,  key: 'contact' },
 ]
 
 const socials = [
@@ -36,6 +32,43 @@ const socials = [
 const Sidebar = () => {
   const { t, i18n } = useTranslation()
   const [open, setOpen] = useState(false)
+  const [activeId, setActiveId] = useState('home')
+
+  // Detecta qué sección está visible según el scroll de layout__main
+  useEffect(() => {
+    const container = document.querySelector('.layout__main')
+    if (!container) return
+
+    const handleScroll = () => {
+      const scrollTop      = container.scrollTop
+      const containerH     = container.clientHeight
+      let current          = navItems[0].id
+
+      navItems.forEach(({ id }) => {
+        const section = document.getElementById(id)
+        if (!section) return
+        if (scrollTop >= section.offsetTop - containerH * 0.4) {
+          current = id
+        }
+      })
+
+      setActiveId(current)
+    }
+
+    container.addEventListener('scroll', handleScroll, { passive: true })
+    return () => container.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  // Scroll suave explícito (más fiable en contenedores con overflow)
+  const scrollTo = (e, id) => {
+    e.preventDefault()
+    const section   = document.getElementById(id)
+    const container = document.querySelector('.layout__main')
+    if (section && container) {
+      container.scrollTo({ top: section.offsetTop, behavior: 'smooth' })
+    }
+    setOpen(false)
+  }
 
   const toggleLang = () => {
     i18n.changeLanguage(i18n.resolvedLanguage === 'es' ? 'en' : 'es')
@@ -43,42 +76,32 @@ const Sidebar = () => {
 
   return (
     <>
-      {/* Botón hamburguesa (móvil) */}
-      <button
-        className="nav-toggle"
-        aria-label="Menú"
-        onClick={() => setOpen((o) => !o)}
-      >
+      <button className="nav-toggle" aria-label="Menú" onClick={() => setOpen((o) => !o)}>
         <FontAwesomeIcon icon={open ? faXmark : faBars} />
       </button>
 
       <nav className={`sidebar ${open ? 'sidebar--open' : ''}`}>
-        <Link className="sidebar__logo" to="/" onClick={() => setOpen(false)}>
+        <a className="sidebar__logo" href="#home" onClick={(e) => scrollTo(e, 'home')}>
           <img src={logo} alt="Fabián" />
-        </Link>
+        </a>
 
         <ul className="sidebar__nav">
           {navItems.map((item) => (
             <li key={item.key}>
-              <NavLink
-                to={item.to}
-                end={item.end}
-                onClick={() => setOpen(false)}
-                className={({ isActive }) => (isActive ? 'active' : '')}
+              <a
+                href={`#${item.id}`}
+                onClick={(e) => scrollTo(e, item.id)}
+                className={activeId === item.id ? 'active' : ''}
               >
                 <FontAwesomeIcon icon={item.icon} />
                 <span className="sidebar__label">{t(`nav.${item.key}`)}</span>
-              </NavLink>
+              </a>
             </li>
           ))}
         </ul>
 
         <div className="sidebar__bottom">
-          <button
-            className="sidebar__lang"
-            onClick={toggleLang}
-            aria-label="Cambiar idioma"
-          >
+          <button className="sidebar__lang" onClick={toggleLang} aria-label="Cambiar idioma">
             {i18n.resolvedLanguage === 'es' ? 'EN' : 'ES'}
           </button>
           <ul className="sidebar__socials">

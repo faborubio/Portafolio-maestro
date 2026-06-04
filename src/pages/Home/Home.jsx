@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import PageWrapper from '../../components/PageWrapper/PageWrapper'
 import AnimatedLetters from '../../components/AnimatedLetters/AnimatedLetters'
@@ -10,7 +9,8 @@ const Home = () => {
   const { t } = useTranslation()
 
   return (
-    <PageWrapper className="home">
+    <PageWrapper className="home" id="home">
+      <span className="code-tag home__tag-html">&lt;html&gt;</span>
       <span className="code-tag home__tag-body">&lt;body&gt;</span>
 
       <div className="home__text">
@@ -40,9 +40,9 @@ const Home = () => {
 
         <p className="home__subtitle">{t('home.subtitle')}</p>
 
-        <Link to="/contact" className="btn-outline">
+        <a href="#contact" className="btn-outline">
           {t('home.contact')}
-        </Link>
+        </a>
       </div>
 
       <div className="home__logo">

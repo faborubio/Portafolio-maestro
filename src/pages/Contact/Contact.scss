@@ -1,5 +1,15 @@
 @import '../../styles/variables';
 
+// Especificidad mayor que .page para ganar min-height en la cascada
+.page.contact {
+  min-height: fit-content;
+  padding-bottom: 60px;
+
+  .page__watermark {
+    display: none;
+  }
+}
+
 .contact {
   &__title {
     font-size: clamp(2.2rem, 5vw, 4rem);
@@ -32,7 +42,6 @@
     input,
     textarea {
       width: 100%;
-      // input "glass" más oscuro que la superficie (estilo línea de comandos)
       background: rgba(5, 10, 20, 0.6);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
@@ -62,15 +71,79 @@
     }
   }
 
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+
+    &-error {
+      color: #ff6b6b;
+      font-size: 0.78rem;
+    }
+
+    &-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+  }
+
+  &__char-count {
+    color: $muted;
+    font-size: 0.75rem;
+    text-align: right;
+    flex-shrink: 0;
+    margin-left: 8px;
+  }
+
+  input.input--error,
+  textarea.input--error {
+    border-color: #ff6b6b;
+    box-shadow: 0 0 8px rgba(255, 107, 107, 0.2);
+  }
+
   &__row {
     display: flex;
     gap: 16px;
   }
 
-  &__note {
-    color: $muted;
-    font-size: 0.8rem;
-    font-style: italic;
+  &__error {
+    color: #ff6b6b;
+    font-size: 0.85rem;
+    margin-bottom: -4px;
+  }
+
+  &__feedback {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+
+    &-icon {
+      font-size: 2.5rem;
+      color: $accent;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      color: $accent;
+    }
+
+    p {
+      color: $muted;
+      max-width: 480px;
+    }
+
+    .btn-outline {
+      margin-top: 8px;
+    }
+  }
+
+  .btn-outline:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
   }
 
   .contact-map {

@@ -7,9 +7,15 @@
   gap: 40px;
 
   // Tags de código en las esquinas (absolutos, como el original)
-  &__tag-body {
-    top: 40px;
+  &__tag-html {
+    top: 14px;
     left: clamp(24px, 7vw, 150px);
+    font-size: 1.1rem;
+  }
+
+  &__tag-body {
+    top: 44px;
+    left: clamp(44px, 9vw, 180px);
     font-size: 1.1rem;
   }
 
@@ -74,11 +80,12 @@
     text-transform: uppercase;
   }
 
-  // Logo F 3D flotante (equivalente a la "S" 3D del original)
+  // Logo F 3D flotante
   &__logo {
     position: relative;
     z-index: 1;
     flex-shrink: 0;
+    width: clamp(220px, 34vw, 460px);
   }
 }
 

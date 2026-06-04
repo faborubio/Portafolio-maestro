@@ -15,7 +15,7 @@ const Portfolio = () => {
     filter === 'all' ? projects : projects.filter((p) => p.category === filter)
 
   return (
-    <PageWrapper className="portfolio">
+    <PageWrapper className="portfolio" id="portfolio">
       <div className="portfolio__head">
         <h1 className="portfolio__title">
           <AnimatedLetters text={t('portfolio.title')} />

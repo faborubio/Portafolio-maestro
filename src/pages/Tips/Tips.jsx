@@ -22,7 +22,7 @@ const Tips = () => {
   const { t } = useTranslation()
 
   return (
-    <PageWrapper className="tips">
+    <PageWrapper className="tips" id="tips">
       <div className="tips__head">
         <h1 className="tips__title">
           <AnimatedLetters text={t('tips.title')} />

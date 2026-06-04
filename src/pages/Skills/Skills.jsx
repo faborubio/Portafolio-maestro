@@ -37,7 +37,7 @@ const Skills = () => {
   }, [])
 
   return (
-    <PageWrapper className="skills">
+    <PageWrapper className="skills" id="skills">
       <div className="skills__text">
         <h1 className="skills__title">
           <AnimatedLetters text={t('skills.title')} />
