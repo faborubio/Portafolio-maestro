@@ -34,6 +34,17 @@ const Sidebar = () => {
   const [open, setOpen] = useState(false)
   const [activeId, setActiveId] = useState('home')
 
+  // Refleja la sección en la URL. 'home' deja la URL limpia (sin hash);
+  // el resto usa #id. replaceState evita llenar el historial al hacer scroll.
+  const syncHash = (id, push = false) => {
+    const { pathname, search, hash } = window.location
+    const target  = id === 'home' ? pathname + search : `${pathname}${search}#${id}`
+    const current = pathname + search + hash
+    if (current === target) return
+    if (push) window.history.pushState(null, '', target)
+    else window.history.replaceState(null, '', target)
+  }
+
   // Detecta qué sección está visible según el scroll de layout__main
   useEffect(() => {
     const container = document.querySelector('.layout__main')
@@ -53,10 +64,31 @@ const Sidebar = () => {
       })
 
       setActiveId(current)
+      syncHash(current)
     }
 
     container.addEventListener('scroll', handleScroll, { passive: true })
     return () => container.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  // Al cargar con un hash (p. ej. /#skills) hace scroll a esa sección.
+  // También responde al botón atrás/adelante del navegador (popstate).
+  useEffect(() => {
+    const goToHash = (behavior) => {
+      const id = window.location.hash.replace('#', '')
+      const container = document.querySelector('.layout__main')
+      if (!container) return
+      const id_      = id || 'home'
+      const section  = document.getElementById(id_)
+      if (!section) return
+      container.scrollTo({ top: section.offsetTop, behavior })
+      setActiveId(id_)
+    }
+
+    requestAnimationFrame(() => goToHash('auto'))
+    const onPop = () => goToHash('smooth')
+    window.addEventListener('popstate', onPop)
+    return () => window.removeEventListener('popstate', onPop)
   }, [])
 
   // Scroll suave explícito (más fiable en contenedores con overflow)
@@ -67,6 +99,8 @@ const Sidebar = () => {
     if (section && container) {
       container.scrollTo({ top: section.offsetTop, behavior: 'smooth' })
     }
+    syncHash(id, true)
+    setActiveId(id)
     setOpen(false)
   }
 
