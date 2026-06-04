@@ -17,13 +17,14 @@
     "role1": "desarrollador",
     "role2": "web.",
     "subtitle": "Desarrollador Full Stack / Experto en JavaScript / Freelancer",
-    "contact": "Contáctame"
+    "contact": "Contáctame",
+    "cv": "Descargar CV"
   },
   "about": {
     "title": "Sobre mí",
-    "p1": "Soy un desarrollador web full stack apasionado por crear experiencias digitales atractivas y funcionales.",
-    "p2": "Me motivan los retos, el aprendizaje continuo y trabajar en proyectos que aporten valor real a las personas.",
-    "p3": "Si quieres saber más sobre mí o trabajar juntos, no dudes en contactarme."
+    "p1": "Soy desarrollador Web Full Stack con más de 3 años de experiencia construyendo aplicaciones con Angular, React y Node.js. Me especializo en interfaces de alta calidad: código limpio, diseño responsive y rendimiento medible.",
+    "p2": "He trabajado en proyectos reales para empresas y como freelance, desde landing pages animadas hasta plataformas con autenticación, testing y CI/CD. Cuido tanto el detalle visual como la solidez del código.",
+    "p3": "Estoy disponible para proyectos freelance y oportunidades remotas. Si buscas a alguien que entregue trabajo bien hecho, me encuentras en LinkedIn o por el formulario de contacto."
   },
   "skills": {
     "title": "Habilidades & Experiencia",
@@ -76,7 +77,7 @@
     "errors": {
       "nameMin": "El nombre debe tener al menos 2 caracteres.",
       "nameMax": "El nombre no puede superar 80 caracteres.",
-      "emailInvalid": "Ingresa un correo válido terminado en .com, .cl, .dev u .org.",
+      "emailInvalid": "Ingresa un correo electrónico válido.",
       "messageMin": "El mensaje debe tener al menos 10 caracteres.",
       "messageMax": "El mensaje no puede superar 2000 caracteres."
     }

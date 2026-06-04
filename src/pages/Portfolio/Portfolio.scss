@@ -55,7 +55,7 @@
 
 .project {
   position: relative;
-  height: 200px;
+  height: 230px;
   border-radius: 8px;
   overflow: hidden;
   cursor: pointer;
@@ -113,20 +113,47 @@
     color: $accent;
   }
 
+  &__desc {
+    margin: 4px 0 0;
+    font-size: 0.78rem;
+    color: $muted;
+    line-height: 1.45;
+  }
+
   &__tech {
-    margin: 6px 0 12px;
-    font-size: 0.82rem;
+    margin: 6px 0 10px;
+    font-size: 0.75rem;
     color: #cfcfcf;
+    opacity: 0.8;
+  }
+
+  &__links {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
   }
 
   &__link {
-    align-self: flex-start;
-    font-size: 0.78rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.75rem;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
     color: $text;
     border-bottom: 1px solid $accent;
     padding-bottom: 2px;
+    transition: color 0.2s;
+
+    &--gh {
+      border-bottom-color: $muted;
+      color: $muted;
+
+      &:hover {
+        color: $text;
+        border-bottom-color: $text;
+      }
+    }
   }
 
   &:hover {

@@ -80,6 +80,34 @@
     text-transform: uppercase;
   }
 
+  &__ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 42px;
+
+    .btn-outline {
+      margin-top: 0;
+    }
+
+    .btn-outline--cv {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: $accent;
+      border-color: $accent;
+
+      &::before {
+        background: $accent;
+      }
+
+      &:hover {
+        color: $bg;
+        box-shadow: 0 0 14px rgba(0, 242, 255, 0.4);
+      }
+    }
+  }
+
   // Logo F 3D flotante
   &__logo {
     position: relative;

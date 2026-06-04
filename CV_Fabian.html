@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV — Fabián Rubio Contreras</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:      #0a1221;
+      --navy-2:    #131c2e;
+      --cyan:      #00d4e0;
+      --amber:     #ffb800;
+      --text-dark: #1d2535;
+      --text-mid:  #4a5568;
+      --text-light:#e0e3e5;
+      --text-muted:#8a9bb0;
+      --border:    #e2e8f0;
+      --white:     #ffffff;
+    }
+
+    @page { size: A4 portrait; margin: 0; }
+
+    body {
+      font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10pt;
+      color: var(--text-dark);
+      background: #cdd5e0;
+      line-height: 1.45;
+    }
+
+    /* ── PRINT HINT ─────────────────────────── */
+    .print-hint {
+      background: var(--navy);
+      color: var(--text-light);
+      text-align: center;
+      padding: 11px 16px;
+      font-size: 8.5pt;
+      letter-spacing: 0.3px;
+    }
+    .print-hint strong { color: var(--cyan); }
+    @media print { .print-hint { display: none; } }
+
+    /* ── PAGE ────────────────────────────────── */
+    .page {
+      width: 210mm;
+      height: 297mm;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 70mm 1fr;
+      background: var(--white);
+      margin: 0 auto;
+      box-shadow: 0 10px 60px rgba(0,0,0,0.25);
+    }
+
+    @media screen {
+      body { padding: 24px 16px 56px; }
+    }
+
+    /* ════════════════════════════════════════
+       SIDEBAR — justify-content: space-between
+       fuerza que los bloques llenen los 297mm
+    ════════════════════════════════════════ */
+    .sidebar {
+      background: var(--navy);
+      color: var(--text-light);
+      padding: 36px 20px 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* monogram */
+    .s-monogram {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: var(--navy-2);
+      border: 2px solid var(--cyan);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22pt;
+      font-weight: 700;
+      color: var(--cyan);
+      margin: 0 auto 8px;
+      letter-spacing: -1px;
+    }
+
+    .s-name { text-align: center; }
+    .s-name h1 {
+      font-size: 13pt;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.25;
+    }
+    .s-name .role {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 8pt;
+      color: var(--cyan);
+      letter-spacing: 0.5px;
+      margin-top: 5px;
+    }
+
+    /* section label */
+    .s-label {
+      font-size: 7.5pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--cyan);
+      border-bottom: 1px solid rgba(0,212,224,.22);
+      padding-bottom: 6px;
+      margin-bottom: 11px;
+    }
+
+    /* contact list */
+    .contact-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+    .contact-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 8.5pt;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+    .contact-list .ic {
+      color: var(--cyan);
+      font-size: 9pt;
+      flex-shrink: 0;
+      font-style: normal;
+      width: 13px;
+      text-align: center;
+      margin-top: 1px;
+    }
+    .contact-list a {
+      color: var(--text-light);
+      text-decoration: none;
+      word-break: break-all;
+    }
+
+    /* skill groups */
+    .skill-group { margin-bottom: 11px; }
+    .skill-group:last-child { margin-bottom: 0; }
+    .skill-group__title {
+      font-size: 8pt;
+      font-weight: 600;
+      color: var(--amber);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .tags { display: flex; flex-wrap: wrap; gap: 4px; }
+    .tag {
+      background: rgba(0,212,224,.07);
+      border: 1px solid rgba(0,212,224,.2);
+      color: var(--text-light);
+      padding: 3px 8px;
+      border-radius: 3px;
+      font-size: 7.8pt;
+    }
+
+    /* languages */
+    .lang-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 7px;
+    }
+    .lang-row:last-child { margin-bottom: 0; }
+    .lang-name { font-size: 9pt;  color: var(--text-light); }
+    .lang-lvl  {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 8pt;
+      color: var(--cyan);
+    }
+
+    /* ════════════════════════════════════════
+       MAIN — justify-content: space-between
+       distribuye secciones en los 297mm
+    ════════════════════════════════════════ */
+    .main {
+      padding: 36px 30px 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* header */
+    .m-header {
+      border-bottom: 1.5px solid var(--border);
+      padding-bottom: 14px;
+    }
+    .m-header h1 {
+      font-size: 28pt;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: -2px;
+      line-height: 1;
+    }
+    .m-header h1 span { color: var(--cyan); }
+    .m-header .subtitle {
+      font-size: 9.5pt;
+      color: var(--text-mid);
+      margin-top: 6px;
+      font-weight: 400;
+    }
+
+    /* section title */
+    .m-section-title {
+      font-size: 8pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--navy);
+      border-bottom: 1.5px solid var(--border);
+      padding-bottom: 5px;
+      margin-bottom: 13px;
+      position: relative;
+    }
+    .m-section-title::after {
+      content: '';
+      position: absolute;
+      left: 0; bottom: -1.5px;
+      width: 30px; height: 1.5px;
+      background: var(--cyan);
+    }
+
+    /* about */
+    .about-text {
+      font-size: 9.5pt;
+      line-height: 1.7;
+      color: var(--text-mid);
+    }
+
+    /* experience */
+    .exp-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+    }
+    .exp-role {
+      font-size: 10.5pt;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+    .exp-dates {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 8pt;
+      color: var(--text-muted);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .exp-company {
+      font-size: 8.5pt;
+      color: var(--cyan);
+      margin-top: 2px;
+      font-weight: 500;
+    }
+    .exp-bullets {
+      margin-top: 6px;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .exp-bullets li {
+      font-size: 9pt;
+      color: var(--text-mid);
+      line-height: 1.55;
+      padding-left: 14px;
+      position: relative;
+    }
+    .exp-bullets li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--cyan);
+      font-size: 8pt;
+      top: 2px;
+    }
+    .highlight { color: var(--amber); font-weight: 500; }
+
+    /* education */
+    .edu-list {
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+    }
+    .edu-degree {
+      font-size: 9.5pt;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+    .edu-school {
+      font-size: 8.5pt;
+      color: var(--text-mid);
+      margin-top: 2px;
+    }
+    .edu-dates {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 8pt;
+      color: var(--text-muted);
+    }
+
+    /* ── print ──────────────────────────────── */
+    @media print {
+      body { background: white; }
+      .page { box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <p class="print-hint">
+    Para exportar a PDF: <strong>Ctrl + P</strong> → Destino: "Guardar como PDF" → Más configuraciones → activar <strong>"Gráficos de fondo"</strong> → Guardar
+  </p>
+
+  <div class="page">
+
+    <!-- ═══════════════ SIDEBAR ═══════════════ -->
+    <aside class="sidebar">
+
+      <!-- Nombre -->
+      <div>
+        <div class="s-monogram">FR</div>
+        <div class="s-name">
+          <h1>Fabián Rubio<br>Contreras</h1>
+          <p class="role">Full Stack Developer</p>
+        </div>
+      </div>
+
+      <!-- Contacto -->
+      <div>
+        <p class="s-label">Contacto</p>
+        <ul class="contact-list">
+          <li>
+            <i class="ic">✉</i>
+            <a href="mailto:fabian.rubiocs@gmail.com">fabian.rubiocs@gmail.com</a>
+          </li>
+          <li>
+            <i class="ic">☎</i>
+            <span>+56 9 5535 0921</span>
+          </li>
+          <li>
+            <i class="ic">◈</i>
+            <a href="https://fabian-portafolio.web.app">fabian-portafolio.web.app</a>
+          </li>
+          <li>
+            <i class="ic">in</i>
+            <a href="https://linkedin.com/in/fabian-rubioc">linkedin.com/in/fabian-rubioc</a>
+          </li>
+          <li>
+            <i class="ic">⌥</i>
+            <a href="https://github.com/faborubio">github.com/faborubio</a>
+          </li>
+          <li>
+            <i class="ic">◎</i>
+            <span>Curepto, Maule · Chile</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Habilidades -->
+      <div>
+        <p class="s-label">Habilidades</p>
+
+        <div class="skill-group">
+          <p class="skill-group__title">Frontend</p>
+          <div class="tags">
+            <span class="tag">HTML5</span>
+            <span class="tag">CSS3 / Sass</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">React</span>
+            <span class="tag">Angular</span>
+            <span class="tag">TailwindCSS</span>
+            <span class="tag">Bootstrap</span>
+            <span class="tag">GSAP</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <p class="skill-group__title">Backend &amp; Bases de datos</p>
+          <div class="tags">
+            <span class="tag">Node.js</span>
+            <span class="tag">Express</span>
+            <span class="tag">Firebase</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">SQL</span>
+            <span class="tag">MongoDB</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <p class="skill-group__title">Herramientas</p>
+          <div class="tags">
+            <span class="tag">Git</span>
+            <span class="tag">Vite</span>
+            <span class="tag">Postman</span>
+            <span class="tag">Figma</span>
+            <span class="tag">Kanban</span>
+            <span class="tag">cPanel / WHM</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Idiomas -->
+      <div>
+        <p class="s-label">Idiomas</p>
+        <div class="lang-row">
+          <span class="lang-name">Español</span>
+          <span class="lang-lvl">Nativo</span>
+        </div>
+        <div class="lang-row">
+          <span class="lang-name">Inglés</span>
+          <span class="lang-lvl">C1 · EF SET</span>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- ═══════════════ MAIN ═══════════════ -->
+    <main class="main">
+
+      <header class="m-header">
+        <h1>Fabián <span>Rubio</span></h1>
+        <p class="subtitle">Desarrollador Web Full Stack &nbsp;·&nbsp; Angular &nbsp;·&nbsp; React &nbsp;·&nbsp; Node.js</p>
+      </header>
+
+      <!-- Sobre mí -->
+      <section>
+        <h2 class="m-section-title">Sobre mí</h2>
+        <p class="about-text">
+          Desarrollador Web Full Stack con más de 2 años construyendo aplicaciones con
+          Angular, React y Node.js, respaldado por 4 años de experiencia técnica de nivel
+          senior en entornos SaaS. Me especializo en interfaces responsive, código limpio
+          y entregas funcionales para empresas y clientes independientes.
+          Inglés C1 certificado. Disponible para trabajo remoto.
+        </p>
+      </section>
+
+      <!-- Experiencia -->
+      <section>
+        <h2 class="m-section-title">Experiencia</h2>
+        <div class="exp-list">
+
+          <div class="exp-item">
+            <div class="exp-header">
+              <span class="exp-role">Desarrollador Web Full Stack</span>
+              <span class="exp-dates">ene. 2023 — presente</span>
+            </div>
+            <p class="exp-company">Freelance · Informática / Tecnología</p>
+            <ul class="exp-bullets">
+              <li>Desarrollo de plataformas corporativas, landing pages animadas y sistemas de gestión para PYMEs.</li>
+              <li>Stack: Angular, React, TypeScript, Node.js, Firebase, TailwindCSS, Sass.</li>
+              <li>Proyectos destacados: <span class="highlight">Caucorp</span> (caucorp.com) &nbsp;·&nbsp; <span class="highlight">Velvet Pour</span> (mojitos-landing.web.app)</li>
+            </ul>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-header">
+              <span class="exp-role">Senior Customer Support Engineer</span>
+              <span class="exp-dates">feb. 2019 — sep. 2022</span>
+            </div>
+            <p class="exp-company">Haulmer · Holding (Opencloud / Bluehosting) · Informática / Tecnología</p>
+            <ul class="exp-bullets">
+              <li>Escalación directa de incidentes con equipo de desarrollo; QA informal reportando y documentando bugs.</li>
+              <li>Automatización con scripts Python: compresión y carga de archivos XML (guías SII) a plataforma interna.</li>
+              <li>Consultas y debugging via Postman / API REST; administración en WHM, WHMCS y cPanel.</li>
+              <li>Ascendido de Soporte Nivel 1 a Senior — uno de los primeros en el departamento de soporte avanzado.</li>
+            </ul>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-header">
+              <span class="exp-role">Soporte Técnico · Webhosting &amp; Servidores</span>
+              <span class="exp-dates">feb. 2018 — oct. 2018</span>
+            </div>
+            <p class="exp-company">Haulmer · Informática / Tecnología</p>
+            <ul class="exp-bullets">
+              <li>Atención y resolución técnica para clientes de servicios de webhosting y servidores dedicados.</li>
+            </ul>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Formación -->
+      <section>
+        <h2 class="m-section-title">Formación</h2>
+        <div class="edu-list">
+
+          <div class="edu-item">
+            <p class="edu-degree">Bootcamp · Full Stack Web Development</p>
+            <p class="edu-school">Le Wagon · Online</p>
+            <p class="edu-dates">2023</p>
+          </div>
+
+          <div class="edu-item">
+            <p class="edu-degree">Ingeniería en Informática / Gestión Informática</p>
+            <p class="edu-school">INACAP · Sede Curicó &nbsp;·&nbsp; cursado parcialmente</p>
+            <p class="edu-dates">2014 – 2017</p>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+</body>
+</html>

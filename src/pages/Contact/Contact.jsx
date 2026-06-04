@@ -6,7 +6,7 @@ import ContactMap from '../../components/ContactMap/ContactMap'
 import './Contact.scss'
 
 const INITIAL = { name: '', email: '', subject: '', message: '' }
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.(cl|com|dev|org)$/i
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i
 
 const validate = (fields, t) => {
   const errs = {}

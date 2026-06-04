@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>OG Cover Generator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #555;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      padding: 24px;
+      font-family: sans-serif;
+    }
+    .hint {
+      color: white;
+      font-size: 13px;
+      background: #333;
+      padding: 10px 18px;
+      border-radius: 6px;
+      text-align: center;
+      line-height: 1.6;
+    }
+    .hint code { background: #555; padding: 2px 6px; border-radius: 3px; }
+
+    /* ── OG CARD — exactly 1200×630 ── */
+    .og {
+      width: 1200px;
+      height: 630px;
+      background: #0a1221;
+      background-image:
+        linear-gradient(rgba(0,242,255,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,242,255,.04) 1px, transparent 1px),
+        radial-gradient(circle at 20% 50%, #0d1a30 0%, #050a14 100%);
+      background-size: 32px 32px, 32px 32px, cover;
+      display: flex;
+      align-items: center;
+      padding: 70px 90px;
+      gap: 80px;
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    /* decorative glow */
+    .og::before {
+      content: '';
+      position: absolute;
+      top: -120px; right: -80px;
+      width: 420px; height: 420px;
+      background: radial-gradient(circle, rgba(0,242,255,.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .og::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: 200px;
+      width: 320px; height: 320px;
+      background: radial-gradient(circle, rgba(255,184,0,.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* monogram */
+    .og__mono {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 3px solid #00f2ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Inter', sans-serif;
+      font-size: 64px;
+      font-weight: 700;
+      color: #00f2ff;
+      flex-shrink: 0;
+      background: #131c2e;
+      position: relative;
+      z-index: 1;
+    }
+
+    .og__text {
+      position: relative;
+      z-index: 1;
+    }
+    .og__tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 15px;
+      color: #00f2ff;
+      opacity: 0.7;
+      margin-bottom: 12px;
+    }
+    .og__name {
+      font-family: 'Inter', sans-serif;
+      font-size: 72px;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: -3px;
+      line-height: 1;
+    }
+    .og__name span { color: #00f2ff; }
+    .og__role {
+      font-family: 'Inter', sans-serif;
+      font-size: 22px;
+      color: #849495;
+      margin-top: 14px;
+      letter-spacing: 0.5px;
+    }
+    .og__stack {
+      margin-top: 28px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .og__badge {
+      background: rgba(0,242,255,.08);
+      border: 1px solid rgba(0,242,255,.25);
+      color: #e0e3e5;
+      padding: 5px 14px;
+      border-radius: 4px;
+      font-size: 15px;
+      font-family: 'Inter', sans-serif;
+    }
+    .og__url {
+      position: absolute;
+      bottom: 32px;
+      right: 56px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      color: #849495;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hint">
+    <strong>Cómo capturar:</strong> DevTools (F12) → Ctrl+Shift+P → <code>Capture full size screenshot</code><br>
+    Guarda el archivo como <code>og-cover.png</code> y cópialo a <code>/public/</code>
+  </div>
+
+  <div class="og">
+    <div class="og__mono">FR</div>
+    <div class="og__text">
+      <p class="og__tag">&lt;portfolio /&gt;</p>
+      <h1 class="og__name">Fabián <span>Rubio</span></h1>
+      <p class="og__role">Desarrollador Web Full Stack</p>
+      <div class="og__stack">
+        <span class="og__badge">Angular</span>
+        <span class="og__badge">React</span>
+        <span class="og__badge">TypeScript</span>
+        <span class="og__badge">Node.js</span>
+        <span class="og__badge">Firebase</span>
+      </div>
+    </div>
+    <p class="og__url">fabian-portafolio.web.app</p>
+  </div>
+
+</body>
+</html>

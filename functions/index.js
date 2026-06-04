@@ -5,7 +5,7 @@ const nodemailer = require('nodemailer')
 const GMAIL_USER = defineSecret('GMAIL_USER')
 const GMAIL_PASS = defineSecret('GMAIL_PASS')
 
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.(cl|com|dev|org)$/i
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i
 
 // Rate limiter en memoria: máximo 3 envíos por IP por hora
 const rateMap = new Map()

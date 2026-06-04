@@ -1,4 +1,6 @@
 import { useTranslation } from 'react-i18next'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faDownload } from '@fortawesome/free-solid-svg-icons'
 import PageWrapper from '../../components/PageWrapper/PageWrapper'
 import AnimatedLetters from '../../components/AnimatedLetters/AnimatedLetters'
 import HomeLogo from '../../components/HomeLogo/HomeLogo'
@@ -40,9 +42,20 @@ const Home = () => {
 
         <p className="home__subtitle">{t('home.subtitle')}</p>
 
-        <a href="#contact" className="btn-outline">
-          {t('home.contact')}
-        </a>
+        <div className="home__ctas">
+          <a href="#contact" className="btn-outline">
+            {t('home.contact')}
+          </a>
+          <a
+            href="/fabian-rubio-cv.pdf"
+            download
+            className="btn-outline btn-outline--cv"
+            aria-label="Descargar CV de Fabián Rubio"
+          >
+            <FontAwesomeIcon icon={faDownload} />
+            {t('home.cv')}
+          </a>
+        </div>
       </div>
 
       <div className="home__logo">
