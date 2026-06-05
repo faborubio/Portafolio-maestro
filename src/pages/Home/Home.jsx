@@ -1,3 +1,4 @@
+import { useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faDownload } from '@fortawesome/free-solid-svg-icons'
@@ -10,6 +11,27 @@ import './Home.scss'
 
 const Home = () => {
   const { t } = useTranslation()
+  const lastChar = useRef(null)
+
+  // Ola al deslizar el dedo: cada letra bajo el dedo hace "pop".
+  // Usa Web Animations API (no framer) para no afectar el hover de escritorio.
+  const onTitleTouchMove = (e) => {
+    const touch = e.touches[0]
+    if (!touch) return
+    const el = document.elementFromPoint(touch.clientX, touch.clientY)
+    const char = el?.closest?.('.animated-letters__char')
+    if (!char || char === lastChar.current) return
+    lastChar.current = char
+    char.animate(
+      [
+        { transform: 'translateY(0) scale(1)' },
+        { transform: 'translateY(-12px) scale(1.25)', color: '#00f2ff', offset: 0.4 },
+        { transform: 'translateY(0) scale(1)' },
+      ],
+      { duration: 460, easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)' }
+    )
+  }
+  const onTitleTouchEnd = () => { lastChar.current = null }
 
   return (
     <PageWrapper className="home" id="home">
@@ -23,7 +45,11 @@ const Home = () => {
       <div className="home__text">
         <span className="code-tag code-tag--open">&lt;h1&gt;</span>
 
-        <h1 className="home__title">
+        <h1
+          className="home__title"
+          onTouchMove={onTitleTouchMove}
+          onTouchEnd={onTitleTouchEnd}
+        >
           <span className="home__line">
             <AnimatedLetters text={t('home.hi')} start={0} />
           </span>
