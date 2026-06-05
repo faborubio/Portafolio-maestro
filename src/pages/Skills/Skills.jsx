@@ -45,16 +45,38 @@ const Skills = () => {
     const onEnter = () => cloud?.pause?.()       // pausa el giro para poder apuntar
     const onLeave = () => { cloud?.resume?.(); setActive(null) }
 
-    el.addEventListener('mouseover', onOver)
+    // Touch: arrastrar con el dedo gira la esfera (más rápido); el tap muestra la tech
+    const onTouchMove = (e) => {
+      const t = e.touches[0]
+      if (!t || !cloud) return
+      const rect = el.getBoundingClientRect()
+      cloud.maxSpeed = 2 // 'fast' mientras se arrastra
+      cloud.mouseX = (t.clientX - (rect.left + rect.width / 2)) / 3
+      cloud.mouseY = (t.clientY - (rect.top + rect.height / 2)) / 3
+      e.preventDefault() // evita el scroll de la página al girar la esfera
+    }
+    const onTouchEnd = () => { if (cloud) cloud.maxSpeed = 1 } // se asienta tras soltar
+
+    // En táctil no aplicamos pausa-al-hover (estorbaría); usamos touch + tap
+    const canHover = window.matchMedia?.('(hover: hover)').matches
+
     el.addEventListener('click', onClick)
-    el.addEventListener('mouseenter', onEnter)
-    el.addEventListener('mouseleave', onLeave)
+    if (canHover) {
+      el.addEventListener('mouseover', onOver)
+      el.addEventListener('mouseenter', onEnter)
+      el.addEventListener('mouseleave', onLeave)
+    } else {
+      el.addEventListener('touchmove', onTouchMove, { passive: false })
+      el.addEventListener('touchend', onTouchEnd)
+    }
 
     return () => {
-      el.removeEventListener('mouseover', onOver)
       el.removeEventListener('click', onClick)
+      el.removeEventListener('mouseover', onOver)
       el.removeEventListener('mouseenter', onEnter)
       el.removeEventListener('mouseleave', onLeave)
+      el.removeEventListener('touchmove', onTouchMove)
+      el.removeEventListener('touchend', onTouchEnd)
       cloud?.destroy?.()
       if (el) el.innerHTML = ''
     }
