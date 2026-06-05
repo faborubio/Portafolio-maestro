@@ -1,0 +1,85 @@
+@import '../../styles/variables';
+
+.boot {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  background: $bg;
+  transition: opacity 0.55s $ease;
+
+  &--closing {
+    opacity: 0;
+  }
+
+  &__window {
+    width: min(90vw, 460px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    background: rgba(8, 14, 26, 0.92);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5), 0 0 24px rgba(0, 242, 255, 0.06);
+    font-family: $font-script;
+  }
+
+  &__bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    background: rgba(255, 255, 255, 0.04);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  &__dots {
+    display: inline-flex;
+    gap: 7px;
+
+    i {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: #3a4456;
+
+      &:nth-child(1) { background: #ff5f57; }
+      &:nth-child(2) { background: #febc2e; }
+      &:nth-child(3) { background: #28c840; }
+    }
+  }
+
+  &__name {
+    font-size: 0.8rem;
+    color: $muted;
+  }
+
+  &__body {
+    padding: 18px 16px;
+    min-height: 168px;
+    font-size: 0.85rem;
+    line-height: 1.7;
+  }
+
+  &__line {
+    margin: 0;
+    color: $accent;
+
+    &:last-of-type {
+      color: $accent-2;
+    }
+  }
+
+  &__cursor {
+    display: inline-block;
+    width: 9px;
+    height: 1rem;
+    vertical-align: text-bottom;
+    background: $accent;
+    animation: bootBlink 1s steps(1) infinite;
+  }
+}
+
+@keyframes bootBlink {
+  0%, 50% { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
+}

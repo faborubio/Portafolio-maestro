@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { scrollToSection } from '../../utils/scrollToSection'
 import { skills, projects } from '../../data/portfolio'
+import MatrixRain from '../MatrixRain/MatrixRain'
 import logo from '../../assets/img/f-preload.svg'
 import './Terminal.scss'
 
@@ -21,6 +22,8 @@ const Terminal = () => {
   const [input, setInput] = useState('')
   const [cmdLog, setCmdLog] = useState([]) // comandos previos (ArrowUp/Down)
   const [logIdx, setLogIdx] = useState(-1)
+  const [matrix, setMatrix] = useState(false) // easter egg
+  const themeIdx = useRef(0)
   const bodyRef = useRef(null)
   const inputRef = useRef(null)
 
@@ -48,6 +51,7 @@ const Terminal = () => {
         HELP_CMDS.forEach((c) =>
           out.push({ text: `  ${c.padEnd(9)} ${t(`terminal.desc.${c}`)}`, variant: 'out' })
         )
+        out.push({ text: t('terminal.helpEgg'), variant: 'muted' })
         break
       case 'whoami':
         out.push({ text: t('terminal.whoami'), variant: 'out' })
@@ -83,6 +87,23 @@ const Terminal = () => {
       case 'links':
         out.push({ text: 'LinkedIn → ', href: SOCIALS.linkedin, variant: 'link' })
         out.push({ text: 'GitHub   → ', href: SOCIALS.github, variant: 'link' })
+        break
+      // ===== Easter eggs (ocultos) =====
+      case 'matrix':
+        out.push({ text: 'Wake up, Neo… 🟩', variant: 'accent' })
+        setTimeout(() => setMatrix(true), 250)
+        break
+      case 'theme': {
+        const hues = [0, 90, 180, 270]
+        themeIdx.current = (themeIdx.current + 1) % hues.length
+        const hue = hues[themeIdx.current]
+        const layout = document.querySelector('.layout')
+        if (layout) layout.style.filter = hue ? `hue-rotate(${hue}deg)` : ''
+        out.push({ text: hue ? `theme: hue-rotate(${hue}°)` : 'theme: default', variant: 'accent' })
+        break
+      }
+      case 'sudo':
+        out.push({ text: t('terminal.sudo'), variant: 'error' })
         break
       default:
         out.push({ text: t('terminal.notFound', { cmd: word }), variant: 'error' })
@@ -137,7 +158,9 @@ const Terminal = () => {
   }
 
   return (
-    <div className="terminal" onClick={() => inputRef.current?.focus()}>
+    <>
+      {matrix && <MatrixRain onDone={() => setMatrix(false)} />}
+      <div className="terminal" onClick={() => inputRef.current?.focus()}>
       <div className="terminal__bar">
         <span className="terminal__dots" aria-hidden="true">
           <i /><i /><i />
@@ -195,7 +218,8 @@ const Terminal = () => {
           </button>
         ))}
       </div>
-    </div>
+      </div>
+    </>
   )
 }
 

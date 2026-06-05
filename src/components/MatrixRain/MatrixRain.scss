@@ -1,0 +1,30 @@
+@import '../../styles/variables';
+
+.matrix-rain {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: #050a14;
+  cursor: pointer;
+  animation: mrFade 0.3s ease;
+
+  canvas {
+    display: block;
+  }
+
+  &__hint {
+    position: absolute;
+    bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: $font-script;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    color: rgba(0, 255, 102, 0.7);
+  }
+}
+
+@keyframes mrFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

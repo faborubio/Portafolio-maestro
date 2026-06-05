@@ -10,6 +10,12 @@
     "portfolio": "Portfolio",
     "contact": "Contact"
   },
+  "palette": {
+    "placeholder": "Search a section or action…",
+    "cv": "Download CV",
+    "lang": "Switch language",
+    "empty": "No results"
+  },
   "home": {
     "hi": "Hi,",
     "im": "I'm",
@@ -30,6 +36,8 @@
     "opening": "Opening {{section}}…",
     "cvDownloading": "Downloading CV…",
     "notFound": "command not found: {{cmd}}. Type 'help'.",
+    "sudo": "permission denied: nice try 😏",
+    "helpEgg": "psst… try: matrix · theme · sudo",
     "desc": {
       "about": "who I am",
       "skills": "tech I work with",
@@ -92,7 +100,12 @@
   "portfolio": {
     "title": "My portfolio",
     "intro": "A selection of recent projects.",
-    "view": "View project"
+    "view": "View project",
+    "gh": {
+      "repos": "repos",
+      "followers": "followers",
+      "latest": "latest"
+    }
   },
   "contact": {
     "title": "Contact me",

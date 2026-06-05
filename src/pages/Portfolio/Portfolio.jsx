@@ -5,6 +5,7 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
 import PageWrapper from '../../components/PageWrapper/PageWrapper'
 import AnimatedTitle from '../../components/AnimatedLetters/AnimatedTitle'
+import GitHubStats from '../../components/GitHubStats/GitHubStats'
 import { projects } from '../../data/portfolio'
 import './Portfolio.scss'
 
@@ -25,6 +26,8 @@ const Portfolio = () => {
           <AnimatedTitle text={t('portfolio.title')} />
         </h1>
         <p className="portfolio__intro">{t('portfolio.intro')}</p>
+
+        <GitHubStats />
 
         <div className="portfolio__filters">
           {categories.map((c) => (

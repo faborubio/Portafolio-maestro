@@ -1,0 +1,58 @@
+@import '../../styles/variables';
+
+.gh-stats {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 16px;
+  padding: 8px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  background: rgba(10, 18, 33, 0.5);
+  font-family: $font-script;
+  font-size: 0.8rem;
+  color: $muted;
+
+  b {
+    color: $accent;
+    font-weight: 700;
+  }
+
+  &__profile {
+    position: relative;
+    display: inline-flex;
+    color: $text;
+    font-size: 1rem;
+
+    &:hover { color: $accent; }
+  }
+
+  // punto "en vivo"
+  &__live {
+    position: absolute;
+    top: -2px;
+    right: -4px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #00ff88;
+    box-shadow: 0 0 6px #00ff88;
+    animation: ghPulse 2s ease-in-out infinite;
+  }
+
+  &__sep {
+    color: rgba(255, 255, 255, 0.2);
+  }
+
+  &__repo {
+    color: $accent;
+    text-decoration: none;
+    &:hover { text-decoration: underline; }
+  }
+}
+
+@keyframes ghPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
