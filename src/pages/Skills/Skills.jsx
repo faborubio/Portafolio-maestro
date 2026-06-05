@@ -132,9 +132,8 @@ const Skills = () => {
                   <motion.div
                     className="skill-bar__fill"
                     initial={{ width: 0 }}
-                    whileInView={{ width: `${s.level}%` }}
-                    viewport={{ once: true, margin: '-60px' }}
-                    transition={{ duration: 1, delay: i * 0.1, ease: 'easeOut' }}
+                    animate={{ width: `${s.level}%` }}
+                    transition={{ duration: 1, delay: 0.2 + i * 0.12, ease: 'easeOut' }}
                   />
                 </div>
               </li>
