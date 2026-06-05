@@ -45,6 +45,12 @@ const AnimatedLetters = ({ text, start = 0 }) => {
             color: '#00f2ff',
             transition: { type: 'spring', stiffness: 400, damping: 12 },
           }}
+          whileTap={{
+            y: -12,
+            scale: 1.25,
+            color: '#00f2ff',
+            transition: { type: 'spring', stiffness: 400, damping: 12 },
+          }}
         >
           {char === ' ' ? ' ' : char}
         </motion.span>
