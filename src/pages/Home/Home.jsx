@@ -3,8 +3,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faDownload } from '@fortawesome/free-solid-svg-icons'
 import PageWrapper from '../../components/PageWrapper/PageWrapper'
 import AnimatedLetters from '../../components/AnimatedLetters/AnimatedLetters'
-import HomeLogo from '../../components/HomeLogo/HomeLogo'
 import SpinF from '../../components/SpinF/SpinF'
+import HomeLogo from '../../components/HomeLogo/HomeLogo'
+import Terminal from '../../components/Terminal/Terminal'
 import './Home.scss'
 
 const Home = () => {
@@ -14,6 +15,10 @@ const Home = () => {
     <PageWrapper className="home" id="home">
       <span className="code-tag home__tag-html">&lt;html&gt;</span>
       <span className="code-tag home__tag-body">&lt;body&gt;</span>
+
+      <div className="home__logo-top" aria-hidden="true">
+        <HomeLogo />
+      </div>
 
       <div className="home__text">
         <span className="code-tag code-tag--open">&lt;h1&gt;</span>
@@ -58,8 +63,8 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="home__logo">
-        <HomeLogo />
+      <div className="home__terminal">
+        <Terminal />
       </div>
 
       <span className="code-tag home__tag-close">

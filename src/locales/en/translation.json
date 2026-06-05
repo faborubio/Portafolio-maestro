@@ -20,6 +20,26 @@
     "contact": "Contact me",
     "cv": "Download CV"
   },
+  "terminal": {
+    "welcome": "Welcome to my portfolio. Type 'help' or tap a command to get started.",
+    "ariaLabel": "Interactive terminal output",
+    "inputLabel": "Type a command",
+    "placeholder": "type 'help'…",
+    "helpIntro": "Available commands:",
+    "whoami": "Fabián Rubio — Full Stack Web Developer",
+    "opening": "Opening {{section}}…",
+    "cvDownloading": "Downloading CV…",
+    "notFound": "command not found: {{cmd}}. Type 'help'.",
+    "desc": {
+      "about": "who I am",
+      "skills": "tech I work with",
+      "projects": "my projects",
+      "contact": "get in touch",
+      "cv": "download my CV",
+      "social": "my links",
+      "clear": "clear the screen"
+    }
+  },
   "about": {
     "title": "About me",
     "p1": "I'm a Full Stack Web Developer with 3+ years of experience building applications with Angular, React and Node.js. I specialize in high-quality interfaces: clean code, responsive design and measurable performance.",

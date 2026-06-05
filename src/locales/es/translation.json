@@ -20,6 +20,26 @@
     "contact": "Contáctame",
     "cv": "Descargar CV"
   },
+  "terminal": {
+    "welcome": "Bienvenido a mi portafolio. Escribe 'help' o toca un comando para empezar.",
+    "ariaLabel": "Salida de la terminal interactiva",
+    "inputLabel": "Escribe un comando",
+    "placeholder": "escribe 'help'…",
+    "helpIntro": "Comandos disponibles:",
+    "whoami": "Fabián Rubio — Desarrollador Web Full Stack",
+    "opening": "Abriendo {{section}}…",
+    "cvDownloading": "Descargando CV…",
+    "notFound": "comando no encontrado: {{cmd}}. Escribe 'help'.",
+    "desc": {
+      "about": "quién soy",
+      "skills": "tecnologías que uso",
+      "projects": "mis proyectos",
+      "contact": "ponte en contacto",
+      "cv": "descargar mi CV",
+      "social": "mis redes",
+      "clear": "limpiar la pantalla"
+    }
+  },
   "about": {
     "title": "Sobre mí",
     "p1": "Soy desarrollador Web Full Stack con más de 3 años de experiencia construyendo aplicaciones con Angular, React y Node.js. Me especializo en interfaces de alta calidad: código limpio, diseño responsive y rendimiento medible.",

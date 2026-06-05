@@ -36,6 +36,13 @@
     font-weight: 700;
     line-height: 1.05;
     letter-spacing: -2px;
+
+    // Evita que una palabra se parta a mitad (las letras son inline-block y
+    // sin esto el navegador puede cortar entre cualquier par de letras).
+    // El salto de línea sigue ocurriendo en los espacios entre palabras.
+    .animated-letters {
+      white-space: nowrap;
+    }
   }
 
   &__line {
@@ -108,33 +115,72 @@
     }
   }
 
-  // Logo F 3D flotante
-  &__logo {
-    position: relative;
+  // F 3D reducida, decorativa, en la franja superior central (no estorba)
+  &__logo-top {
+    position: absolute;
+    top: clamp(12px, 3vh, 32px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: clamp(120px, 12vw, 190px);
     z-index: 1;
+    pointer-events: none;
+
+    // Anula el ancho propio (gigante) del componente: manda el contenedor
+    .home-logo {
+      width: 100%;
+    }
+  }
+
+  // Terminal interactiva (reemplaza la F gigante)
+  &__terminal {
+    position: relative;
+    z-index: 2;
     flex-shrink: 0;
-    width: clamp(220px, 34vw, 460px);
+    width: clamp(360px, 47vw, 660px);
+    // La acerca a la esquina derecha (compensa parte del padding del .page)
+    margin-right: clamp(-120px, -6vw, -32px);
   }
 }
 
 @media screen and (max-width: $bp-mobile) {
   .home {
-    flex-direction: column-reverse;
+    flex-direction: column;
+    align-items: stretch; // texto y terminal alineados al borde izquierdo
     justify-content: center;
     text-align: left;
-    gap: 24px;
+    gap: 32px;
+  }
+
+  .home__text {
+    width: 100%;
+  }
+
+  .home__terminal {
+    width: 100%;
+    max-width: 660px;
+    margin-right: 0;
+  }
+
+  // En columna, la F pasa al flujo: centrada arriba, sin solaparse
+  .home__logo-top {
+    position: static;
+    transform: none;
+    align-self: center;
+    width: clamp(110px, 32vw, 160px);
+    margin-bottom: 4px;
+  }
+
+  // El cierre </body></html> pasa al flujo, al final (debajo de la terminal)
+  .home__tag-close {
+    position: static;
+    order: 1;
+    margin-top: 4px;
   }
 }
 
 @media screen and (max-width: $bp-phone) {
   .home {
-    gap: 12px;
-
-    // los tags de esquina estorban en pantallas pequeñas
-    &__tag-body,
-    &__tag-close {
-      display: none;
-    }
+    gap: 24px;
 
     &__title {
       font-size: clamp(2rem, 11vw, 2.8rem);
@@ -147,8 +193,22 @@
       letter-spacing: 2px;
     }
 
-    .btn-outline {
+    // CTAs apilados a ancho completo, con separación uniforme
+    &__ctas {
       margin-top: 28px;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 12px;
+
+      .btn-outline {
+        margin-top: 0;
+        width: 100%;
+        text-align: center;
+      }
+
+      .btn-outline--cv {
+        justify-content: center;
+      }
     }
   }
 }
