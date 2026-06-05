@@ -118,6 +118,8 @@
 
   &__pct {
     color: $accent;
+    display: inline-block;
+    transition: color 0.25s $ease, transform 0.25s $ease;
   }
 
   &__track {
@@ -134,12 +136,18 @@
     box-shadow: 0 0 12px rgba(0, 242, 255, 0.35);
   }
 
-  // Barra resaltada al hacer click en su tech de la esfera
+  // Barra resaltada al señalar/tocar su tech en la esfera
   &--active {
     .skill-bar__name { color: $accent; }
-    .skill-bar__track { background: rgba(0, 242, 255, 0.12); }
+    .skill-bar__pct {
+      color: $accent-2;
+      font-weight: 700;
+      transform: scale(1.25);
+      transform-origin: right center;
+    }
+    .skill-bar__track { background: rgba(0, 242, 255, 0.16); }
     .skill-bar__fill {
-      box-shadow: 0 0 18px rgba(0, 242, 255, 0.75);
+      box-shadow: 0 0 18px rgba(0, 242, 255, 0.85);
       animation: barPulse 1s $ease;
     }
   }

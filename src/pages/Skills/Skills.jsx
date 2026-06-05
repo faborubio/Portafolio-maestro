@@ -50,9 +50,9 @@ const Skills = () => {
       const t = e.touches[0]
       if (!t || !cloud) return
       const rect = el.getBoundingClientRect()
-      cloud.maxSpeed = 2 // 'fast' mientras se arrastra
-      cloud.mouseX = (t.clientX - (rect.left + rect.width / 2)) / 3
-      cloud.mouseY = (t.clientY - (rect.top + rect.height / 2)) / 3
+      cloud.maxSpeed = 6 // giro rápido mientras se arrastra
+      cloud.mouseX = (t.clientX - (rect.left + rect.width / 2)) / 2
+      cloud.mouseY = (t.clientY - (rect.top + rect.height / 2)) / 2
       e.preventDefault() // evita el scroll de la página al girar la esfera
     }
     const onTouchEnd = () => { if (cloud) cloud.maxSpeed = 1 } // se asienta tras soltar
