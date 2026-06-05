@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
 import TagCloud from 'TagCloud'
 import PageWrapper from '../../components/PageWrapper/PageWrapper'
-import AnimatedLetters from '../../components/AnimatedLetters/AnimatedLetters'
+import AnimatedTitle from '../../components/AnimatedLetters/AnimatedTitle'
 import { skills } from '../../data/portfolio'
 import './Skills.scss'
 
@@ -88,7 +88,7 @@ const Skills = () => {
     <PageWrapper className="skills" id="skills">
       <div className="skills__text">
         <h1 className="skills__title">
-          <AnimatedLetters text={t('skills.title')} />
+          <AnimatedTitle text={t('skills.title')} />
         </h1>
         <p>{t('skills.p1')}</p>
         <p>{t('skills.p2')}</p>

@@ -1,0 +1,5 @@
+// Cada palabra no se parte a mitad; el salto solo ocurre entre palabras
+.animated-title__word {
+  display: inline-block;
+  white-space: nowrap;
+}

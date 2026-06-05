@@ -11,7 +11,7 @@ import {
   faGitAlt,
 } from '@fortawesome/free-brands-svg-icons'
 import PageWrapper from '../../components/PageWrapper/PageWrapper'
-import AnimatedLetters from '../../components/AnimatedLetters/AnimatedLetters'
+import AnimatedTitle from '../../components/AnimatedLetters/AnimatedTitle'
 import './About.scss'
 
 const cubeFaces = [
@@ -59,7 +59,7 @@ const About = () => {
     <PageWrapper className="about" id="about">
       <div className="about__text">
         <h1 className="about__title">
-          <AnimatedLetters text={t('about.title')} />
+          <AnimatedTitle text={t('about.title')} />
         </h1>
         <p>{t('about.p1')}</p>
         <p>{t('about.p2')}</p>

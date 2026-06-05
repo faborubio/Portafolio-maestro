@@ -1,12 +1,6 @@
 .animated-letters {
   display: inline;
 
-  // Agrupa las letras de una palabra para que no se parta a mitad
-  &__word {
-    display: inline-block;
-    white-space: nowrap;
-  }
-
   &__char {
     display: inline-block;
     white-space: pre;

@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
 import PageWrapper from '../../components/PageWrapper/PageWrapper'
-import AnimatedLetters from '../../components/AnimatedLetters/AnimatedLetters'
+import AnimatedTitle from '../../components/AnimatedLetters/AnimatedTitle'
 import { projects } from '../../data/portfolio'
 import './Portfolio.scss'
 
@@ -22,7 +22,7 @@ const Portfolio = () => {
     <PageWrapper className="portfolio" id="portfolio">
       <div className="portfolio__head">
         <h1 className="portfolio__title">
-          <AnimatedLetters text={t('portfolio.title')} />
+          <AnimatedTitle text={t('portfolio.title')} />
         </h1>
         <p className="portfolio__intro">{t('portfolio.intro')}</p>
 

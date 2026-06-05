@@ -10,7 +10,7 @@ import {
   faComments,
 } from '@fortawesome/free-solid-svg-icons'
 import PageWrapper from '../../components/PageWrapper/PageWrapper'
-import AnimatedLetters from '../../components/AnimatedLetters/AnimatedLetters'
+import AnimatedTitle from '../../components/AnimatedLetters/AnimatedTitle'
 import { tips } from '../../data/portfolio'
 import './Tips.scss'
 
@@ -68,7 +68,7 @@ const Tips = () => {
     <PageWrapper className="tips" id="tips">
       <div className="tips__head">
         <h1 className="tips__title">
-          <AnimatedLetters text={t('tips.title')} />
+          <AnimatedTitle text={t('tips.title')} />
         </h1>
         <p className="tips__intro">{t('tips.intro')}</p>
       </div>

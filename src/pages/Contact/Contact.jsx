@@ -1,7 +1,7 @@
 import { useState, useRef, lazy, Suspense } from 'react'
 import { useTranslation } from 'react-i18next'
 import PageWrapper from '../../components/PageWrapper/PageWrapper'
-import AnimatedLetters from '../../components/AnimatedLetters/AnimatedLetters'
+import AnimatedTitle from '../../components/AnimatedLetters/AnimatedTitle'
 import './Contact.scss'
 
 // El mapa (Leaflet) se carga solo cuando hace falta, aligerando la carga inicial
@@ -77,7 +77,7 @@ const Contact = () => {
     return (
       <PageWrapper className="contact" id="contact">
         <div className="contact__head">
-          <h1 className="contact__title"><AnimatedLetters text={t('contact.title')} /></h1>
+          <h1 className="contact__title"><AnimatedTitle text={t('contact.title')} /></h1>
         </div>
         <div className="contact__feedback">
           <span className="contact__feedback-icon">✓</span>
@@ -93,7 +93,7 @@ const Contact = () => {
   return (
     <PageWrapper className="contact" id="contact">
       <div className="contact__head">
-        <h1 className="contact__title"><AnimatedLetters text={t('contact.title')} /></h1>
+        <h1 className="contact__title"><AnimatedTitle text={t('contact.title')} /></h1>
         <p className="contact__intro">{t('contact.intro')}</p>
       </div>
 
