@@ -19,6 +19,35 @@
     }
   }
 
+  // Métricas con contador animado
+  &__stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    margin-top: 30px;
+  }
+
+  &__stat {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__stat-num {
+    font-family: $font-script;
+    font-size: clamp(1.9rem, 4vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1;
+    color: $accent;
+  }
+
+  &__stat-label {
+    margin-top: 8px;
+    font-size: 0.74rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: $muted;
+  }
+
   &__link {
     color: $accent;
     text-decoration: none;

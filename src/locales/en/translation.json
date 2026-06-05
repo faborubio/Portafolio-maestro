@@ -44,7 +44,12 @@
     "title": "About me",
     "p1": "I'm a Full Stack Web Developer with 3+ years of experience building applications with Angular, React and Node.js. I specialize in high-quality interfaces: clean code, responsive design and measurable performance.",
     "p2": "I've worked on real-world projects for companies and as a freelancer — from animated landing pages to platforms with authentication, unit testing and CI/CD. I balance both visual detail and code reliability.",
-    "p3": "I'm available for freelance projects and remote opportunities. If you're looking for someone who delivers solid work, find me on <lk>LinkedIn</lk> or through the contact form."
+    "p3": "I'm available for freelance projects and remote opportunities. If you're looking for someone who delivers solid work, find me on <lk>LinkedIn</lk> or through the contact form.",
+    "stats": {
+      "years": "Years of experience",
+      "projects": "Projects completed",
+      "tech": "Technologies"
+    }
   },
   "skills": {
     "title": "Skills & Experience",
