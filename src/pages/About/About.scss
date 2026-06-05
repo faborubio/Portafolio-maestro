@@ -120,3 +120,22 @@
     }
   }
 }
+
+@media screen and (max-width: $bp-phone) {
+  // Métricas en 3 columnas iguales (en vez de 2+1 desbalanceado)
+  .about__stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    width: 100%;
+  }
+
+  .about__stat-num {
+    font-size: 1.7rem;
+  }
+
+  .about__stat-label {
+    font-size: 0.62rem;
+    letter-spacing: 0.04em;
+  }
+}
