@@ -2,10 +2,12 @@
 
 .layout {
   height: 100vh;
+  height: 100dvh; // respeta la UI del navegador en móvil (fallback: 100vh)
 
   &__main {
     position: relative;
     height: 100vh;
+    height: 100dvh; // evita que el footer quede tras la barra del navegador
     margin-left: $sidebar-w;
     overflow-y: auto;
     overflow-x: hidden;
