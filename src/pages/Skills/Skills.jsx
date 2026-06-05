@@ -13,7 +13,7 @@ const SKILL_NAMES = new Set(TAGS)
 const LEVEL_BY_NAME = Object.fromEntries(skills.map((s) => [s.name, s.level]))
 
 // La lista muestra solo las de mayor nivel
-const TOP_N = 6
+const TOP_N = 3
 const TOP_SKILLS = [...skills].sort((a, b) => b.level - a.level).slice(0, TOP_N)
 
 const Skills = () => {
