@@ -22,4 +22,13 @@ i18n
     },
   })
 
+// Mantiene <html lang="…"> en sync con el idioma activo (SEO / accesibilidad)
+const syncHtmlLang = (lng) => {
+  if (typeof document !== 'undefined') {
+    document.documentElement.lang = lng?.startsWith('en') ? 'en' : 'es'
+  }
+}
+syncHtmlLang(i18n.resolvedLanguage)
+i18n.on('languageChanged', syncHtmlLang)
+
 export default i18n

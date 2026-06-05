@@ -1,9 +1,11 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, lazy, Suspense } from 'react'
 import { useTranslation } from 'react-i18next'
 import PageWrapper from '../../components/PageWrapper/PageWrapper'
 import AnimatedLetters from '../../components/AnimatedLetters/AnimatedLetters'
-import ContactMap from '../../components/ContactMap/ContactMap'
 import './Contact.scss'
+
+// El mapa (Leaflet) se carga solo cuando hace falta, aligerando la carga inicial
+const ContactMap = lazy(() => import('../../components/ContactMap/ContactMap'))
 
 const INITIAL = { name: '', email: '', subject: '', message: '' }
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i
@@ -162,7 +164,9 @@ const Contact = () => {
           </button>
         </form>
 
-        <ContactMap />
+        <Suspense fallback={<div className="contact-map contact-map--loading" />}>
+          <ContactMap />
+        </Suspense>
       </div>
 
       <span className="page__watermark">Contact</span>
