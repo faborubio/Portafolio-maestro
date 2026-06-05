@@ -43,14 +43,15 @@
   "about": {
     "title": "Sobre mí",
     "p1": "Soy desarrollador Web Full Stack con más de 3 años de experiencia construyendo aplicaciones con Angular, React y Node.js. Me especializo en interfaces de alta calidad: código limpio, diseño responsive y rendimiento medible.",
-    "p2": "He trabajado en proyectos reales para empresas y como freelance, desde landing pages animadas hasta plataformas con autenticación, testing y CI/CD. Cuido tanto el detalle visual como la solidez del código.",
-    "p3": "Estoy disponible para proyectos freelance y oportunidades remotas. Si buscas a alguien que entregue trabajo bien hecho, me encuentras en LinkedIn o por el formulario de contacto."
+    "p2": "He trabajado en proyectos reales para empresas y como freelance, desde landing pages animadas hasta plataformas con autenticación, testing y CI/CD. Equilibro tanto el detalle visual como la solidez del código.",
+    "p3": "Estoy disponible para proyectos freelance y oportunidades remotas. Si buscas a alguien que entregue trabajo bien hecho, me encuentras en <lk>LinkedIn</lk> o por el formulario de contacto."
   },
   "skills": {
     "title": "Habilidades & Experiencia",
     "p1": "Desarrollador full stack con experiencia en front-end y back-end: HTML5, CSS3/Sass, JavaScript, TypeScript, React, Angular y Node.js, entre otras.",
     "p2": "Cuido el diseño responsive (mobile-first), el rendimiento y la calidad del código para ofrecer la mejor experiencia de usuario en cada proyecto.",
-    "p3": "Pasa el mouse sobre la esfera para explorar las tecnologías con las que trabajo."
+    "p3": "Pasa el cursor (o toca) una tecnología de la esfera para ver su nivel destacado.",
+    "spotHint": "Pasa el cursor por una tecnología…"
   },
   "tips": {
     "title": "Cómo trabajo",

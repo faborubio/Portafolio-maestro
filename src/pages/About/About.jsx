@@ -1,4 +1,4 @@
-import { useTranslation } from 'react-i18next'
+import { useTranslation, Trans } from 'react-i18next'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faHtml5,
@@ -32,7 +32,21 @@ const About = () => {
         </h1>
         <p>{t('about.p1')}</p>
         <p>{t('about.p2')}</p>
-        <p>{t('about.p3')}</p>
+        <p>
+          <Trans
+            i18nKey="about.p3"
+            components={{
+              lk: (
+                <a
+                  className="about__link"
+                  href="https://www.linkedin.com/in/fabian-rubioc/"
+                  target="_blank"
+                  rel="noreferrer"
+                />
+              ),
+            }}
+          />
+        </p>
       </div>
 
       <div className="about__cube-stage" aria-hidden="true">

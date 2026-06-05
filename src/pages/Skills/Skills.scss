@@ -25,6 +25,19 @@
     margin-bottom: 8px;
   }
 
+  // Barras de nivel (datos reales de portfolio.js)
+  &__bars {
+    margin-top: 26px;
+    max-width: 460px;
+  }
+
+  // Lista de las de mayor nivel
+  &__top {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
   &__hint {
     color: $text !important;
     font-size: 0.85rem !important;
@@ -43,15 +56,99 @@
 
     span {
       color: $muted;
-      cursor: default;
-      transition: color 0.2s $ease;
+      cursor: pointer;
+      // transform lo controla TagCloud (posición 3D); animamos font-size para "crecer"
+      transition: color 0.2s $ease, font-size 0.2s $ease, text-shadow 0.2s $ease;
 
       &:hover {
         color: $accent;
-        text-shadow: 0 0 12px rgba(0, 122, 255, 0.6);
+        font-size: 1.7rem;
+        text-shadow: 0 0 16px rgba(0, 242, 255, 0.85);
       }
     }
   }
+}
+
+// Spotlight: muestra la tech señalada en la esfera, resaltada notoriamente
+.skill-spot {
+  min-height: 58px;
+  padding: 12px 14px;
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid rgba(0, 242, 255, 0.18);
+  border-radius: 8px;
+  background: rgba(0, 242, 255, 0.04);
+  transition: border-color 0.25s $ease, box-shadow 0.25s $ease, background 0.25s $ease;
+
+  &.is-active {
+    border-color: rgba(0, 242, 255, 0.55);
+    background: rgba(0, 242, 255, 0.08);
+    box-shadow: 0 0 22px rgba(0, 242, 255, 0.18);
+  }
+
+  &__hint {
+    color: $muted;
+    font-family: $font-script;
+    font-size: 0.8rem;
+    text-align: center;
+  }
+
+  // barra más gruesa y notoria que las del listado
+  .skill-bar__head { font-size: 0.92rem; }
+  .skill-bar__track { height: 9px; }
+  .skill-bar__fill { box-shadow: 0 0 16px rgba(0, 242, 255, 0.6); }
+}
+
+.skill-bar {
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 6px;
+    font-family: $font-script;
+    font-size: 0.8rem;
+  }
+
+  &__name {
+    color: $text;
+    letter-spacing: 0.03em;
+  }
+
+  &__pct {
+    color: $accent;
+  }
+
+  &__track {
+    height: 6px;
+    background: rgba(255, 255, 255, 0.07);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  &__fill {
+    height: 100%;
+    border-radius: 3px;
+    background: linear-gradient(90deg, $accent, $accent-2);
+    box-shadow: 0 0 12px rgba(0, 242, 255, 0.35);
+  }
+
+  // Barra resaltada al hacer click en su tech de la esfera
+  &--active {
+    .skill-bar__name { color: $accent; }
+    .skill-bar__track { background: rgba(0, 242, 255, 0.12); }
+    .skill-bar__fill {
+      box-shadow: 0 0 18px rgba(0, 242, 255, 0.75);
+      animation: barPulse 1s $ease;
+    }
+  }
+}
+
+@keyframes barPulse {
+  0%   { filter: brightness(1); }
+  40%  { filter: brightness(1.6); }
+  100% { filter: brightness(1); }
 }
 
 @media screen and (max-width: $bp-mobile) {

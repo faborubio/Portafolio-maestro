@@ -4,13 +4,31 @@
 import mojitos from '../assets/img/proj-mojitos.webp'
 import caucorp from '../assets/img/proj-caucorp.png'
 
+// Fuente única: cada tecnología tiene su nivel. La esfera (TagCloud) y las
+// barras se derivan de aquí; la lista muestra solo las de mayor nivel.
 export const skills = [
   { name: 'HTML5', level: 95 },
-  { name: 'CSS3 / Sass', level: 90 },
-  { name: 'JavaScript', level: 90 },
-  { name: 'React', level: 85 },
-  { name: 'Node.js', level: 75 },
-  { name: 'Git', level: 80 },
+  { name: 'JavaScript', level: 93 },
+  { name: 'React', level: 91 },
+  { name: 'CSS3', level: 90 },
+  { name: 'Node.js', level: 86 },
+  { name: 'TypeScript', level: 85 },
+  { name: 'Git', level: 84 },
+  { name: 'Sass', level: 83 },
+  { name: 'REST', level: 82 },
+  { name: 'TailwindCSS', level: 81 },
+  { name: 'npm', level: 80 },
+  { name: 'Angular', level: 80 },
+  { name: 'JSON', level: 80 },
+  { name: 'Firebase', level: 78 },
+  { name: 'Vite', level: 77 },
+  { name: 'Bootstrap', level: 76 },
+  { name: 'Express', level: 75 },
+  { name: 'MongoDB', level: 72 },
+  { name: 'SQL', level: 70 },
+  { name: 'Figma', level: 70 },
+  { name: 'GSAP', level: 68 },
+  { name: 'Webpack', level: 66 },
 ]
 
 // `titleKey`/`textKey` apuntan a claves dentro de locales (tips.items.*)
