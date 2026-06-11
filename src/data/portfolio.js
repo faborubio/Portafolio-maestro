@@ -3,6 +3,7 @@
 
 import mojitos from '../assets/img/proj-mojitos.webp'
 import caucorp from '../assets/img/proj-caucorp.png'
+import rag from '../assets/img/proj-rag.webp'
 
 // Fuente única: cada tecnología tiene su nivel. La esfera (TagCloud) y las
 // barras se derivan de aquí; la lista muestra solo las de mayor nivel.
@@ -53,7 +54,7 @@ export const projects = [
       'Production RAG pipeline: ingests PDFs, semantic search via vector embeddings (pgvector) and LLM answers with source citations. Deployed with Docker/Kamal.',
     url: 'https://fabianragpipeline.duckdns.org/demo.html',
     github: 'https://github.com/faborubio/rag-data-pipeline',
-    image: null,
+    image: rag,
   },
   {
     id: 'caucorp',
