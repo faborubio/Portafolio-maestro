@@ -9,7 +9,8 @@ import GitHubStats from '../../components/GitHubStats/GitHubStats'
 import { projects } from '../../data/portfolio'
 import './Portfolio.scss'
 
-const categories = ['all', 'web', 'app', 'backend']
+// Solo "all" + las categorías que realmente tienen proyectos
+const categories = ['all', ...new Set(projects.map((p) => p.category))]
 
 const Portfolio = () => {
   const { t, i18n } = useTranslation()
@@ -58,16 +59,18 @@ const Portfolio = () => {
               </p>
               <p className="project__tech">{p.tech.join(' · ')}</p>
               <div className="project__links">
-                <a
-                  href={p.url}
-                  className="project__link"
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label={`Ver ${p.title} en vivo`}
-                >
-                  <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
-                  {t('portfolio.view')}
-                </a>
+                {p.url && (
+                  <a
+                    href={p.url}
+                    className="project__link"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`Ver ${p.title} en vivo`}
+                  >
+                    <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                    {t('portfolio.view')}
+                  </a>
+                )}
                 {p.github && (
                   <a
                     href={p.github}

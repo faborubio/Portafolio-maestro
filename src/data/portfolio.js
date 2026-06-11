@@ -43,6 +43,19 @@ export const tips = [
 
 export const projects = [
   {
+    id: 'rag',
+    title: 'RAG Data Pipeline',
+    category: 'backend',
+    tech: ['Ruby on Rails', 'PostgreSQL + pgvector', 'langchainrb', 'OpenAI', 'Docker', 'Kamal'],
+    descriptionEs:
+      'Pipeline RAG en producción: ingiere PDFs, búsqueda semántica con embeddings vectoriales (pgvector) y respuestas del LLM con citas de la fuente. Desplegado con Docker/Kamal.',
+    descriptionEn:
+      'Production RAG pipeline: ingests PDFs, semantic search via vector embeddings (pgvector) and LLM answers with source citations. Deployed with Docker/Kamal.',
+    url: 'https://fabianragpipeline.duckdns.org/demo.html',
+    github: 'https://github.com/faborubio/rag-data-pipeline',
+    image: null,
+  },
+  {
     id: 'caucorp',
     title: 'Caucorp',
     category: 'web',
