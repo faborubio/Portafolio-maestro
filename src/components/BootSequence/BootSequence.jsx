@@ -9,9 +9,15 @@ const LINES = [
   '> ready ✓',
 ]
 
+const reduceMotion =
+  typeof window !== 'undefined' &&
+  window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
+
 const BootSequence = () => {
-  // Solo una vez por sesión
-  const [shown, setShown] = useState(() => !sessionStorage.getItem('booted'))
+  // Una vez por sesión; se omite con "reducir movimiento" (es una animación auto)
+  const [shown, setShown] = useState(
+    () => !reduceMotion && !sessionStorage.getItem('booted')
+  )
   const [count, setCount] = useState(0)
   const [closing, setClosing] = useState(false)
 

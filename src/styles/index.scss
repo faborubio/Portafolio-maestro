@@ -95,15 +95,20 @@ ul {
   }
 }
 
-// Respeta "reducir movimiento" del sistema (anula animaciones CSS)
+// "Reducir movimiento" (quirúrgico): se mantiene todo lo interactivo
+// (terminal, hovers, taps, esfera al tocar…) y solo se calman los bucles
+// automáticos. El cubo (About) y la esfera/boot se manejan aparte.
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
+  html,
+  .layout__main {
+    scroll-behavior: auto;
+  }
+
+  // Detiene los bucles ambientales en bucle infinito
+  .home-logo__solid svg,
+  .site-footer__dot,
+  .gh-stats__live {
+    animation: none !important;
   }
 }
 

@@ -109,6 +109,15 @@
   to   { transform: rotateX(-20deg) rotateY(360deg); }
 }
 
+// Con "reducir movimiento": el cubo no gira, pero queda en una pose 3D
+// (dos caras visibles) en vez de congelado de frente
+@media (prefers-reduced-motion: reduce) {
+  .cube {
+    animation: none !important;
+    transform: rotateX(-20deg) rotateY(-35deg);
+  }
+}
+
 @media screen and (max-width: $bp-mobile) {
   .about {
     flex-direction: column;

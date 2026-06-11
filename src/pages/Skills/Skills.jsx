@@ -59,10 +59,16 @@ const Skills = () => {
 
     // En táctil no aplicamos pausa-al-hover (estorbaría); usamos touch + tap
     const canHover = window.matchMedia?.('(hover: hover)').matches
+    const reduce = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
 
+    // El spotlight (hover/tap) se mantiene siempre, no implica movimiento
     el.addEventListener('click', onClick)
-    if (canHover) {
-      el.addEventListener('mouseover', onOver)
+    if (canHover) el.addEventListener('mouseover', onOver)
+
+    if (reduce) {
+      // Con reduce-motion la esfera no gira sola (sigue el tap para el spotlight)
+      cloud?.pause?.()
+    } else if (canHover) {
       el.addEventListener('mouseenter', onEnter)
       el.addEventListener('mouseleave', onLeave)
     } else {
