@@ -1,3 +1,4 @@
+import { MotionConfig } from 'framer-motion'
 import Layout from './components/Layout/Layout'
 import BootSequence from './components/BootSequence/BootSequence'
 import CommandPalette from './components/CommandPalette/CommandPalette'
@@ -10,7 +11,7 @@ import Contact from './pages/Contact/Contact'
 
 const App = () => {
   return (
-    <>
+    <MotionConfig reducedMotion="user">
       <BootSequence />
       <CommandPalette />
       <Layout>
@@ -21,7 +22,7 @@ const App = () => {
         <Portfolio />
         <Contact />
       </Layout>
-    </>
+    </MotionConfig>
   )
 }
 

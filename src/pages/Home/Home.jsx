@@ -34,7 +34,7 @@ const Home = () => {
   const onTitleTouchEnd = () => { lastChar.current = null }
 
   return (
-    <PageWrapper className="home" id="home">
+    <PageWrapper className="home" id="home" reveal={false}>
       <span className="code-tag home__tag-html">&lt;html&gt;</span>
       <span className="code-tag home__tag-body">&lt;body&gt;</span>
 

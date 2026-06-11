@@ -63,6 +63,50 @@ ul {
   border-radius: 3px;
 }
 
+// ===== Accesibilidad =====
+// Foco visible solo al navegar con teclado
+:focus-visible {
+  outline: 2px solid $accent;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.layout__main:focus {
+  outline: none;
+}
+
+// "Saltar al contenido" — oculto hasta enfocar con teclado
+.skip-link {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 10001;
+  transform: translateY(-150%);
+  background: $accent;
+  color: $bg;
+  font-family: $font-script;
+  font-size: 0.85rem;
+  padding: 8px 14px;
+  border-radius: 4px;
+  transition: transform 0.2s $ease;
+
+  &:focus {
+    transform: translateY(0);
+  }
+}
+
+// Respeta "reducir movimiento" del sistema (anula animaciones CSS)
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 // Tags decorativos de código (estilo del original)
 .code-tag {
   font-family: $font-script;

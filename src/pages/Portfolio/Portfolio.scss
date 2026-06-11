@@ -166,3 +166,11 @@
     }
   }
 }
+
+// En táctil no hay hover: el overlay (descripción + enlaces) se muestra siempre
+@media (hover: none) {
+  .project__overlay {
+    opacity: 1;
+    transform: none;
+  }
+}

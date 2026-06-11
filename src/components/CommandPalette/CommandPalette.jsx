@@ -90,7 +90,13 @@ const CommandPalette = () => {
 
   return (
     <div className="cmdk" onMouseDown={() => setOpen(false)}>
-      <div className="cmdk__panel" onMouseDown={(e) => e.stopPropagation()}>
+      <div
+        className="cmdk__panel"
+        role="dialog"
+        aria-modal="true"
+        aria-label={t('palette.placeholder')}
+        onMouseDown={(e) => e.stopPropagation()}
+      >
         <input
           ref={inputRef}
           className="cmdk__input"
