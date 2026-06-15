@@ -97,7 +97,7 @@ ul {
 
 // "Reducir movimiento" (quirúrgico): se mantiene todo lo interactivo
 // (terminal, hovers, taps, esfera al tocar…) y solo se calman los bucles
-// automáticos. El cubo (About) y la esfera/boot se manejan aparte.
+// automáticos. El cubo (About), SpinF (Home) y la esfera/boot se manejan aparte.
 @media (prefers-reduced-motion: reduce) {
   html,
   .layout__main {

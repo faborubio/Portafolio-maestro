@@ -11,7 +11,11 @@
   background: rgba(3, 7, 14, 0.6);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  animation: cmdkFade 0.15s ease;
+  animation: cmdkFade 0.15s $ease;
+
+  &--closing {
+    animation: cmdkFadeOut 0.12s $ease forwards;
+  }
 
   &__panel {
     width: min(92vw, 520px);
@@ -20,6 +24,11 @@
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5), 0 0 24px rgba(0, 242, 255, 0.1);
+    animation: cmdkPanelIn 0.15s $ease;
+  }
+
+  &--closing &__panel {
+    animation: cmdkPanelOut 0.12s $ease forwards;
   }
 
   &__input {
@@ -81,4 +90,19 @@
 @keyframes cmdkFade {
   from { opacity: 0; }
   to { opacity: 1; }
+}
+
+@keyframes cmdkFadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes cmdkPanelIn {
+  from { opacity: 0; transform: scale(0.97) translateY(-6px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes cmdkPanelOut {
+  from { opacity: 1; transform: scale(1) translateY(0); }
+  to { opacity: 0; transform: scale(0.97) translateY(-4px); }
 }

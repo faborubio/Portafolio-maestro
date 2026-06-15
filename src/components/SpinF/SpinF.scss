@@ -32,3 +32,11 @@
     transform: rotateX(8deg) rotateY(-382deg);
   }
 }
+
+// Con "reducir movimiento": sin giro 3D, directo en su pose de reposo
+@media (prefers-reduced-motion: reduce) {
+  .spin-f__obj {
+    animation: none !important;
+    transform: rotateX(8deg) rotateY(-382deg);
+  }
+}

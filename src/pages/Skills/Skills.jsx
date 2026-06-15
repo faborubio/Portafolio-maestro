@@ -112,8 +112,8 @@ const Skills = () => {
                   <motion.div
                     className="skill-bar__fill"
                     key={spotlight.name}
-                    initial={{ width: 0 }}
-                    animate={{ width: `${spotlight.level}%` }}
+                    initial={{ scaleX: 0 }}
+                    animate={{ scaleX: spotlight.level / 100 }}
                     transition={{ duration: 0.45, ease: 'easeOut' }}
                   />
                 </div>
@@ -137,8 +137,8 @@ const Skills = () => {
                 <div className="skill-bar__track">
                   <motion.div
                     className="skill-bar__fill"
-                    initial={{ width: 0 }}
-                    animate={{ width: `${s.level}%` }}
+                    initial={{ scaleX: 0 }}
+                    animate={{ scaleX: s.level / 100 }}
                     transition={{ duration: 1, delay: 0.2 + i * 0.12, ease: 'easeOut' }}
                   />
                 </div>

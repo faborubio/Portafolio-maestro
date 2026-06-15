@@ -14,9 +14,12 @@ const downloadCV = () => {
   a.remove()
 }
 
+const EXIT_MS = 120
+
 const CommandPalette = () => {
   const { t, i18n } = useTranslation()
   const [open, setOpen] = useState(false)
+  const [mounted, setMounted] = useState(false)
   const [query, setQuery] = useState('')
   const [active, setActive] = useState(0)
   const inputRef = useRef(null)
@@ -67,7 +70,18 @@ const CommandPalette = () => {
 
   useEffect(() => setActive(0), [query])
 
-  if (!open) return null
+  // Monta al abrir; al cerrar espera la animación de salida antes de desmontar
+  useEffect(() => {
+    if (open) {
+      setMounted(true)
+      return
+    }
+    if (!mounted) return
+    const timer = setTimeout(() => setMounted(false), EXIT_MS)
+    return () => clearTimeout(timer)
+  }, [open, mounted])
+
+  if (!mounted) return null
 
   const exec = (action) => {
     action?.run()
@@ -89,7 +103,7 @@ const CommandPalette = () => {
   }
 
   return (
-    <div className="cmdk" onMouseDown={() => setOpen(false)}>
+    <div className={`cmdk ${open ? '' : 'cmdk--closing'}`} onMouseDown={() => setOpen(false)}>
       <div
         className="cmdk__panel"
         role="dialog"

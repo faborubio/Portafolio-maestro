@@ -1,11 +1,13 @@
-import { useRef, useEffect } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import './MatrixRain.scss'
 
 // Easter egg: lluvia "Matrix" a pantalla completa. Se cierra al tocar o a los 7s.
 const CHARS = 'アイウエオカキクケコ0123456789ABCDEF<>/{}[]=;:$#'.split('')
+const EXIT_MS = 200
 
 const MatrixRain = ({ onDone }) => {
   const canvasRef = useRef(null)
+  const [closing, setClosing] = useState(false)
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -36,16 +38,27 @@ const MatrixRain = ({ onDone }) => {
     }
     draw()
 
-    const timer = setTimeout(onDone, 7000)
+    const timer = setTimeout(() => setClosing(true), 7000)
     return () => {
       cancelAnimationFrame(raf)
       clearTimeout(timer)
       window.removeEventListener('resize', setup)
     }
-  }, [onDone])
+  }, [])
+
+  // Espera la animación de salida antes de desmontar
+  useEffect(() => {
+    if (!closing) return
+    const timer = setTimeout(onDone, EXIT_MS)
+    return () => clearTimeout(timer)
+  }, [closing, onDone])
 
   return (
-    <div className="matrix-rain" onClick={onDone} role="presentation">
+    <div
+      className={`matrix-rain ${closing ? 'matrix-rain--closing' : ''}`}
+      onClick={() => setClosing(true)}
+      role="presentation"
+    >
       <canvas ref={canvasRef} />
       <span className="matrix-rain__hint">tap / click para salir</span>
     </div>

@@ -38,7 +38,7 @@
     border-radius: 50%;
     background: #00ff88;
     box-shadow: 0 0 6px #00ff88;
-    animation: ghPulse 2s ease-in-out infinite;
+    animation: pulse 2s ease-in-out infinite;
   }
 
   &__sep {
@@ -50,9 +50,4 @@
     text-decoration: none;
     &:hover { text-decoration: underline; }
   }
-}
-
-@keyframes ghPulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.3; }
 }

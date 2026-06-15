@@ -8,6 +8,10 @@
   cursor: pointer;
   animation: mrFade 0.3s ease;
 
+  &--closing {
+    animation: mrFadeOut 0.2s ease forwards;
+  }
+
   canvas {
     display: block;
   }
@@ -25,6 +29,11 @@
 }
 
 @keyframes mrFade {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes mrFadeOut {
+  from { opacity: 1; transform: scale(1); }
+  to { opacity: 0; transform: scale(0.98); }
 }

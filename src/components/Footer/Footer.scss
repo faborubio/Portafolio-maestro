@@ -54,17 +54,12 @@
     border-radius: 50%;
     background: #00ff88;
     box-shadow: 0 0 6px #00ff88;
-    animation: footer-pulse 2s ease-in-out infinite;
+    animation: pulse 2s ease-in-out infinite;
   }
 
   &__sep {
     color: rgba(255, 255, 255, 0.2);
   }
-}
-
-@keyframes footer-pulse {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0.3; }
 }
 
 @media screen and (max-width: $bp-phone) {
