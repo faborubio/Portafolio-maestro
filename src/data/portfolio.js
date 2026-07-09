@@ -4,6 +4,7 @@
 import mojitos from '../assets/img/proj-mojitos.webp'
 import caucorp from '../assets/img/proj-caucorp.png'
 import rag from '../assets/img/proj-rag.webp'
+import atalaya from '../assets/img/proj-atalaya.webp'
 
 // Fuente única: cada tecnología tiene su nivel. La esfera (TagCloud) y las
 // barras se derivan de aquí; la lista muestra solo las de mayor nivel.
@@ -55,6 +56,19 @@ export const projects = [
     url: 'https://fabianragpipeline.duckdns.org/demo.html',
     github: 'https://github.com/faborubio/rag-data-pipeline',
     image: rag,
+  },
+  {
+    id: 'atalaya',
+    title: 'Atalaya',
+    category: 'fullstack',
+    tech: ['Angular', '.NET', 'SignalR', 'PostgreSQL', 'Redis', 'GCP'],
+    descriptionEs:
+      'Monitoreo de flota/IoT en tiempo real: ingesta de miles de eventos por segundo, alertas con histéresis y dashboard en vivo vía SignalR. Arquitectura orientada a eventos con camino caliente/frío.',
+    descriptionEn:
+      'Real-time fleet/IoT monitoring: ingests thousands of events per second, hysteresis-based alerting and live dashboard via SignalR. Event-driven architecture with hot/cold paths.',
+    url: 'https://atalaya-demo.web.app/dashboard',
+    github: 'https://github.com/faborubio/atalaya-fleet-monitoring',
+    image: atalaya,
   },
   {
     id: 'caucorp',

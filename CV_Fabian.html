@@ -246,7 +246,7 @@
     .exp-list {
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 14px;
     }
 
     .exp-header {
@@ -299,9 +299,9 @@
 
     /* education */
     .edu-list {
-      display: flex;
-      flex-direction: column;
-      gap: 13px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 18px;
     }
     .edu-degree {
       font-size: 9.5pt;
@@ -317,6 +317,39 @@
       font-family: 'JetBrains Mono', monospace;
       font-size: 8pt;
       color: var(--text-muted);
+    }
+    .edu-link {
+      color: var(--cyan);
+      text-decoration: none;
+    }
+
+    /* projects */
+    .proj-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+    .proj-list li {
+      font-size: 9pt;
+      color: var(--text-mid);
+      line-height: 1.55;
+      padding-left: 14px;
+      position: relative;
+    }
+    .proj-list li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--cyan);
+      font-size: 8pt;
+      top: 2px;
+    }
+    .proj-name { font-weight: 600; color: var(--text-dark); }
+    .proj-url {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 8pt;
+      color: var(--cyan);
     }
 
     /* ── print ──────────────────────────────── */
@@ -384,39 +417,38 @@
         <div class="skill-group">
           <p class="skill-group__title">Frontend</p>
           <div class="tags">
-            <span class="tag">HTML5</span>
-            <span class="tag">CSS3 / Sass</span>
             <span class="tag">JavaScript</span>
             <span class="tag">TypeScript</span>
             <span class="tag">React</span>
             <span class="tag">Angular</span>
+            <span class="tag">HTML5</span>
+            <span class="tag">CSS3 / Sass</span>
             <span class="tag">TailwindCSS</span>
-            <span class="tag">Bootstrap</span>
-            <span class="tag">GSAP</span>
           </div>
         </div>
 
         <div class="skill-group">
           <p class="skill-group__title">Backend &amp; Bases de datos</p>
           <div class="tags">
+            <span class="tag">Ruby on Rails</span>
+            <span class="tag">Python</span>
             <span class="tag">Node.js</span>
             <span class="tag">Express</span>
-            <span class="tag">Firebase</span>
             <span class="tag">PostgreSQL</span>
-            <span class="tag">SQL</span>
+            <span class="tag">Firebase</span>
             <span class="tag">MongoDB</span>
           </div>
         </div>
 
         <div class="skill-group">
-          <p class="skill-group__title">Herramientas</p>
+          <p class="skill-group__title">Herramientas &amp; Cloud</p>
           <div class="tags">
             <span class="tag">Git</span>
+            <span class="tag">Docker</span>
+            <span class="tag">GCP</span>
             <span class="tag">Vite</span>
             <span class="tag">Postman</span>
             <span class="tag">Figma</span>
-            <span class="tag">Kanban</span>
-            <span class="tag">cPanel / WHM</span>
           </div>
         </div>
       </div>
@@ -441,18 +473,17 @@
 
       <header class="m-header">
         <h1>Fabián <span>Rubio</span></h1>
-        <p class="subtitle">Desarrollador Web Full Stack &nbsp;·&nbsp; Angular &nbsp;·&nbsp; React &nbsp;·&nbsp; Node.js</p>
+        <p class="subtitle">Desarrollador Web Full Stack &nbsp;·&nbsp; Angular &nbsp;·&nbsp; React &nbsp;·&nbsp; Rails &nbsp;·&nbsp; Python</p>
       </header>
 
       <!-- Sobre mí -->
       <section>
         <h2 class="m-section-title">Sobre mí</h2>
         <p class="about-text">
-          Desarrollador Web Full Stack con más de 2 años construyendo aplicaciones con
-          Angular, React y Node.js, respaldado por 4 años de experiencia técnica de nivel
-          senior en entornos SaaS. Me especializo en interfaces responsive, código limpio
-          y entregas funcionales para empresas y clientes independientes.
-          Inglés C1 certificado. Disponible para trabajo remoto.
+          Desarrollador Full Stack con 2+ años construyendo aplicaciones web (Angular, React,
+          Ruby on Rails, Python) y 4 años de experiencia técnica senior en entornos SaaS.
+          Foco en interfaces cuidadas, código limpio y proyectos desplegados en producción.
+          Inglés C1 certificado · disponible para trabajo remoto.
         </p>
       </section>
 
@@ -468,9 +499,8 @@
             </div>
             <p class="exp-company">Freelance · Informática / Tecnología</p>
             <ul class="exp-bullets">
-              <li>Desarrollo de plataformas corporativas, landing pages animadas y sistemas de gestión para PYMEs.</li>
-              <li>Stack: Angular, React, TypeScript, Node.js, Firebase, TailwindCSS, Sass.</li>
-              <li>Proyectos destacados: <span class="highlight">Caucorp</span> (caucorp.com) &nbsp;·&nbsp; <span class="highlight">Velvet Pour</span> (mojitos-landing.web.app)</li>
+              <li>Desarrollo de plataformas corporativas, landing pages animadas y sistemas de gestión para PYMEs (<span class="highlight">Caucorp</span>, <span class="highlight">Velvet Pour</span>).</li>
+              <li>Stack: Angular, React, TypeScript, Node.js, Ruby on Rails, Python, Firebase.</li>
             </ul>
           </div>
 
@@ -484,32 +514,55 @@
               <li>Escalación directa de incidentes con equipo de desarrollo; QA informal reportando y documentando bugs.</li>
               <li>Automatización con scripts Python: compresión y carga de archivos XML (guías SII) a plataforma interna.</li>
               <li>Consultas y debugging via Postman / API REST; administración en WHM, WHMCS y cPanel.</li>
-              <li>Ascendido de Soporte Nivel 1 a Senior — uno de los primeros en el departamento de soporte avanzado.</li>
-            </ul>
-          </div>
-
-          <div class="exp-item">
-            <div class="exp-header">
-              <span class="exp-role">Soporte Técnico · Webhosting &amp; Servidores</span>
-              <span class="exp-dates">feb. 2018 — oct. 2018</span>
-            </div>
-            <p class="exp-company">Haulmer · Informática / Tecnología</p>
-            <ul class="exp-bullets">
-              <li>Atención y resolución técnica para clientes de servicios de webhosting y servidores dedicados.</li>
+              <li>Trayectoria completa: de Soporte Técnico de webhosting y servidores (2018) a Senior — uno de los primeros del departamento de soporte avanzado.</li>
             </ul>
           </div>
 
         </div>
       </section>
 
+      <!-- Proyectos destacados -->
+      <section>
+        <h2 class="m-section-title">Proyectos destacados</h2>
+        <ul class="proj-list">
+          <li>
+            <span class="proj-name">RAG Data Pipeline</span> — ingestión y búsqueda semántica de PDFs con citas de fuente · Rails + pgvector + Docker · <span class="proj-url">fabianragpipeline.duckdns.org</span>
+          </li>
+          <li>
+            <span class="proj-name">Atalaya</span> — monitoreo de flota/IoT en tiempo real, miles de eventos/seg · Angular + .NET + GCP · <span class="proj-url">atalaya-demo.web.app</span>
+          </li>
+          <li>
+            <span class="proj-name">Portafolio</span> — SPA bilingüe instalable como PWA, con terminal interactiva · React + Vite · <span class="proj-url">fabian-portafolio.web.app</span>
+          </li>
+        </ul>
+      </section>
+
       <!-- Formación -->
       <section>
-        <h2 class="m-section-title">Formación</h2>
+        <h2 class="m-section-title">Formación y certificaciones</h2>
         <div class="edu-list">
+
+          <div class="edu-item">
+            <p class="edu-degree">Desarrollo de Aplicaciones Full Stack Python · 413 h</p>
+            <p class="edu-school">Certificado SENCE · Talento Digital · Esc. de SER</p>
+            <p class="edu-dates">oct. 2025 – mar. 2026 · Folio 3097372</p>
+          </div>
+
+          <div class="edu-item">
+            <p class="edu-degree">Desarrollo Ruby on Rails para startups · 400 h</p>
+            <p class="edu-school">Certificado SENCE · Inforcap / Desafío Latam</p>
+            <p class="edu-dates">mar. 2023 – nov. 2023 · Folio 3097367</p>
+          </div>
 
           <div class="edu-item">
             <p class="edu-degree">Bootcamp · Full Stack Web Development</p>
             <p class="edu-school">Le Wagon · Online</p>
+            <p class="edu-dates">2023</p>
+          </div>
+
+          <div class="edu-item">
+            <p class="edu-degree">Web Development Fundamentals · IBM SkillsBuild</p>
+            <p class="edu-school">Badge verificable en <a class="edu-link" href="https://www.credly.com/users/fabian-rubio.82ea1090">Credly</a></p>
             <p class="edu-dates">2023</p>
           </div>
 
