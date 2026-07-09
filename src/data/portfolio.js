@@ -99,7 +99,7 @@ export const projects = [
     tech: ['React', 'Vite', 'SCSS', 'Framer Motion', 'i18next'],
     descriptionEs: 'Portafolio bilingüe con glassmorphism, animaciones 3D, esfera de skills y formulario de contacto.',
     descriptionEn: 'Bilingual portfolio with glassmorphism, 3D animations, skills sphere and contact form.',
-    url: 'https://fabian-portafolio.web.app/',
+    url: 'https://faborubio.dev/',
     github: 'https://github.com/faborubio/Portafolio-maestro',
     image: null,
   },

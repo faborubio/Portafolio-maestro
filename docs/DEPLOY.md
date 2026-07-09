@@ -16,7 +16,7 @@ npm run build
 npx firebase-tools deploy --only hosting
 ```
 
-Verificación post-deploy: abrir https://fabian-portafolio.web.app — el SW del PWA está en
+Verificación post-deploy: abrir https://faborubio.dev — el SW del PWA está en
 `autoUpdate` y `sw.js`/`manifest.webmanifest` se sirven sin caché (headers en
 `firebase.json`), así que la nueva versión llega sola; puede requerir una recarga.
 
@@ -48,8 +48,8 @@ Configurado el 2026-07-08. Registros en Namecheap → Advanced DNS:
   (`faborubio.dev`, con `www` como redirect al apex). No hay soporte de CLI para esto.
 - `.dev` es HTTPS-only (precarga HSTS): el sitio no carga hasta que Firebase emite el
   certificado (minutos a 24 h tras verificar el TXT).
-- **Al quedar activo**: actualizar las URLs hardcodeadas a `fabian-portafolio.web.app`
-  (lista en [CLAUDE.md](../CLAUDE.md), "Estado actual") y redesplegar.
+- **Activo desde 2026-07-09**; las URLs públicas del repo ya apuntan a `faborubio.dev`.
+  El dominio por defecto `fabian-portafolio.web.app` sigue sirviendo el mismo contenido.
 
 ## Notas
 

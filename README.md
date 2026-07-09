@@ -4,7 +4,7 @@ Portafolio personal **bilingüe (ES/EN)** hecho con **React + Vite**: single-pag
 con sidebar vertical, terminal interactiva, formulario de contacto funcional e **instalable
 como PWA**.
 
-🔗 **En vivo:** https://fabian-portafolio.web.app
+🔗 **En vivo:** https://faborubio.dev
 
 Tema visual **Cyber-Humanist** (navy/obsidiana + cian + ámbar, glassmorphism, tipografía
 Geist + JetBrains Mono). Especificación completa en [`DESIGN.md`](./DESIGN.md).

@@ -11,8 +11,8 @@ Portafolio personal bilingüe (ES/EN), single-page con React 18 + Vite 5 + frame
 SCSS + i18next, instalable como PWA. Detalle de features, stack y estructura: [README.md](./README.md).
 Sistema visual: [DESIGN.md](./DESIGN.md).
 
-- **Producción:** https://fabian-portafolio.web.app (Firebase Hosting)
-- **Dominio propio:** `faborubio.dev` (Namecheap) — en migración, ver "Estado actual"
+- **Producción:** https://faborubio.dev (Firebase Hosting; `fabian-portafolio.web.app`
+  sigue activo como dominio por defecto del proyecto)
 - **Repo:** https://github.com/faborubio/Portafolio-maestro (rama única `main`)
 
 ## Comandos
@@ -37,17 +37,17 @@ se usa vía npx).
   (AUD-001, ver [docs/AUDIT.md](./docs/AUDIT.md)) — no "arreglarla" de pasada.
 - **La sección "Método" del sitio mantiene el id `tips`** (deep-links existentes).
 
-## Estado actual (2026-07-08)
+## Estado actual (2026-07-09)
 
-- Fixes del motion audit (2 Critical + 4 Important) implementados, desplegados y en
-  producción (commit `db21c2b`). El reporte del audit vive en `motion-audits/` (untracked,
-  interno). Las 5 "Opportunities" del reporte quedaron sin implementar → AUD-002.
-- **Dominio `faborubio.dev` en migración**: DNS en Namecheap ya apunta a Firebase
-  (A `@` y `www` → `199.36.158.100`, TXT `hosting-site=fabian-portafolio`). Pendiente:
-  esperar el certificado SSL de Firebase y luego **actualizar las 12 URLs hardcodeadas**
-  a `fabian-portafolio.web.app` (index.html canonical/OG/JSON-LD, public/robots.txt,
-  public/sitemap.xml, README.md, src/data/portfolio.js, CV_Fabian.html,
-  og-cover-generator.html) + build + deploy.
+- **Dominio `faborubio.dev` activo**: SSL emitido, URLs públicas migradas (canonical/OG/
+  JSON-LD, sitemap, robots, README, portfolio.js, CV). El `www` puede tardar en emitir
+  su certificado; redirige al apex vía Firebase.
+- Fixes del motion audit (2 Critical + 4 Important) en producción (`db21c2b`); reporte en
+  `motion-audits/` (untracked, interno). Las 5 "Opportunities" → AUD-002.
+- Fix del dibujo de la F tras el boot (`33ac460`); Atalaya en Portfolio y CV con
+  certificaciones SENCE + proyectos destacados (`0aa9a3b`).
+- El CV del sitio es `public/fabian-rubio-cv.pdf`, **generado desde `CV_Fabian.html`**
+  (Chrome headless / Ctrl+P con gráficos de fondo) — al editar el HTML hay que regenerarlo.
 - Deuda aceptada y su plan: [docs/AUDIT.md](./docs/AUDIT.md).
 
 ## Dónde vive cada cosa
