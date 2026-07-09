@@ -37,17 +37,28 @@ se usa vía npx).
   (AUD-001, ver [docs/AUDIT.md](./docs/AUDIT.md)) — no "arreglarla" de pasada.
 - **La sección "Método" del sitio mantiene el id `tips`** (deep-links existentes).
 
-## Estado actual (2026-07-09)
+## Estado actual (2026-07-09, cierre de sesión)
 
-- **Dominio `faborubio.dev` activo**: SSL emitido, URLs públicas migradas (canonical/OG/
-  JSON-LD, sitemap, robots, README, portfolio.js, CV). El `www` puede tardar en emitir
-  su certificado; redirige al apex vía Firebase.
+- **Dominio `faborubio.dev` activo y migrado**: SSL emitido, URLs públicas actualizadas
+  (canonical/OG/JSON-LD, sitemap, robots, README, portfolio.js, CV), desplegado y
+  verificado en producción (`942c9c1`). Registrado en **Google Search Console**
+  (propiedad de dominio, TXT en Namecheap; sitemap enviado, indexación solicitada).
+- **Pendiente que se resuelve solo**: el certificado de `www.faborubio.dev` seguía en
+  emisión al cierre — Firebase lo completa y redirige al apex. Si en días sigue caído,
+  revisar Firebase Console → Hosting.
+- **Pendiente menor (lado usuario)**: actualizar el dominio en los settings de
+  GoatCounter (`faborubio.goatcounter.com`).
 - Fixes del motion audit (2 Critical + 4 Important) en producción (`db21c2b`); reporte en
   `motion-audits/` (untracked, interno). Las 5 "Opportunities" → AUD-002.
-- Fix del dibujo de la F tras el boot (`33ac460`); Atalaya en Portfolio y CV con
-  certificaciones SENCE + proyectos destacados (`0aa9a3b`).
+- Fix del dibujo de la F tras el boot (`33ac460`); Atalaya en Portfolio (nueva categoría
+  `fullstack`, captura de la demo viva) y CV con certificaciones SENCE + badge IBM/Credly
+  + sección de proyectos destacados (`0aa9a3b`).
 - El CV del sitio es `public/fabian-rubio-cv.pdf`, **generado desde `CV_Fabian.html`**
-  (Chrome headless / Ctrl+P con gráficos de fondo) — al editar el HTML hay que regenerarlo.
+  (Chrome headless / Ctrl+P con gráficos de fondo) — al editar el HTML hay que
+  regenerarlo. El HTML es una página A4 de altura fija (`overflow: hidden`): verificar
+  que el contenido no se recorte tras editar.
+- **Candidatos a futuros proyectos del Portfolio** (repos públicos con buena descripción):
+  fleetpilot, veredicto, acopia, consola-transaccional, oteo, nexusroutine, telar, cauce.
 - Deuda aceptada y su plan: [docs/AUDIT.md](./docs/AUDIT.md).
 
 ## Dónde vive cada cosa

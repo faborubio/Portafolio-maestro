@@ -50,6 +50,9 @@ Configurado el 2026-07-08. Registros en Namecheap → Advanced DNS:
   certificado (minutos a 24 h tras verificar el TXT).
 - **Activo desde 2026-07-09**; las URLs públicas del repo ya apuntan a `faborubio.dev`.
   El dominio por defecto `fabian-portafolio.web.app` sigue sirviendo el mismo contenido.
+- **Google Search Console**: propiedad de dominio `faborubio.dev` verificada vía TXT en
+  Namecheap (no borrar ese registro), sitemap enviado. El TXT de Google convive con el
+  de Firebase en el host `@`.
 
 ## Notas
 
