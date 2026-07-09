@@ -11,9 +11,30 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i
 const rateMap = new Map()
 const RATE_LIMIT  = 3
 const WINDOW_MS   = 60 * 60 * 1000
+const MAX_ENTRIES = 500
+
+// Tras el rewrite de Hosting, X-Forwarded-For llega como
+// "<lo que mande el cliente...>, <ip real>, <proxy de Google>":
+// solo el penúltimo valor es confiable; el resto es falsificable.
+function clientIp(req) {
+  const xff = req.headers['x-forwarded-for']
+  if (typeof xff === 'string' && xff.length) {
+    const ips = xff.split(',').map((s) => s.trim()).filter(Boolean)
+    if (ips.length >= 2) return ips[ips.length - 2]
+    if (ips.length === 1) return ips[0]
+  }
+  return req.ip ?? 'unknown'
+}
 
 function isRateLimited(ip) {
   const now   = Date.now()
+
+  if (rateMap.size > MAX_ENTRIES) {
+    for (const [key, val] of rateMap) {
+      if (now - val.start > WINDOW_MS) rateMap.delete(key)
+    }
+  }
+
   const entry = rateMap.get(ip)
 
   if (!entry || now - entry.start > WINDOW_MS) {
@@ -42,7 +63,7 @@ exports.sendContactEmail = onRequest(
       return
     }
 
-    const ip = req.headers['x-forwarded-for']?.split(',')[0] ?? req.ip ?? 'unknown'
+    const ip = clientIp(req)
     if (isRateLimited(ip)) {
       res.status(429).json({ error: 'Too many requests' })
       return

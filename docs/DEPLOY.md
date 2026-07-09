@@ -24,8 +24,16 @@ Verificación post-deploy: abrir https://faborubio.dev — el SW del PWA está e
 
 ```bash
 npm run build
-npx firebase-tools deploy        # hosting + functions
+npx firebase-tools deploy --only "hosting,functions:sendContactEmail"
 ```
+
+> **Siempre filtrar por `functions:sendContactEmail`, nunca `--only functions` a secas.**
+> El proyecto Firebase `fabian-portafolio` es compartido: aloja los sitios
+> `atalaya-demo`, `atalaya-live`, `mojitos-landing` y `telar-tejido`, y la función
+> `api` (us-central1) es el **backend vivo de telar** (desplegado desde el repo
+> `ProyectosPortafolio/telar`, rewrite `/api/**` de `telar-tejido.web.app`).
+> Un deploy sin filtro detecta `api` como "huérfana" y propone borrarla — hacerlo
+> rompería la demo de telar.
 
 Las credenciales de la función son secrets de Firebase (no van en el repo):
 
