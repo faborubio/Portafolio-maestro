@@ -122,3 +122,6 @@ npm run build
 firebase deploy                 # hosting + functions
 firebase deploy --only hosting  # solo el front
 ```
+
+Proceso completo (dominio propio, secrets, verificación): [`docs/DEPLOY.md`](./docs/DEPLOY.md).
+Contexto de trabajo y deuda técnica: [`CLAUDE.md`](./CLAUDE.md) y [`docs/AUDIT.md`](./docs/AUDIT.md).
