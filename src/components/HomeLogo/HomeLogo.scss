@@ -11,12 +11,12 @@
   }
 
   // ----- Sólido (F extruida oblicua, estilo S) -----
+  // Las animaciones arrancan con --go (señal de fin del boot), para que la
+  // construcción de la F no ocurra tapada por el overlay del BootSequence
   &__solid {
     position: absolute;
     inset: 0;
     opacity: 0;
-    // aparece cuando el trazo está casi completo
-    animation: hlShow 0.8s ease 2s forwards;
 
     svg {
       width: 100%;
@@ -26,13 +26,21 @@
     }
   }
 
+  // aparece cuando el trazo está casi completo
+  &--go &__solid {
+    animation: hlShow 0.8s ease 2s forwards;
+  }
+
   // ----- Trazo line-art -----
   &__draw {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
-    // se desvanece una vez terminado el trazo
+  }
+
+  // se desvanece una vez terminado el trazo
+  &--go &__draw {
     animation: hlHide 0.6s ease 2.2s forwards;
   }
 }
@@ -41,6 +49,9 @@
 .hl-stroke {
   stroke-dasharray: 1;
   stroke-dashoffset: 1;
+}
+
+.home-logo--go .hl-stroke {
   animation: hlDraw 1.3s ease forwards;
 }
 

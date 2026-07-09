@@ -27,7 +27,11 @@ const BootSequence = () => {
       const id = setTimeout(() => setCount((c) => c + 1), 300)
       return () => clearTimeout(id)
     }
-    const close = setTimeout(() => setClosing(true), 450)
+    const close = setTimeout(() => {
+      setClosing(true)
+      // avisa a quien espere el fin del boot (p. ej. el dibujo de la F del Home)
+      window.dispatchEvent(new Event('boot:done'))
+    }, 450)
     const done = setTimeout(() => {
       sessionStorage.setItem('booted', '1')
       setShown(false)
