@@ -52,8 +52,10 @@ Configurado el 2026-07-08. Registros en Namecheap → Advanced DNS:
 | A | `www` | `199.36.158.100` |
 | TXT | `@` | `hosting-site=fabian-portafolio` |
 
-- El dominio se dio de alta en Firebase Console → Hosting → "Agregar dominio personalizado"
-  (`faborubio.dev`, con `www` como redirect al apex). No hay soporte de CLI para esto.
+- El dominio se dio de alta en Firebase Console → Hosting → "Agregar dominio personalizado".
+  No hay soporte de CLI para esto. **Ojo**: en el alta original solo quedó activo el apex;
+  `www.faborubio.dev` hubo que agregarlo aparte (2026-07-12) como redirect al apex — si un
+  subdominio sirve el cert de `firebaseapp.com`, es que no está agregado en Console.
 - `.dev` es HTTPS-only (precarga HSTS): el sitio no carga hasta que Firebase emite el
   certificado (minutos a 24 h tras verificar el TXT).
 - **Activo desde 2026-07-09**; las URLs públicas del repo ya apuntan a `faborubio.dev`.

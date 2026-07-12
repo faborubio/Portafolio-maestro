@@ -46,11 +46,11 @@ se usa vía npx). Si el deploy incluye functions, **siempre filtrado**:
   es compartido (aloja también atalaya-demo/live, mojitos-landing y telar-tejido).
   Nunca borrarla ni desplegar functions sin filtrar.
 
-## Estado actual (2026-07-11, cierre de sesión — posicionamiento Data & Backend)
+## Estado actual (2026-07-12, cierre de sesión — posicionamiento Data & Backend)
 
 - **Giro del sitio y CV hacia "Full Stack · Data & Backend"** para postulaciones activas
-  (Junior Data Engineer en Grupo Mariposa; Vibe Coder en Zagged), en producción y
-  verificado en vivo:
+  (Junior Data Engineer en Grupo Mariposa; Vibe Coder en Zagged — ojo: Zagged exige
+  apps publicadas en App Store, es su filtro duro), en producción y verificado en vivo:
   - Headline, meta tags, JSON-LD (`knowsAbout` con Python/SQL/PostgreSQL/Docker, sin
     `worksFor: Freelance`), textos de Home/About/Skills en ES y EN: "abierto a roles
     full-time y freelance".
@@ -58,16 +58,27 @@ se usa vía npx). Si el deploy incluye functions, **siempre filtrado**:
     API + dashboard, demo en faro.vibenest.net) en Portfolio, nueva categoría `data`
     (el RAG también se movió ahí). Descripción del RAG ahora dice multi-tenant y CI/CD
     (ojo: "134 tests" no se pudo verificar — se contaron 31 bloques; no se publicó cifra).
-  - **CV regenerado** con el mismo giro (rol, skills, proyectos con Acopia/Faro); sigue
-    siendo 1 página A4 verificada sin recortes.
+  - **CV regenerado** con el mismo giro; la sidebar de "Habilidades" (chips) se
+    reemplazó por **Stack compacto (Data/Web/Ops/IA)** + **Resultados medibles**
+    (−23% RMSE Acopia, p95<100ms Faro, miles de eventos/seg Atalaya, 60+ repos)
+    (`dc55dc6`). Sigue siendo 1 página A4 — **verificar con screenshot headless tras
+    cualquier edición**: el layout va justo y `overflow: hidden` recorta en silencio.
 - **Pendientes de esta línea de trabajo**:
-  - Captura visual de Acopia (lado usuario, "estos días") → agregarla a su tarjeta.
+  - Captura visual de Acopia (lado usuario, "estos días") → agregarla a su tarjeta
+    (`src/data/portfolio.js`, hoy `image: null`).
   - **Astilla para Zagged**: repo local en `ProyectosPortafolio/astilla` sin git ni
-    GitHub; escaneado sin secretos (artifacts/ 314MB fuera). Falta: `git init` +
-    `.gitignore` + repo público + tarjeta en Portfolio (idealmente con video demo).
+    GitHub; escaneado sin secretos (artifacts/ 314MB fuera). Falta el OK del usuario
+    para: `git init` + `.gitignore` + repo público + tarjeta en Portfolio (idealmente
+    con video demo — hay shorts terminados en `artifacts/`).
+  - `og-cover.png` podría tener horneado el headline viejo ("Desarrollador Web Full
+    Stack") — regenerarla antes de compartir el link en postulaciones.
   - El sitio es 100% JS para crawlers sin JS → AUD-003 (prerender, sesión propia).
-- **`www.faborubio.dev` sigue sin certificado tras 3+ días** → revisar Firebase Console
-  → Hosting (el plazo de "se resuelve solo" ya venció).
+- **`www.faborubio.dev` — alta completada, redirect aún propagando**: el dominio no
+  estaba agregado en Firebase Console (esa era la causa raíz, no la emisión); se agregó
+  el 2026-07-12, el certificado `CN=www.faborubio.dev` ya se emitió, pero al cierre aún
+  respondía 404 "Site Not Found" (mapeo propagando). Verificar:
+  `curl -sIL https://www.faborubio.dev` debe dar 301 → `faborubio.dev`. Si sigue en 404,
+  revisar en Console que quedó como **redirect** y no como dominio suelto.
 - **Sesión de ciberseguridad completa, en producción y verificada** (`4a28f26`):
   - `functions/` con **0 vulnerabilidades** en `npm audit`: nodemailer 9,
     firebase-functions 6, runtime **Node 22**; `overrides` de firebase-admin/uuid
