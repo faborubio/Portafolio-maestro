@@ -68,7 +68,7 @@
     .sidebar {
       background: var(--navy);
       color: var(--text-light);
-      padding: 36px 20px 30px;
+      padding: 26px 20px 22px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -76,8 +76,8 @@
 
     /* monogram */
     .s-monogram {
-      width: 80px;
-      height: 80px;
+      width: 72px;
+      height: 72px;
       border-radius: 50%;
       background: var(--navy-2);
       border: 2px solid var(--cyan);
@@ -114,8 +114,8 @@
       letter-spacing: 2px;
       color: var(--cyan);
       border-bottom: 1px solid rgba(0,212,224,.22);
-      padding-bottom: 6px;
-      margin-bottom: 11px;
+      padding-bottom: 4px;
+      margin-bottom: 8px;
     }
 
     /* contact list */
@@ -123,7 +123,7 @@
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 9px;
+      gap: 7px;
     }
     .contact-list li {
       display: flex;
@@ -149,7 +149,7 @@
     }
 
     /* skill groups */
-    .skill-group { margin-bottom: 11px; }
+    .skill-group { margin-bottom: 8px; }
     .skill-group:last-child { margin-bottom: 0; }
     .skill-group__title {
       font-size: 8pt;
@@ -189,7 +189,7 @@
        distribuye secciones en los 297mm
     ════════════════════════════════════════ */
     .main {
-      padding: 36px 30px 30px;
+      padding: 28px 30px 24px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -198,7 +198,7 @@
     /* header */
     .m-header {
       border-bottom: 1.5px solid var(--border);
-      padding-bottom: 14px;
+      padding-bottom: 10px;
     }
     .m-header h1 {
       font-size: 28pt;
@@ -246,7 +246,7 @@
     .exp-list {
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 12px;
     }
 
     .exp-header {
@@ -301,7 +301,7 @@
     .edu-list {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 10px 18px;
+      gap: 8px 18px;
     }
     .edu-degree {
       font-size: 9.5pt;
@@ -375,7 +375,7 @@
         <div class="s-monogram">FR</div>
         <div class="s-name">
           <h1>Fabián Rubio<br>Contreras</h1>
-          <p class="role">Full Stack Developer</p>
+          <p class="role">Full Stack · Data &amp; Backend</p>
         </div>
       </div>
 
@@ -428,15 +428,15 @@
         </div>
 
         <div class="skill-group">
-          <p class="skill-group__title">Backend &amp; Bases de datos</p>
+          <p class="skill-group__title">Data &amp; Backend</p>
           <div class="tags">
-            <span class="tag">Ruby on Rails</span>
             <span class="tag">Python</span>
-            <span class="tag">Node.js</span>
-            <span class="tag">Express</span>
             <span class="tag">PostgreSQL</span>
+            <span class="tag">SQL</span>
+            <span class="tag">FastAPI</span>
+            <span class="tag">Ruby on Rails</span>
+            <span class="tag">Node.js</span>
             <span class="tag">Firebase</span>
-            <span class="tag">MongoDB</span>
           </div>
         </div>
 
@@ -446,7 +446,7 @@
             <span class="tag">Git</span>
             <span class="tag">Docker</span>
             <span class="tag">GCP</span>
-            <span class="tag">Vite</span>
+            <span class="tag">CI/CD</span>
             <span class="tag">Postman</span>
             <span class="tag">Figma</span>
           </div>
@@ -473,17 +473,17 @@
 
       <header class="m-header">
         <h1>Fabián <span>Rubio</span></h1>
-        <p class="subtitle">Desarrollador Web Full Stack &nbsp;·&nbsp; Angular &nbsp;·&nbsp; React &nbsp;·&nbsp; Rails &nbsp;·&nbsp; Python</p>
+        <p class="subtitle">Full Stack · Data &amp; Backend · Python · SQL · React · Angular</p>
       </header>
 
       <!-- Sobre mí -->
       <section>
         <h2 class="m-section-title">Sobre mí</h2>
         <p class="about-text">
-          Desarrollador Full Stack con 2+ años construyendo aplicaciones web (Angular, React,
-          Ruby on Rails, Python) y 4 años de experiencia técnica senior en entornos SaaS.
-          Foco en interfaces cuidadas, código limpio y proyectos desplegados en producción.
-          Inglés C1 certificado · disponible para trabajo remoto.
+          Desarrollador Full Stack con 2+ años construyendo aplicaciones web y proyectos de
+          datos (Python, SQL, Angular, React, Rails) y 4 años de experiencia técnica senior
+          en entornos SaaS. Pipelines de pronóstico y optimización en producción, código
+          limpio y auditable. Inglés C1 · abierto a roles full-time y freelance, remoto.
         </p>
       </section>
 
@@ -526,13 +526,16 @@
         <h2 class="m-section-title">Proyectos destacados</h2>
         <ul class="proj-list">
           <li>
-            <span class="proj-name">RAG Data Pipeline</span> — ingestión y búsqueda semántica de PDFs con citas de fuente · Rails + pgvector + Docker · <span class="proj-url">fabianragpipeline.duckdns.org</span>
+            <span class="proj-name">Acopia</span> — pronóstico y optimización de despacho solar + batería (SARIMAX/LSTM, backtest real) · Python + FastAPI · <span class="proj-url">github.com/faborubio/acopia</span>
+          </li>
+          <li>
+            <span class="proj-name">Faro</span> — indicadores económicos de Chile: ingesta CMF, API pública y dashboard · Go + PostgreSQL · <span class="proj-url">faro.vibenest.net</span>
+          </li>
+          <li>
+            <span class="proj-name">RAG Data Pipeline</span> — RAG multi-tenant: PDFs, búsqueda semántica y citas · Rails + pgvector · <span class="proj-url">fabianragpipeline.duckdns.org</span>
           </li>
           <li>
             <span class="proj-name">Atalaya</span> — monitoreo de flota/IoT en tiempo real, miles de eventos/seg · Angular + .NET + GCP · <span class="proj-url">atalaya-demo.web.app</span>
-          </li>
-          <li>
-            <span class="proj-name">Portafolio</span> — SPA bilingüe instalable como PWA, con terminal interactiva · React + Vite · <span class="proj-url">faborubio.dev</span>
           </li>
         </ul>
       </section>
@@ -567,8 +570,8 @@
           </div>
 
           <div class="edu-item">
-            <p class="edu-degree">Ingeniería en Informática / Gestión Informática</p>
-            <p class="edu-school">INACAP · Sede Curicó &nbsp;·&nbsp; cursado parcialmente</p>
+            <p class="edu-degree">Ingeniería en Informática (parcial)</p>
+            <p class="edu-school">INACAP · Sede Curicó</p>
             <p class="edu-dates">2014 – 2017</p>
           </div>
 

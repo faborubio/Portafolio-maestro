@@ -46,8 +46,28 @@ se usa vía npx). Si el deploy incluye functions, **siempre filtrado**:
   es compartido (aloja también atalaya-demo/live, mojitos-landing y telar-tejido).
   Nunca borrarla ni desplegar functions sin filtrar.
 
-## Estado actual (2026-07-09, cierre de sesión — ciberseguridad)
+## Estado actual (2026-07-11, cierre de sesión — posicionamiento Data & Backend)
 
+- **Giro del sitio y CV hacia "Full Stack · Data & Backend"** para postulaciones activas
+  (Junior Data Engineer en Grupo Mariposa; Vibe Coder en Zagged), en producción y
+  verificado en vivo:
+  - Headline, meta tags, JSON-LD (`knowsAbout` con Python/SQL/PostgreSQL/Docker, sin
+    `worksFor: Freelance`), textos de Home/About/Skills en ES y EN: "abierto a roles
+    full-time y freelance".
+  - **Acopia** (Python: pronóstico + optimización PV-BESS) y **Faro** (Go: ingesta CMF +
+    API + dashboard, demo en faro.vibenest.net) en Portfolio, nueva categoría `data`
+    (el RAG también se movió ahí). Descripción del RAG ahora dice multi-tenant y CI/CD
+    (ojo: "134 tests" no se pudo verificar — se contaron 31 bloques; no se publicó cifra).
+  - **CV regenerado** con el mismo giro (rol, skills, proyectos con Acopia/Faro); sigue
+    siendo 1 página A4 verificada sin recortes.
+- **Pendientes de esta línea de trabajo**:
+  - Captura visual de Acopia (lado usuario, "estos días") → agregarla a su tarjeta.
+  - **Astilla para Zagged**: repo local en `ProyectosPortafolio/astilla` sin git ni
+    GitHub; escaneado sin secretos (artifacts/ 314MB fuera). Falta: `git init` +
+    `.gitignore` + repo público + tarjeta en Portfolio (idealmente con video demo).
+  - El sitio es 100% JS para crawlers sin JS → AUD-003 (prerender, sesión propia).
+- **`www.faborubio.dev` sigue sin certificado tras 3+ días** → revisar Firebase Console
+  → Hosting (el plazo de "se resuelve solo" ya venció).
 - **Sesión de ciberseguridad completa, en producción y verificada** (`4a28f26`):
   - `functions/` con **0 vulnerabilidades** en `npm audit`: nodemailer 9,
     firebase-functions 6, runtime **Node 22**; `overrides` de firebase-admin/uuid
@@ -62,9 +82,6 @@ se usa vía npx). Si el deploy incluye functions, **siempre filtrado**:
   deprecado** (se apaga 2026-10-30) — subirla a 22 desde el repo telar en alguna sesión.
 - **Dominio `faborubio.dev` activo y migrado** (`942c9c1`), registrado en Google Search
   Console (sitemap enviado, indexación solicitada).
-- **Pendiente que se resuelve solo**: el certificado de `www.faborubio.dev` seguía en
-  emisión al cierre anterior — Firebase lo completa y redirige al apex. Si en días sigue
-  caído, revisar Firebase Console → Hosting.
 - **Pendiente menor (lado usuario)**: actualizar el dominio en los settings de
   GoatCounter (`faborubio.goatcounter.com`).
 - Fixes del motion audit (2 Critical + 4 Important) en producción (`db21c2b`); reporte en
@@ -77,7 +94,10 @@ se usa vía npx). Si el deploy incluye functions, **siempre filtrado**:
   regenerarlo. El HTML es una página A4 de altura fija (`overflow: hidden`): verificar
   que el contenido no se recorte tras editar.
 - **Candidatos a futuros proyectos del Portfolio** (repos públicos con buena descripción):
-  fleetpilot, veredicto, acopia, consola-transaccional, oteo, nexusroutine, telar, cauce.
+  fleetpilot, veredicto, consola-transaccional, oteo, nexusroutine, telar, cauce
+  (acopia y faro ya entraron; astilla pendiente de publicar).
+- **El Método vive en** `\\wsl.localhost\Ubuntu-24.04\home\faborubio\Workspace\metodo\MANIFIESTO.md`
+  (v1.1.0) — este repo lo sigue en dosis mínima; las fases de contenido cierran con su DoD.
 - Deuda aceptada y su plan: [docs/AUDIT.md](./docs/AUDIT.md).
 
 ## Dónde vive cada cosa

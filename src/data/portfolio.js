@@ -5,6 +5,7 @@ import mojitos from '../assets/img/proj-mojitos.webp'
 import caucorp from '../assets/img/proj-caucorp.png'
 import rag from '../assets/img/proj-rag.webp'
 import atalaya from '../assets/img/proj-atalaya.webp'
+import faro from '../assets/img/proj-faro.png'
 
 // Fuente única: cada tecnología tiene su nivel. La esfera (TagCloud) y las
 // barras se derivan de aquí; la lista muestra solo las de mayor nivel.
@@ -15,6 +16,7 @@ export const skills = [
   { name: 'CSS3', level: 90 },
   { name: 'Node.js', level: 86 },
   { name: 'TypeScript', level: 85 },
+  { name: 'Python', level: 84 },
   { name: 'Git', level: 84 },
   { name: 'Sass', level: 83 },
   { name: 'REST', level: 82 },
@@ -22,12 +24,14 @@ export const skills = [
   { name: 'npm', level: 80 },
   { name: 'Angular', level: 80 },
   { name: 'JSON', level: 80 },
+  { name: 'SQL', level: 79 },
   { name: 'Firebase', level: 78 },
   { name: 'Vite', level: 77 },
+  { name: 'PostgreSQL', level: 77 },
   { name: 'Bootstrap', level: 76 },
   { name: 'Express', level: 75 },
+  { name: 'Docker', level: 74 },
   { name: 'MongoDB', level: 72 },
-  { name: 'SQL', level: 70 },
   { name: 'Figma', level: 70 },
   { name: 'GSAP', level: 68 },
   { name: 'Webpack', level: 66 },
@@ -45,17 +49,43 @@ export const tips = [
 
 export const projects = [
   {
+    id: 'acopia',
+    title: 'Acopia',
+    category: 'data',
+    tech: ['Python', 'FastAPI', 'cvxpy + HiGHS', 'SARIMAX / LSTM', 'pytest + Hypothesis', 'MCP'],
+    descriptionEs:
+      'Pronóstico y optimización de despacho para una planta solar con batería (PV-BESS) en el mercado eléctrico chileno: forecasting de generación y costo marginal (SARIMAX / Seq2Seq-LSTM), optimizador determinista y estocástico auditable, backtest sobre datos reales y servidor MCP para interrogar el plan.',
+    descriptionEn:
+      'Dispatch forecasting and optimization for a solar-plus-storage (PV-BESS) plant in the Chilean power market: generation and marginal-cost forecasting (SARIMAX / Seq2Seq-LSTM), auditable deterministic and stochastic optimizer, backtesting on real data and an MCP server to query the plan.',
+    url: null,
+    github: 'https://github.com/faborubio/acopia',
+    image: null,
+  },
+  {
     id: 'rag',
     title: 'RAG Data Pipeline',
-    category: 'backend',
+    category: 'data',
     tech: ['Ruby on Rails', 'PostgreSQL + pgvector', 'langchainrb', 'OpenAI', 'Docker', 'Kamal'],
     descriptionEs:
-      'Pipeline RAG en producción: ingiere PDFs, búsqueda semántica con embeddings vectoriales (pgvector) y respuestas del LLM con citas de la fuente. Desplegado con Docker/Kamal.',
+      'Pipeline RAG multi-tenant en producción: ingesta y fragmentación de PDFs, búsqueda semántica con embeddings vectoriales (pgvector) y respuestas del LLM con citas de la fuente. API con autenticación por tenant, suite de tests con CI/CD, desplegado con Docker/Kamal.',
     descriptionEn:
-      'Production RAG pipeline: ingests PDFs, semantic search via vector embeddings (pgvector) and LLM answers with source citations. Deployed with Docker/Kamal.',
+      'Multi-tenant production RAG pipeline: PDF ingestion and chunking, semantic search via vector embeddings (pgvector) and LLM answers with source citations. Per-tenant authenticated API, test suite with CI/CD, deployed with Docker/Kamal.',
     url: 'https://fabianragpipeline.duckdns.org/demo.html',
     github: 'https://github.com/faborubio/rag-data-pipeline',
     image: rag,
+  },
+  {
+    id: 'faro',
+    title: 'Faro',
+    category: 'data',
+    tech: ['Go', 'PostgreSQL', 'Chart.js', 'Docker', 'GitHub Actions'],
+    descriptionEs:
+      'Indicadores económicos de Chile (dólar, UF, UTM, IPC) desde la fuente oficial (CMF): ingesta diaria, histórico en PostgreSQL, API JSON pública, dashboard con tendencias, alertas por webhook y widgets embebibles. Un solo binario Go, con CI y Docker.',
+    descriptionEn:
+      'Chilean economic indicators (USD, UF, UTM, CPI) from the official source (CMF): daily ingestion, history in PostgreSQL, public JSON API, trends dashboard, webhook alerts and embeddable widgets. A single Go binary, with CI and Docker.',
+    url: 'https://faro.vibenest.net/',
+    github: 'https://github.com/faborubio/faro',
+    image: faro,
   },
   {
     id: 'atalaya',

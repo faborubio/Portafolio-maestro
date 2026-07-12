@@ -8,6 +8,7 @@
 |---|---|---|
 | AUD-001 | Abierta | `MotionConfig reducedMotion="user"` global vs. reduced-motion quirúrgico en CSS |
 | AUD-002 | Abierta | 5 "Opportunities" del motion audit sin implementar |
+| AUD-003 | Abierta | El sitio renderiza 100% por JS: sin prerender estático para crawlers sin JS |
 
 ---
 
@@ -44,3 +45,20 @@ priorizó cerrar lo crítico/importante con verificación visual.
 **Plan de pago.** Oportunista — retomarlas del reporte si alguna sesión futura toca los
 componentes afectados. Sin fecha; si el reporte se vuelve obsoleto frente al código,
 cerrar esta entrada como descartada.
+
+---
+
+## AUD-003 — Sin prerender estático (SPA 100% JS)
+
+**Contexto.** Sin JavaScript, el HTML servido solo contiene los metadatos y el JSON-LD:
+un fetch simple no ve proyectos ni textos. Google ejecuta JS y el JSON-LD mitiga, pero
+previews de ATS y crawlers de LLMs no ven el contenido real (detectado 2026-07-11
+durante la preparación de postulaciones).
+
+**Por qué se aceptó.** No bloquea las postulaciones en curso (el CV en PDF y el JSON-LD
+cubren lo esencial) y un prerender bien hecho (vite-plugin-prerender o SSG parcial) es
+una sesión propia, no un parche de pasada.
+
+**Plan de pago.** Sesión dedicada: prerender estático del build de Vite (al menos rutas
+y contenido de Portfolio/About). Verificar con `curl` que el HTML resultante contiene
+los proyectos sin ejecutar JS.
