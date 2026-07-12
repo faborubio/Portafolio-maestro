@@ -148,25 +148,42 @@
       word-break: break-all;
     }
 
-    /* skill groups */
-    .skill-group { margin-bottom: 8px; }
-    .skill-group:last-child { margin-bottom: 0; }
-    .skill-group__title {
-      font-size: 8pt;
-      font-weight: 600;
+    /* stack compacto */
+    .stack-row {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 7px;
+      font-size: 8.5pt;
+    }
+    .stack-row:last-child { margin-bottom: 0; }
+    .stack-k {
       color: var(--amber);
-      margin-bottom: 6px;
+      font-weight: 600;
+      font-size: 7.5pt;
       text-transform: uppercase;
       letter-spacing: 0.5px;
+      width: 32px;
+      flex-shrink: 0;
+      margin-top: 1px;
     }
-    .tags { display: flex; flex-wrap: wrap; gap: 4px; }
-    .tag {
-      background: rgba(0,212,224,.07);
-      border: 1px solid rgba(0,212,224,.2);
-      color: var(--text-light);
-      padding: 3px 8px;
-      border-radius: 3px;
-      font-size: 7.8pt;
+    .stack-v { color: var(--text-light); line-height: 1.5; }
+
+    /* resultados medibles */
+    .kpi-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .kpi-list li {
+      font-size: 8.5pt;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .kpi-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 500;
+      color: var(--cyan);
     }
 
     /* languages */
@@ -410,47 +427,36 @@
         </ul>
       </div>
 
-      <!-- Habilidades -->
+      <!-- Stack -->
       <div>
-        <p class="s-label">Habilidades</p>
-
-        <div class="skill-group">
-          <p class="skill-group__title">Frontend</p>
-          <div class="tags">
-            <span class="tag">JavaScript</span>
-            <span class="tag">TypeScript</span>
-            <span class="tag">React</span>
-            <span class="tag">Angular</span>
-            <span class="tag">HTML5</span>
-            <span class="tag">CSS3 / Sass</span>
-            <span class="tag">TailwindCSS</span>
-          </div>
+        <p class="s-label">Stack</p>
+        <div class="stack-row">
+          <span class="stack-k">Data</span>
+          <span class="stack-v">Python · SQL · PostgreSQL · FastAPI</span>
         </div>
-
-        <div class="skill-group">
-          <p class="skill-group__title">Data &amp; Backend</p>
-          <div class="tags">
-            <span class="tag">Python</span>
-            <span class="tag">PostgreSQL</span>
-            <span class="tag">SQL</span>
-            <span class="tag">FastAPI</span>
-            <span class="tag">Ruby on Rails</span>
-            <span class="tag">Node.js</span>
-            <span class="tag">Firebase</span>
-          </div>
+        <div class="stack-row">
+          <span class="stack-k">Web</span>
+          <span class="stack-v">TypeScript · React · Angular · Node.js · Rails</span>
         </div>
-
-        <div class="skill-group">
-          <p class="skill-group__title">Herramientas &amp; Cloud</p>
-          <div class="tags">
-            <span class="tag">Git</span>
-            <span class="tag">Docker</span>
-            <span class="tag">GCP</span>
-            <span class="tag">CI/CD</span>
-            <span class="tag">Postman</span>
-            <span class="tag">Figma</span>
-          </div>
+        <div class="stack-row">
+          <span class="stack-k">Ops</span>
+          <span class="stack-v">Docker · GCP · CI/CD · Git</span>
         </div>
+        <div class="stack-row">
+          <span class="stack-k">IA</span>
+          <span class="stack-v">Claude Code · servidores MCP propios · Whisper / SD</span>
+        </div>
+      </div>
+
+      <!-- Resultados medibles -->
+      <div>
+        <p class="s-label">Resultados</p>
+        <ul class="kpi-list">
+          <li><span class="kpi-num">−23% RMSE</span> vs naive: forecaster LSTM de costo marginal (Acopia)</li>
+          <li><span class="kpi-num">p95 &lt; 100 ms</span> en API pública de indicadores en producción (Faro)</li>
+          <li><span class="kpi-num">Miles de eventos/seg</span> procesados en tiempo real (Atalaya)</li>
+          <li><span class="kpi-num">60+ repos</span> públicos en GitHub — todo el trabajo es verificable</li>
+        </ul>
       </div>
 
       <!-- Idiomas -->
