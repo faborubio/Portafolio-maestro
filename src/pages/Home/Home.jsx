@@ -7,11 +7,16 @@ import AnimatedLetters from '../../components/AnimatedLetters/AnimatedLetters'
 import SpinF from '../../components/SpinF/SpinF'
 import HomeLogo from '../../components/HomeLogo/HomeLogo'
 import Terminal from '../../components/Terminal/Terminal'
+import useBootDone from '../../hooks/useBootDone'
 import './Home.scss'
 
 const Home = () => {
   const { t } = useTranslation()
   const lastChar = useRef(null)
+  // El stagger de AnimatedLetters corre al montar y quedaba tapado por el
+  // overlay del BootSequence (mismo caso que la F, 33ac460). Remontar el h1
+  // con boot:done replay la intro justo cuando el overlay se desvanece.
+  const bootDone = useBootDone()
 
   // Ola al deslizar el dedo: cada letra bajo el dedo hace "pop".
   // Usa Web Animations API (no framer) para no afectar el hover de escritorio.
@@ -46,6 +51,7 @@ const Home = () => {
         <span className="code-tag code-tag--open">&lt;h1&gt;</span>
 
         <h1
+          key={bootDone ? 'after-boot' : 'boot'}
           className="home__title"
           onTouchMove={onTitleTouchMove}
           onTouchEnd={onTitleTouchEnd}

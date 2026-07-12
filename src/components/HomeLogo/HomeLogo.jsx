@@ -1,12 +1,5 @@
-import { useEffect, useState } from 'react'
+import useBootDone from '../../hooks/useBootDone'
 import './HomeLogo.scss'
-
-// ¿Va a mostrarse el boot? (mismas condiciones que BootSequence) — si sí, el
-// dibujo de la F espera su señal para no construirse tapado por el overlay
-const bootPending =
-  typeof window !== 'undefined' &&
-  !window.matchMedia?.('(prefers-reduced-motion: reduce)').matches &&
-  !sessionStorage.getItem('booted')
 
 // Geometría compartida por el trazo y el sólido (F mayúscula)
 const FRONT_PTS = [
@@ -37,18 +30,8 @@ const vbH = Math.max(...ys) - Math.min(...ys) + PAD * 2
 const VIEWBOX = `${minX} ${minY} ${vbW} ${vbH}`
 
 const HomeLogo = () => {
-  const [go, setGo] = useState(!bootPending)
-
-  useEffect(() => {
-    if (go) return
-    const start = () => setGo(true)
-    window.addEventListener('boot:done', start)
-    const fallback = setTimeout(start, 4000) // por si la señal nunca llega
-    return () => {
-      window.removeEventListener('boot:done', start)
-      clearTimeout(fallback)
-    }
-  }, [go])
+  // el dibujo de la F espera el fin del boot para no construirse tapado por el overlay
+  const go = useBootDone()
 
   return (
     <div

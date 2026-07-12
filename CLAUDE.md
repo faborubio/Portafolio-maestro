@@ -48,6 +48,16 @@ se usa vía npx). Si el deploy incluye functions, **siempre filtrado**:
 
 ## Estado actual (2026-07-12, cierre de sesión — posicionamiento Data & Backend)
 
+- **Intro de AnimatedLetters del Home visible tras el boot**: el stagger corría desde
+  el montaje tapado por el overlay del BootSequence (mismo bug que la F, `33ac460`).
+  Fix: hook compartido `src/hooks/useBootDone.js` (extraído de HomeLogo) y remount del
+  `h1` del título con `key` al llegar `boot:done` — AnimatedLetters no se tocó
+  (invariante). Verificado con puppeteer-core + Chrome en tiempo real: primera visita,
+  segunda visita (sin boot) y reduced-motion. **Gotcha de verificación**: el
+  `--virtual-time-budget` de Chrome headless adelanta los timers pero NO las
+  animaciones rAF de framer-motion — para verificar motion usar capturas en tiempo
+  real (puppeteer), no virtual time. Pendiente de deploy a producción.
+
 - **Giro del sitio y CV hacia "Full Stack · Data & Backend"** para postulaciones activas
   (Junior Data Engineer en Grupo Mariposa; Vibe Coder en Zagged — ojo: Zagged exige
   apps publicadas en App Store, es su filtro duro), en producción y verificado en vivo:
