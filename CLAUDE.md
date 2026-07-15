@@ -46,7 +46,7 @@ se usa vía npx). Si el deploy incluye functions, **siempre filtrado**:
   es compartido (aloja también atalaya-demo/live, mojitos-landing y telar-tejido).
   Nunca borrarla ni desplegar functions sin filtrar.
 
-## Estado actual (2026-07-12, cierre de sesión — posicionamiento Data & Backend)
+## Estado actual (2026-07-15, cierre de sesión — intro del Home + Vite 6)
 
 - **Intro de AnimatedLetters del Home visible tras el boot**: el stagger corría desde
   el montaje tapado por el overlay del BootSequence (mismo bug que la F, `33ac460`).
@@ -62,7 +62,10 @@ se usa vía npx). Si el deploy incluye functions, **siempre filtrado**:
   launch-editor, path traversal en `.map`, y el CORS del dev server de esbuild).
   `npm audit` limpio en root y en `functions/`. Verificado: build idéntico, dev server
   y preview sin errores de consola. plugin-react 4.7 y vite-plugin-pwa 1.3 compatibles
-  sin cambios de config.
+  sin cambios de config. **Al cierre, las 4 alertas seguían "open" en GitHub** pese a
+  que el grafo de dependencias ya registra vite 6.4.3/esbuild 0.25.12 — el auto-cierre
+  es asíncrono y tardaba más de lo normal; verificar en la pestaña Dependabot que
+  quedaron Closed (si siguieran abiertas días después, investigar).
 
 - **Giro del sitio y CV hacia "Full Stack · Data & Backend"** para postulaciones activas
   (Junior Data Engineer en Grupo Mariposa; Vibe Coder en Zagged — ojo: Zagged exige
@@ -89,12 +92,13 @@ se usa vía npx). Si el deploy incluye functions, **siempre filtrado**:
   - `og-cover.png` podría tener horneado el headline viejo ("Desarrollador Web Full
     Stack") — regenerarla antes de compartir el link en postulaciones.
   - El sitio es 100% JS para crawlers sin JS → AUD-003 (prerender, sesión propia).
-- **`www.faborubio.dev` — alta completada, redirect aún propagando**: el dominio no
-  estaba agregado en Firebase Console (esa era la causa raíz, no la emisión); se agregó
-  el 2026-07-12, el certificado `CN=www.faborubio.dev` ya se emitió, pero al cierre aún
-  respondía 404 "Site Not Found" (mapeo propagando). Verificar:
-  `curl -sIL https://www.faborubio.dev` debe dar 301 → `faborubio.dev`. Si sigue en 404,
-  revisar en Console que quedó como **redirect** y no como dominio suelto.
+- **`www.faborubio.dev` — sigue en 404, ya NO es propagación (acción lado usuario)**:
+  el dominio se agregó en Firebase Console el 2026-07-12 y el certificado se emitió,
+  pero el 2026-07-15 (3 días después) `curl -sIL https://www.faborubio.dev` seguía
+  dando 404 "Site Not Found". Diagnóstico probable: quedó agregado como **dominio
+  suelto** en vez de **redirect** → en Console (Hosting > dominios) borrarlo y
+  re-agregarlo eligiendo "Redirect to existing website" → `faborubio.dev`. Éxito =
+  301 → `faborubio.dev`.
 - **Sesión de ciberseguridad completa, en producción y verificada** (`4a28f26`):
   - `functions/` con **0 vulnerabilidades** en `npm audit`: nodemailer 9,
     firebase-functions 6, runtime **Node 22**; `overrides` de firebase-admin/uuid
