@@ -56,7 +56,13 @@ se usa vía npx). Si el deploy incluye functions, **siempre filtrado**:
   segunda visita (sin boot) y reduced-motion. **Gotcha de verificación**: el
   `--virtual-time-budget` de Chrome headless adelanta los timers pero NO las
   animaciones rAF de framer-motion — para verificar motion usar capturas en tiempo
-  real (puppeteer), no virtual time. Pendiente de deploy a producción.
+  real (puppeteer), no virtual time. Desplegado y verificado en producción en vivo.
+- **Vite 5 → 6.4.3 (con esbuild 0.25)**: cierra las 4 alertas de Dependabot del root
+  (todas dev-only: bypass de `server.fs.deny` en Windows —high—, NTLMv2 vía
+  launch-editor, path traversal en `.map`, y el CORS del dev server de esbuild).
+  `npm audit` limpio en root y en `functions/`. Verificado: build idéntico, dev server
+  y preview sin errores de consola. plugin-react 4.7 y vite-plugin-pwa 1.3 compatibles
+  sin cambios de config.
 
 - **Giro del sitio y CV hacia "Full Stack · Data & Backend"** para postulaciones activas
   (Junior Data Engineer en Grupo Mariposa; Vibe Coder en Zagged — ojo: Zagged exige
