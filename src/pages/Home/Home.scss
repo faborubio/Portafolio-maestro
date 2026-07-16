@@ -131,6 +131,16 @@
     }
   }
 
+  // En pantallas medianas (notebooks) la franja central ya no está libre:
+  // la terminal se acerca al centro y taparía la F. Se corre a la izquierda
+  // (centrada sobre la columna del texto) y se achica un poco.
+  @media screen and (min-width: ($bp-mobile + 1px)) and (max-width: 1750px) {
+    &__logo-top {
+      left: 47%;
+      width: clamp(80px, 7.5vw, 135px);
+    }
+  }
+
   // Terminal interactiva (reemplaza la F gigante)
   &__terminal {
     position: relative;
