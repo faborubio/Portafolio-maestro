@@ -50,7 +50,7 @@
   },
   "about": {
     "title": "Sobre mí",
-    "p1": "Soy desarrollador Full Stack con más de 3 años de experiencia construyendo aplicaciones con Angular, React y Node.js, y proyectos de datos en Python: pipelines de ingesta, pronóstico y optimización sobre datos reales. Código limpio, diseño responsive y rendimiento medible.",
+    "p1": "Soy desarrollador Full Stack con más de 3 años de experiencia construyendo aplicaciones con Ruby on Rails, Angular, React y Node.js, y proyectos de datos en Python: pipelines de ingesta, pronóstico y optimización sobre datos reales. Código limpio, diseño responsive y rendimiento medible.",
     "p2": "He trabajado en proyectos reales para empresas y como freelance, desde landing pages animadas hasta plataformas con autenticación, testing y CI/CD, pasando por APIs y motores de datos con suites de tests serias. Equilibro el detalle visual con la solidez del código.",
     "p3": "Estoy abierto a roles full-time y a proyectos freelance, idealmente remotos. Si buscas a alguien que entregue trabajo bien hecho, me encuentras en <lk>LinkedIn</lk> o por el formulario de contacto.",
     "stats": {
@@ -61,7 +61,7 @@
   },
   "skills": {
     "title": "Habilidades & Experiencia",
-    "p1": "Desarrollador full stack con experiencia en front-end, back-end y datos: JavaScript/TypeScript, React, Angular y Node.js, más Python, SQL, PostgreSQL y Docker, entre otras.",
+    "p1": "Desarrollador full stack con experiencia en front-end, back-end y datos: JavaScript/TypeScript, React, Angular y Node.js, más Ruby on Rails, Python, SQL, PostgreSQL y Docker, entre otras.",
     "p2": "Cuido el diseño responsive (mobile-first), el rendimiento y la calidad del código para ofrecer la mejor experiencia de usuario en cada proyecto.",
     "p3": "Pasa el cursor (o toca) una tecnología de la esfera para ver su nivel destacado.",
     "spotHint": "Pasa el cursor por una tecnología…"

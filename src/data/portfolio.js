@@ -17,6 +17,7 @@ export const skills = [
   { name: 'Node.js', level: 86 },
   { name: 'TypeScript', level: 85 },
   { name: 'Python', level: 84 },
+  { name: 'Ruby on Rails', level: 84 },
   { name: 'Git', level: 84 },
   { name: 'Sass', level: 83 },
   { name: 'REST', level: 82 },
@@ -49,19 +50,6 @@ export const tips = [
 
 export const projects = [
   {
-    id: 'acopia',
-    title: 'Acopia',
-    category: 'data',
-    tech: ['Python', 'FastAPI', 'cvxpy + HiGHS', 'SARIMAX / LSTM', 'pytest + Hypothesis', 'MCP'],
-    descriptionEs:
-      'Pronóstico y optimización de despacho para una planta solar con batería (PV-BESS) en el mercado eléctrico chileno: forecasting de generación y costo marginal (SARIMAX / Seq2Seq-LSTM), optimizador determinista y estocástico auditable, backtest sobre datos reales y servidor MCP para interrogar el plan.',
-    descriptionEn:
-      'Dispatch forecasting and optimization for a solar-plus-storage (PV-BESS) plant in the Chilean power market: generation and marginal-cost forecasting (SARIMAX / Seq2Seq-LSTM), auditable deterministic and stochastic optimizer, backtesting on real data and an MCP server to query the plan.',
-    url: null,
-    github: 'https://github.com/faborubio/acopia',
-    image: null,
-  },
-  {
     id: 'rag',
     title: 'RAG Data Pipeline',
     category: 'data',
@@ -73,6 +61,19 @@ export const projects = [
     url: 'https://fabianragpipeline.duckdns.org/demo.html',
     github: 'https://github.com/faborubio/rag-data-pipeline',
     image: rag,
+  },
+  {
+    id: 'acopia',
+    title: 'Acopia',
+    category: 'data',
+    tech: ['Python', 'FastAPI', 'cvxpy + HiGHS', 'SARIMAX / LSTM', 'pytest + Hypothesis', 'MCP'],
+    descriptionEs:
+      'Pronóstico y optimización de despacho para una planta solar con batería (PV-BESS) en el mercado eléctrico chileno: forecasting de generación y costo marginal (SARIMAX / Seq2Seq-LSTM), optimizador determinista y estocástico auditable, backtest sobre datos reales y servidor MCP para interrogar el plan.',
+    descriptionEn:
+      'Dispatch forecasting and optimization for a solar-plus-storage (PV-BESS) plant in the Chilean power market: generation and marginal-cost forecasting (SARIMAX / Seq2Seq-LSTM), auditable deterministic and stochastic optimizer, backtesting on real data and an MCP server to query the plan.',
+    url: null,
+    github: 'https://github.com/faborubio/acopia',
+    image: null,
   },
   {
     id: 'faro',

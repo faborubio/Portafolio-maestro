@@ -50,7 +50,7 @@
   },
   "about": {
     "title": "About me",
-    "p1": "I'm a Full Stack Developer with 3+ years of experience building applications with Angular, React and Node.js, plus data projects in Python: ingestion pipelines, forecasting and optimization on real data. Clean code, responsive design and measurable performance.",
+    "p1": "I'm a Full Stack Developer with 3+ years of experience building applications with Ruby on Rails, Angular, React and Node.js, plus data projects in Python: ingestion pipelines, forecasting and optimization on real data. Clean code, responsive design and measurable performance.",
     "p2": "I've worked on real-world projects for companies and as a freelancer — from animated landing pages to platforms with authentication, testing and CI/CD, through APIs and data engines with serious test suites. I balance visual detail with code reliability.",
     "p3": "I'm open to full-time roles and freelance projects, ideally remote. If you're looking for someone who delivers solid work, find me on <lk>LinkedIn</lk> or through the contact form.",
     "stats": {
@@ -61,7 +61,7 @@
   },
   "skills": {
     "title": "Skills & Experience",
-    "p1": "Full stack developer with front-end, back-end and data experience: JavaScript/TypeScript, React, Angular and Node.js, plus Python, SQL, PostgreSQL and Docker, among others.",
+    "p1": "Full stack developer with front-end, back-end and data experience: JavaScript/TypeScript, React, Angular and Node.js, plus Ruby on Rails, Python, SQL, PostgreSQL and Docker, among others.",
     "p2": "I care about responsive (mobile-first) design, performance and code quality to deliver the best user experience on every project.",
     "p3": "Hover (or tap) a technology in the sphere to see its level highlighted.",
     "spotHint": "Hover a technology…"
