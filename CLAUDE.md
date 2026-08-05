@@ -46,7 +46,32 @@ se usa vía npx). Si el deploy incluye functions, **siempre filtrado**:
   es compartido (aloja también atalaya-demo/live, mojitos-landing y telar-tejido).
   Nunca borrarla ni desplegar functions sin filtrar.
 
-## Estado actual (2026-07-15, cierre de sesión — intro del Home + Vite 6)
+## Estado actual (2026-08-05, cierre de sesión — postulaciones + F del Home)
+
+- **`postulaciones/` es la carpeta de material dirigido** (CVs por empresa, cartas, textos de
+  formularios y análisis de calce). **Está en `.gitignore` a propósito**: el repo es público y
+  ahí hay expectativas de sueldo, nombres de reclutadores y dónde Fabián *no* tiene experiencia.
+  Leer [postulaciones/README.md](./postulaciones/README.md) antes de tocar cualquier CV — trae
+  el historial de las 4 postulaciones, los datos personales de verdad (IPLACEX en curso desde
+  2026, Haulmer desde **2018**), las reglas (1 página A4, blanco y negro, lo que se cita en la
+  carta debe estar en el CV) y el comando para regenerar los PDFs.
+- **Los CVs dirigidos se hacen copiando la variante más cercana, nunca editando `CV_Fabian.html`**
+  (ese es el del sitio). Tras editar cualquier CV hay que **verificar con captura headless**:
+  la página A4 tiene `overflow: hidden` y recorta en silencio.
+- **El CV del sitio quedó desactualizado**: `CV_Fabian.html` sigue diciendo "feb. 2019" en
+  Haulmer (lo correcto es 2018) y no menciona IPLACEX. Corregirlo, regenerar
+  `public/fabian-rubio-cv.pdf` y desplegar — pendiente de una sesión.
+- **Ruby on Rails visible en el sitio** (`c96a3f5`, en producción): no aparecía en ninguna parte
+  pese al RAG Pipeline en producción. Ahora está en skills (nivel 84), About y Skills (ES/EN),
+  `knowsAbout` del JSON-LD, y el RAG pasó a ser el primer proyecto del Portfolio.
+- **Fix de la F decorativa del Home** (`3aee0d6`, en producción): entre 1200 y 1750px (notebooks)
+  la terminal la tapaba. Media query que la corre a `left: 47%` y la achica. Verificado con
+  puppeteer-core en tiempo real a 1250/1496/1920px.
+- **Herramienta útil**: hay un `check-overlap.js` (puppeteer-core) que mide solapes entre
+  elementos del Home a un viewport dado; se rearma en 5 min si hace falta de nuevo. Recordar el
+  gotcha: `--virtual-time-budget` NO adelanta las animaciones rAF de framer-motion.
+
+## Estado anterior (2026-07-15 — intro del Home + Vite 6)
 
 - **Intro de AnimatedLetters del Home visible tras el boot**: el stagger corría desde
   el montaje tapado por el overlay del BootSequence (mismo bug que la F, `33ac460`).
@@ -66,6 +91,11 @@ se usa vía npx). Si el deploy incluye functions, **siempre filtrado**:
   que el grafo de dependencias ya registra vite 6.4.3/esbuild 0.25.12 — el auto-cierre
   es asíncrono y tardaba más de lo normal; verificar en la pestaña Dependabot que
   quedaron Closed (si siguieran abiertas días después, investigar).
+  **Revisado el 2026-08-05: las 4 siguen "open"**, pero de nuestro lado está todo correcto —
+  el SBOM del repo ya reporta `vite 6.4.3` / `esbuild 0.25.12`, el push está en `origin/main`
+  y `npm ls --all` no muestra copias vulnerables anidadas. Es solo el auto-cierre de GitHub
+  que no corre. Si molesta: desactivar y reactivar "Dependabot alerts" en Settings > Advanced
+  Security fuerza un re-escaneo completo y las cerraría contra el lockfile actual.
 
 - **Giro del sitio y CV hacia "Full Stack · Data & Backend"** para postulaciones activas
   (Junior Data Engineer en Grupo Mariposa; Vibe Coder en Zagged — ojo: Zagged exige

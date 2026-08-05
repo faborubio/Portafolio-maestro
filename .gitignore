@@ -32,3 +32,11 @@ src/assets/*.mp4
 # firebase
 .firebase/
 *.log
+
+# material de postulaciones (CVs dirigidos, cartas y notas de estrategia).
+# El repo es publico: aqui hay expectativas de sueldo, nombres de reclutadores
+# y donde NO tengo experiencia. Ver postulaciones/README.md
+postulaciones/
+
+# reportes internos del motion audit
+motion-audits/
