@@ -70,6 +70,17 @@ se usa vía npx). Si el deploy incluye functions, **siempre filtrado**:
 - **Herramienta útil**: hay un `check-overlap.js` (puppeteer-core) que mide solapes entre
   elementos del Home a un viewport dado; se rearma en 5 min si hace falta de nuevo. Recordar el
   gotcha: `--virtual-time-budget` NO adelanta las animaciones rAF de framer-motion.
+- **PRIMER PENDIENTE DE LA PRÓXIMA SESIÓN — 10 alertas nuevas de Dependabot (9 high, 1 low).**
+  Las 4 viejas de vite/esbuild **sí quedaron `fixed`**; estas son de otros paquetes y
+  aparecieron después. Diagnóstico hecho el 2026-08-05:
+  - **Root (5 high), todas de `devDependencies` — no llegan al navegador**: `sharp` (dep directa,
+    procesamiento de imágenes en build), `immutable` (via `sass`), `postcss` (via `vite`),
+    `fast-uri` (via `vite-plugin-pwa`), `brace-expansion` (transitiva de glob/filelist).
+  - **`functions/` (1 high + 1 low)**: `brace-expansion` y `body-parser`.
+  - `npm audit fix` resuelve casi todo; **`sharp` necesita `--force`** (0.34 → 0.35, salto mayor:
+    verificar que el build de imágenes siga funcionando antes de dar por buena la subida).
+  - Mismo patrón que la vez anterior: severidad alta pero superficie real baja (build-time).
+    No cunde el pánico, pero conviene cerrarlas para que el repo público no muestre 9 high.
 
 ## Estado anterior (2026-07-15 — intro del Home + Vite 6)
 
