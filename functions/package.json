@@ -6,7 +6,7 @@
   "main": "index.js",
   "dependencies": {
     "firebase-functions": "^6.6.0",
-    "nodemailer": "^9.0.3"
+    "nodemailer": "^10.0.9"
   },
   "overrides": {
     "firebase-admin": "^14.1.0",
